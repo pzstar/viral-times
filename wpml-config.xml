@@ -1,0 +1,9 @@
+<wpml-config>
+    <admin-texts>
+        <key name="theme_mods_viral-times">
+            <key name="viral_times_th_text" />
+            <key name="viral_times_archive_readmore" />
+            <key name="viral_times_footer_copyright" />
+        </key>
+    </admin-texts>
+</wpml-config>

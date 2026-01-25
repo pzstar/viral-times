@@ -1,0 +1,160 @@
+/*Home Sections Icons*/
+.customize-pane-parent .control-section .accordion-trigger:before {
+    font-family: dashicons;
+    content: "\f103";
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+#accordion-section-static_front_page .accordion-trigger:before {
+    content: "\f319";
+}
+
+#accordion-panel-viral_times_general_settings_panel .accordion-trigger:before {
+    content: "\f111";
+}
+
+#accordion-panel-viral_times_typography_panel .accordion-trigger:before {
+    content: "\f464";
+}
+
+#accordion-section-colors .accordion-trigger:before {
+    content: "\f309";
+}
+
+#accordion-panel-viral_times_header_settings_panel .accordion-trigger:before {
+    content: "\f212";
+}
+
+#accordion-panel-viral_times_front_page_panel .accordion-trigger:before {
+    content: "\f102";
+}
+
+#accordion-section-viral_times_frontpage_settings .accordion-trigger:before {
+    content: "\f102";
+}
+
+#accordion-section-viral_times_blog_options_section .accordion-trigger:before {
+    content: "\f119";
+}
+
+#accordion-section-viral_times_footer_section .accordion-trigger:before {
+    content: "\f212";
+}
+
+#accordion-panel-nav_menus .accordion-trigger:before {
+    content: "\f333";
+}
+
+#accordion-panel-widgets .accordion-trigger:before {
+    content: "\f116";
+}
+
+#accordion-section-viral_times_social_section .accordion-trigger:before {
+    content: "\f237";
+}
+
+#accordion-section-custom_css .accordion-trigger:before {
+    content: "\f499";
+}
+
+#accordion-section-viral_times_maintenance_section .accordion-trigger:before {
+    content: "\f321";
+}
+
+#accordion-section-viral_times_gdpr_section .accordion-trigger:before {
+    content: "\f332";
+}
+
+
+#accordion-section-viral_times_layout_options_section .accordion-trigger:before {
+    content: "\f135";
+}
+
+#sub-accordion-panel-viral_times_front_page_panel .accordion-section-title {
+    display: flex;
+}
+
+#sub-accordion-panel-viral_times_front_page_panel .ht--sortable-handle {
+    flex-basis: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e0f3ff;
+    height: auto;
+    min-width: 40px;
+    font-size: 18px;
+    cursor: move;
+}
+
+#customize-control-viral_times_enable_frontpage .viral-times-toggle-container {
+    border: 1px solid #CCC;
+    padding: 10px;
+    background: #FFF;
+}
+
+#sub-accordion-panel-viral_times_front_page_panel .customize-info .customize-panel-description {
+    display: block !important;
+}
+
+.viral-times-drag-spinner {
+    display: none;
+    float: left;
+}
+
+.ht--multi-category-list,
+.customize-control-ht--checkbox-multiple > ul {
+    max-height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.customize-control-ht--checkbox-multiple > ul {
+    background: #FFF;
+}
+
+.viral-times-implink {
+    background: #0073aa;
+    padding: 5px 10px;
+    color: #FFF !important;
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+    line-height: 1.2;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.viral-times-implink:hover {
+    background: #000;
+}
+
+#customize-control-viral_times_enable_frontpage .ht--toggle-container {
+    border: 1px solid #CCC;
+    padding: 10px;
+    background: #FFF;
+}
+
+#accordion-section-viral-times-frontpage-notice .accordion-trigger:before {
+    display: none !important;
+}
+
+#accordion-section-viral-times-frontpage-notice .accordion-section-title {
+    background: #FF0000 !important;
+    color: #FFF !important;
+    text-align: center;
+    border: 0;
+}
+
+#accordion-section-viral-times-frontpage-notice .accordion-section-title a {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.customizer-section-hidden {
+    display: none !important;
+}
