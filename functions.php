@@ -399,16 +399,3 @@ require get_template_directory() . '/inc/aricolor.php';
 require get_template_directory() . '/inc/style.php';
 
 require get_template_directory() . '/inc/viraltimestopro.php';
-
-$aa = get_option('sidebars_widgets');
-echo '<pre>';
-var_dump($aa);
-die();
-
-foreach($aa as $key=>$value){
-    $newkey = str_replace('viral_express', 'viral_times', $key);
-    //$newvalue = str_replace('viral_express', 'viral_times', $value);
-    $bb[$newkey] = $value;
-}
-
-//update_option( 'theme_mods_viral-times', $bb);

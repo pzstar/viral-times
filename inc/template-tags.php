@@ -218,9 +218,11 @@ if (!function_exists('viral_times_post_featured_image')) {
         } elseif ($image_size == 'thumbnail') {
             $image_url = get_template_directory_uri() . '/images/placeholder-150x150.jpg';
         } else {
-            $image_width = $get_all_image_sizes[$image_size]['width'];
-            $image_height = $get_all_image_sizes[$image_size]['height'];
-            $image_url = get_template_directory_uri() . '/images/placeholder-' . $image_width . 'x' . $image_height . '.jpg';
+            if (in_array($image_size, $get_all_image_sizes)) {
+                $image_width = $get_all_image_sizes[$image_size]['width'];
+                $image_height = $get_all_image_sizes[$image_size]['height'];
+                $image_url = get_template_directory_uri() . '/images/placeholder-' . $image_width . 'x' . $image_height . '.jpg';
+            }
         }
 
         if (has_post_thumbnail()) {
