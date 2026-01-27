@@ -1,7 +1,7 @@
 <?php
-echo '<pre>';
-var_dump(get_option('sidebars_widgets'));
-echo '</pre>';
+// echo '<pre>';
+// var_dump(get_option('theme_mods_viral-times'));
+// echo '</pre>';
 
 add_action('after_switch_theme', 'viral_times_transfer_old_settings');
 
@@ -14,7 +14,15 @@ function viral_times_transfer_old_settings() {
     }
 
     $viral_times_mods = get_option('theme_mods_' . $previous_theme);
+
     $viral_times_new_value = array();
+
+    $widgets = array('widget_viral_express_category', 'widget_viral_express_contact_info', 'widget_viral_express_category_post_carousel', 'widget_viral_express_category_post_list');
+    foreach ($widgets as $wie) {
+        $key = str_replace('viral_express', 'viral_times', $wie);
+        $widget_val = get_option($wie);
+        update_option($key, $widget_val);
+    }
 
     if ($viral_times_mods) {
         foreach ($viral_times_mods as $viral_times_key => $viral_times_value) {
@@ -31,18 +39,18 @@ function viral_times_transfer_old_settings() {
 
         $new_widget = array();
         foreach ($viral_times_mods['sidebars_widgets']['data'] as $widget_id => $widget) {
-            $new_widget[str_replace('viral-express', 'viral-times', $widget_id)] = $widget;
+            $newwidget = array();
+            foreach ($widget as $ww) {
+                $newwidget[] = str_replace('viral_express', 'viral_times', $ww);
+            }
+            $new_widget[str_replace('viral-express', 'viral-times', $widget_id)] = $newwidget;
         }
 
         set_theme_mod('sidebars_widgets', $new_widget);
+        update_option('sidebars_widgets', $new_widget);
     }
 
-    $widgets = array('widget_viral_express_category', 'widget_viral_express_contact_info', 'widget_viral_express_category_post_carousel', 'widget_viral_express_category_post_list');
-    foreach ($widgets as $wie) {
-        $key = str_replace('viral_express', 'viral_times', $wie);
-        $widget_val = get_option($wie);
-        update_option($key, $widget_val);
-    }
+    
 
     set_theme_mod('viral_times_is_setting_transferred122', true);
 }
