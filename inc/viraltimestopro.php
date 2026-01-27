@@ -1,12 +1,8 @@
 <?php
-// echo '<pre>';
-// var_dump(get_option('theme_mods_viral-times'));
-// echo '</pre>';
-
 add_action('after_switch_theme', 'viral_times_transfer_old_settings');
 
 function viral_times_transfer_old_settings() {
-    $is_setting_transferred = get_theme_mod('viral_times_is_setting_transferred122', false);
+    $is_setting_transferred = get_theme_mod('viral_times_is_setting_transferred', false);
     $previous_theme = strtolower(get_option('theme_switched'));
 
     if ($previous_theme !== 'viral-express' || $is_setting_transferred) {
@@ -52,5 +48,5 @@ function viral_times_transfer_old_settings() {
 
     
 
-    set_theme_mod('viral_times_is_setting_transferred122', true);
+    set_theme_mod('viral_times_is_setting_transferred', true);
 }
