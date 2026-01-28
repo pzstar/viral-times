@@ -384,16 +384,6 @@ require get_template_directory() . '/inc/frontpage-hooks.php';
 require get_template_directory() . '/inc/theme-hooks.php';
 
 /**
- * Welcome
- */
-require get_template_directory() . '/welcome/welcome.php';
-
-/**
- * AriColor
- */
-require get_template_directory() . '/inc/aricolor.php';
-
-/**
  * Dynamic Styles additions
  */
 require get_template_directory() . '/inc/style.php';

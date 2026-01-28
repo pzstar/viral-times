@@ -187,19 +187,3 @@ $wp_customize->add_control('viral_times_footer_copyright', array(
     'description' => esc_html__('Custom HTMl and Shortcodes Supported. Copy/Paste [display-year] to show current year.', 'viral-times')
 ));
 
-$wp_customize->add_setting('viral_times_footer_upgrade_text', array(
-    'sanitize_callback' => 'viral_times_sanitize_text'
-));
-
-$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_footer_upgrade_text', array(
-    'section' => 'viral_times_footer_section',
-    'label' => esc_html__('For more options,', 'viral-times'),
-    'choices' => array(
-        esc_html__('More footer columns styles with up to 6 columns', 'viral-times'),
-        esc_html__('20+ widgets/blocks for footer', 'viral-times'),
-    ),
-    'priority' => 100,
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
-    'active_callback' => 'viral_times_is_upgrade_notice_active'
-)));

@@ -1496,29 +1496,3 @@ foreach ($home_sections as $home_section) {
         'container_inclusive' => true
     ));
 }
-
-$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-upgrade-section', array(
-    'title' => esc_html__('More Sections on Premium', 'viral-times'),
-    'panel' => 'viral_times_front_page_panel',
-    'priority' => 1000,
-    'class' => 'ht--boxed',
-    'options' => array(
-        esc_html__('- With More Styles for all Modules', 'viral-times'),
-        esc_html__('- Ticker Module', 'viral-times'),
-        esc_html__('- Featured Image Module', 'viral-times'),
-        esc_html__('- Tile News Module', 'viral-times'),
-        esc_html__('- News Module - Fullwidth', 'viral-times'),
-        esc_html__('- Carousel Module - Fullwidth', 'viral-times'),
-        esc_html__('- Three Column Module', 'viral-times'),
-        esc_html__('- Video Module', 'viral-times'),
-        esc_html__('- Multiple Similar Module', 'viral-times'),
-        esc_html__('------------------------', 'viral-times'),
-        esc_html__('- Option to display advertisment between sections', 'viral-times'),
-        esc_html__('- Option to set gradient & video background on each sections', 'viral-times'),
-        esc_html__('- Option to set different shaped separator at top & bottom of the sections', 'viral-times'),
-        esc_html__('- Elementor Pagebuilder Compatible. All the above sections can be created with Elementor Page Builder or Customizer whichever you like.', 'viral-times'),
-    ),
-    'active_callback' => 'viral_times_is_upgrade_notice_active',
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-times/?utm_source=wordpress&utm_medium=viral-times-customizer-button&utm_campaign=viral-times-upgrade',
-)));

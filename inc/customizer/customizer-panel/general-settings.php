@@ -8,7 +8,7 @@
 /* GENERAL SETTINGS PANEL */
 $wp_customize->add_panel('viral_times_general_settings_panel', array(
     'title' => esc_html__('General Settings', 'viral-times'),
-    'priority' => 1
+    'priority' => 2
 ));
 
 //GENERAL SETTINGS
@@ -133,22 +133,6 @@ $wp_customize->add_control(new Viral_Times_Heading_Control($wp_customize, 'viral
     'label' => esc_html__('Background', 'viral-times'),
 )));
 
-$wp_customize->add_setting('viral_times_general_options_upgrade_text', array(
-    'sanitize_callback' => 'viral_times_sanitize_text'
-));
-
-$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_general_options_upgrade_text', array(
-    'section' => 'viral_times_general_options_section',
-    'label' => esc_html__('For more options,', 'viral-times'),
-    'choices' => array(
-        esc_html__('16+ animated preloaders', 'viral-times'),
-        esc_html__('Admin page custom logo', 'viral-times')
-    ),
-    'priority' => 100,
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
-    'active_callback' => 'viral_times_is_upgrade_notice_active'
-)));
 
 
 /* BACK TO TOP SECTION */
@@ -168,23 +152,6 @@ $wp_customize->add_control(new Viral_Times_Toggle_Control($wp_customize, 'viral_
     'description' => esc_html__('A button on click scrolls to the top of the page.', 'viral-times')
 )));
 
-$wp_customize->add_setting('viral_times_backtotop_upgrade_text', array(
-    'sanitize_callback' => 'viral_times_sanitize_text'
-));
-
-$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_backtotop_upgrade_text', array(
-    'section' => 'viral_times_backtotop_section',
-    'label' => esc_html__('For advanced settings,', 'viral-times'),
-    'choices' => array(
-        esc_html__('Set custom top icon', 'viral-times'),
-        esc_html__('Set custom height, width, position & icon size', 'viral-times'),
-        esc_html__('Set custom normal & hover color', 'viral-times')
-    ),
-    'priority' => 100,
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
-    'active_callback' => 'viral_times_is_upgrade_notice_active'
-)));
 
 /* GOOGLE FONT SECTION */
 $wp_customize->add_section('viral_times_google_font_section', array(
@@ -228,79 +195,3 @@ $wp_customize->add_control(new Viral_Times_Toggle_Control($wp_customize, 'viral_
     'description' => esc_html__('Enable Schema.org markup feature for your site. You can disable this option if if you use a SEO plugin.', 'viral-times'),
 )));
 
-
-$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-pro-section', array(
-    'priority' => -10,
-    //'title' => esc_html__('Christmas & New Year Discount!', 'viral-times'),
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-customizer-button&utm_campaign=viral-times-upgrade'
-)));
-
-$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-doc-section', array(
-    'title' => esc_html__('Documentation', 'viral-times'),
-    'priority' => 1000,
-    'upgrade_text' => esc_html__('View', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/documentation/viral-times-documentation/'
-)));
-
-$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-demo-import-section', array(
-    'title' => esc_html__('Import Demo Content', 'viral-times'),
-    'priority' => 999,
-    'upgrade_text' => esc_html__('Import', 'viral-times'),
-    'upgrade_url' => admin_url('admin.php?page=viral-times-welcome')
-)));
-
-$viral_pro_features = '<ul class="upsell-features">
-	<li>' . esc_html__("14 more demos that can be imported with one click", 'viral-times') . '</li>
-        <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", 'viral-times') . '</li>
-	<li>' . esc_html__("50+ magazine blocks for customizer", 'viral-times') . '</li>
-	<li>' . esc_html__("Customizer home page section reorder", 'viral-times') . '</li>
-	<li>' . esc_html__("45+ magazine widgets for Elementor", 'viral-times') . '</li>
-        <li>' . esc_html__("Ajax Tabs and Ajax Paginations for all Elementor widgets", 'viral-times') . '</li>
-	<li>' . esc_html__("7 header layouts with advanced settings", 'viral-times') . '</li>
-        <li>' . esc_html__("7 differently designed Blog/Archive layouts", 'viral-times') . '</li>
-	<li>' . esc_html__("7 differently designed Article/Post layouts", 'viral-times') . '</li>
-	<li>' . esc_html__("22 custom widgets", 'viral-times') . '</li>
-	<li>' . esc_html__("GDPR compliance & cookies consent", 'viral-times') . '</li>
-	<li>' . esc_html__("In-built megaMenu", 'viral-times') . '</li>
-	<li>' . esc_html__("Advanced typography options", 'viral-times') . '</li>
-	<li>' . esc_html__("Advanced color options", 'viral-times') . '</li>
-	<li>' . esc_html__("Preloader option", 'viral-times') . '</li>
-	<li>' . esc_html__("Advanced blog & article settings", 'viral-times') . '</li>
-	<li>' . esc_html__("Advanced footer setting", 'viral-times') . '</li>
-	<li>' . esc_html__("Advanced advertising & monetization options", 'viral-times') . '</li>
-	<li>' . esc_html__("WooCommerce compatible", 'viral-times') . '</li>
-	<li>' . esc_html__("Fully multilingual and translation ready", 'viral-times') . '</li>
-	<li>' . esc_html__("Fully RTL(right to left) languages compatible", 'viral-times') . '</li>
-        <li>' . esc_html__("Maintenance mode option", 'viral-times') . '</li>
-        <li>' . esc_html__("Remove footer credit text", 'viral-times') . '</li>
-	</ul>
-	<a class="ht-implink" href="' . admin_url('admin.php?page=viral-times-welcome&section=free_vs_pro') . '" target="_blank">' . esc_html__("Comparision - Free Vs Pro", 'viral-times') . '</a>';
-
-/* ============PRO FEATURES============ */
-$wp_customize->add_section('viral_pro_feature_section', array(
-    'title' => esc_html__('Pro Theme Features', 'viral-times'),
-    'priority' => -1
-));
-
-$wp_customize->add_setting('viral_times_hide_upgrade_notice', array(
-    'sanitize_callback' => 'viral_times_sanitize_checkbox',
-    'default' => false,
-));
-
-$wp_customize->add_control(new Viral_Times_Toggle_Control($wp_customize, 'viral_times_hide_upgrade_notice', array(
-    'section' => 'viral_pro_feature_section',
-    'label' => esc_html__('Hide all Upgrade Notices from Customizer', 'viral-times'),
-    'description' => esc_html__('If you don\'t want to upgrade to premium version then you can turn off all the upgrade notices. However you can turn it on anytime if you make mind to upgrade to premium version.', 'viral-times')
-)));
-
-$wp_customize->add_setting('viral_pro_features', array(
-    'sanitize_callback' => 'viral_times_sanitize_text',
-));
-
-$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_pro_features', array(
-    'settings' => 'viral_pro_features',
-    'section' => 'viral_pro_feature_section',
-    'description' => $viral_pro_features,
-    'active_callback' => 'viral_times_is_upgrade_notice_active'
-)));

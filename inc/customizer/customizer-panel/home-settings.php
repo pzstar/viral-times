@@ -239,22 +239,3 @@ $wp_customize->add_control(new Viral_Times_Typography_Control($wp_customize, 'fr
         'step' => 1
     )
 )));
-
-$wp_customize->add_setting('viral_times_home_settings_text', array(
-    'sanitize_callback' => 'viral_times_sanitize_text'
-));
-
-$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_sidebar_upgrade_text', array(
-    'section' => 'viral_times_frontpage_settings',
-    'label' => esc_html__('For more options,', 'viral-times'),
-    'choices' => array(
-        esc_html__('12 page block title styles', 'viral-times'),
-        esc_html__('10 image hover style for post thumb', 'viral-times'),
-        esc_html__('Lazy loading images', 'viral-times'),
-        esc_html__('Option to upload custom placeholder image', 'viral-times'),
-    ),
-    'priority' => 100,
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
-    'active_callback' => 'viral_times_is_upgrade_notice_active'
-)));

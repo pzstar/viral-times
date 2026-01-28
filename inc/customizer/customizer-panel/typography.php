@@ -2,7 +2,7 @@
 
 // Add the typography panel.
 $wp_customize->add_panel('viral_times_typography_panel', array(
-    'priority' => 1,
+    'priority' => 2,
     'title' => esc_html__('Typography Settings', 'viral-times')
 ));
 
@@ -256,17 +256,4 @@ $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral
         '<a href="javascript:wp.customize.section(\'viral_times_frontpage_settings\').focus();">' . esc_html__('Front Page Block Title', 'viral-times') . '</a>',
         '<a href="javascript:wp.customize.section(\'viral_times_frontpage_settings\').focus();">' . esc_html__('Front Page Post Title', 'viral-times') . '</a>',
     )
-)));
-
-$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-hcfu-section', array(
-    'title' => esc_html__('Want To Use Custom Fonts?', 'viral-times'),
-    'panel' => 'viral_times_typography_panel',
-    'priority' => 1001,
-    'class' => 'ht--boxed',
-    'options' => array(
-        esc_html__('Upload custom fonts. The uploaded font will display in the typography font family list.', 'viral-times'),
-    ),
-    'upgrade_text' => esc_html__('Purchase Custom Font Uploader', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/downloads/hash-custom-font-uploader/',
-    'active_callback' => 'viral_times_check_cfu'
 )));

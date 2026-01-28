@@ -46,8 +46,9 @@ $wp_customize->add_control(new Viral_Times_Tab_Control($wp_customize, 'viral_tim
     ),
 )));
 
-$wp_customize->get_section('title_tagline')->panel = 'viral_times_header_settings_panel';
-$wp_customize->get_section('title_tagline')->title = esc_html__('Logo & Favicon', 'viral-times');
+//$wp_customize->get_section('title_tagline')->panel = 'viral_times_header_settings_panel';
+//$wp_customize->get_section('title_tagline')->title = esc_html__('Logo & Favicon', 'viral-times');
+$wp_customize->get_section('title_tagline')->priority = 1;
 
 $wp_customize->add_setting('viral_times_hide_title', array(
     'sanitize_callback' => 'viral_times_sanitize_text',
@@ -131,23 +132,6 @@ $wp_customize->add_control(new Viral_Times_Range_Slider_Control($wp_customize, '
         'max' => 100,
         'step' => 1
     )
-)));
-
-$wp_customize->add_setting('viral_times_title_tagline_upgrade_text', array(
-    'sanitize_callback' => 'viral_times_sanitize_text'
-));
-
-$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_title_tagline_upgrade_text', array(
-    'section' => 'title_tagline',
-    'label' => esc_html__('For more options,', 'viral-times'),
-    'choices' => array(
-        esc_html__('Set typography for title & tagline individually', 'viral-times'),
-        esc_html__('Set color for title & tagline individually', 'viral-times'),
-    ),
-    'priority' => 100,
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
-    'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
 
 
@@ -370,23 +354,7 @@ $wp_customize->add_control(new Viral_Times_Editor_Control($wp_customize, 'viral_
     'include_admin_print_footer' => true
 )));
 
-$wp_customize->add_setting('viral_times_th_upgrade_text', array(
-    'sanitize_callback' => 'viral_times_sanitize_text'
-));
 
-$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_th_upgrade_text', array(
-    'section' => 'viral_times_top_header_options',
-    'label' => esc_html__('For more settings,', 'viral-times'),
-    'choices' => array(
-        esc_html__('Display Date/time in top header', 'viral-times'),
-        esc_html__('Display Ticker in top header', 'viral-times'),
-        esc_html__('Display Custom Widgets in top header', 'viral-times'),
-    ),
-    'priority' => 100,
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
-    'active_callback' => 'viral_times_is_upgrade_notice_active'
-)));
 
 
 //MAIN HEADER
@@ -594,22 +562,6 @@ $wp_customize->add_control(new Viral_Times_Alpha_Color_Control($wp_customize, 'v
     'section' => 'viral_times_main_header_options'
 )));
 
-$wp_customize->add_setting('viral_times_mh_upgrade_text', array(
-    'sanitize_callback' => 'viral_times_sanitize_text'
-));
-
-$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_mh_upgrade_text', array(
-    'section' => 'viral_times_main_header_options',
-    'label' => esc_html__('For more options,', 'viral-times'),
-    'choices' => array(
-        esc_html__('7 header layouts', 'viral-times'),
-        esc_html__('More advanced options', 'viral-times')
-    ),
-    'priority' => 100,
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
-    'active_callback' => 'viral_times_is_upgrade_notice_active'
-)));
 
 //MENU SETTINGS
 $wp_customize->add_section('viral_times_menu_section', array(
@@ -856,23 +808,6 @@ $wp_customize->add_control(new Viral_Times_Typography_Control($wp_customize, 'me
     )
 )));
 
-$wp_customize->add_setting('viral_times_menu_upgrade_text', array(
-    'sanitize_callback' => 'viral_times_sanitize_text'
-));
-
-$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_menu_upgrade_text', array(
-    'section' => 'viral_times_menu_section',
-    'label' => esc_html__('For more options,', 'viral-times'),
-    'choices' => array(
-        esc_html__('10 menu hover styles', 'viral-times'),
-        esc_html__('Differently designed call to action button at the end of the menu', 'viral-times'),
-        esc_html__('More advanced options', 'viral-times')
-    ),
-    'priority' => 100,
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
-    'active_callback' => 'viral_times_is_upgrade_notice_active'
-)));
 
 //TITLE BAR SETTINGS
 $wp_customize->add_section('viral_times_title_bar_section', array(
