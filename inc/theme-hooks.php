@@ -45,7 +45,7 @@ function viral_times_body_classes($classes) {
     $sidebar_style = get_theme_mod('viral_times_sidebar_style', 'sidebar-style6');
     $sticky_sidebar = get_theme_mod('viral_times_sticky_sidebar', true);
     $image_hover_effect = get_theme_mod('viral_times_image_hover_effect', 'circle');
-    $block_title_style = get_theme_mod('viral_times_block_title_style', 'style3');
+    $block_title_style = get_theme_mod('viral_times_block_title_style', 'style9');
     if (is_singular('post')) {
         $post_layout = get_theme_mod('viral_times_single_layout', 'layout7');
         $classes[] = 'ht-single-' . $post_layout;
