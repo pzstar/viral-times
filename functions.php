@@ -317,7 +317,7 @@ function viral_times_scripts() {
     wp_enqueue_style('materialdesignicons', get_template_directory_uri() . '/css/materialdesignicons.css', array(), VIRAL_TIMES_VER);
     wp_enqueue_style('eleganticons', get_template_directory_uri() . '/css/eleganticons.css', array(), VIRAL_TIMES_VER);
     wp_enqueue_style('icofont', get_template_directory_uri() . '/css/icofont.css', array(), VIRAL_TIMES_VER);
-    wp_enqueue_style('vp-twittericon', get_template_directory_uri() . '/css/twittericon.css', array(), VIRAL_TIMES_VER);
+    wp_enqueue_style('viral-times-twittericon', get_template_directory_uri() . '/css/twittericon.css', array(), VIRAL_TIMES_VER);
     wp_enqueue_style('dashicons');
 
     $fonts_url = viral_times_fonts_url();
@@ -397,5 +397,3 @@ require get_template_directory() . '/inc/aricolor.php';
  * Dynamic Styles additions
  */
 require get_template_directory() . '/inc/style.php';
-
-require get_template_directory() . '/inc/viraltimestopro.php';

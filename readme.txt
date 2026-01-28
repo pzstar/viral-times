@@ -1,11 +1,11 @@
 === Viral Times ===
-Viral Times WordPress Theme, Copyright 2025 HashThemes 
+Viral Times WordPress Theme, Copyright 2026 HashThemes 
 Viral Times is distributed under the terms of the GNU GPL (http://www.gnu.org/licenses/gpl-2.0.html)
 
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 6.9
-Stable tag: 3.0.0
+Stable tag: 1.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,7 +19,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
-= 1.0 - Apr 04 2025 =
+= 1.0 - Feb 04 2026 =
 * Initial release
 
 == Credits ==
