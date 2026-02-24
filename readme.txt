@@ -90,8 +90,6 @@ ScreenShot Images
 https://wordpress.org/photos/photo/896640776b/
 https://wordpress.org/photos/photo/950675826d/
 https://wordpress.org/photos/photo/54667f5e22/
-https://wordpress.org/photos/photo/31767a9e15/
-https://wordpress.org/photos/photo/48862c872f/
 https://wordpress.org/photos/photo/34267ef93a/
 https://wordpress.org/photos/photo/13967ef698/
 https://wordpress.org/photos/photo/30566ddf31/
