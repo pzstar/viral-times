@@ -5,7 +5,7 @@
  */
 function viral_times_dymanic_styles() {
     $custom_css = $tablet_css = $mobile_css = "";
-    $color = get_theme_mod('viral_times_template_color', '#f97c00');
+    $color = get_theme_mod('viral_times_template_color', '#ea3546');
     $darker_color = viral_times_color_brightness($color, -0.9);
     $container_width = get_theme_mod('viral_times_website_width', 1170);
     $fluid_container_width = get_theme_mod('viral_times_fluid_container_width', 80);
@@ -129,7 +129,7 @@ function viral_times_dymanic_styles() {
     $content_header_color = get_theme_mod('viral_times_content_header_color', '#000000');
     $content_text_color = get_theme_mod('viral_times_content_text_color', '#333333');
     $content_link_color = get_theme_mod('viral_times_content_link_color', '#000000');
-    $content_link_hov_color = get_theme_mod('viral_times_content_link_hov_color', '#f97c00');
+    $content_link_hov_color = get_theme_mod('viral_times_content_link_hov_color', '#ea3546');
     $content_widget_title_color = get_theme_mod('viral_times_content_widget_title_color', '#000000');
     $content_light_color = viral_times_hex2rgba($content_text_color, 0.1);
     $content_lighter_color = viral_times_hex2rgba($content_text_color, 0.05);
@@ -259,8 +259,8 @@ function viral_times_dymanic_styles() {
         }
 
         $block_title_color = get_theme_mod("viral_times_{$sectionname}_block_title_color", '#333333');
-        $block_title_background_color = get_theme_mod("viral_times_{$sectionname}_block_title_background_color", '#f97c00');
-        $block_title_border_color = get_theme_mod("viral_times_{$sectionname}_block_title_border_color", '#f97c00');
+        $block_title_background_color = get_theme_mod("viral_times_{$sectionname}_block_title_background_color", '#ea3546');
+        $block_title_border_color = get_theme_mod("viral_times_{$sectionname}_block_title_border_color", '#ea3546');
 
         $custom_css .= "
             {$sectionclass}.ht-overwrite-color .vl-block-title span.vl-title{color:$block_title_color}
@@ -344,19 +344,19 @@ function viral_times_dymanic_styles() {
 
     /* =============== Header CSS =============== */
     $mh_button_color = get_theme_mod('viral_times_mh_button_color', '#000000');
-    $th_bg_color = get_theme_mod('viral_times_th_bg_color', '#f97c00');
+    $th_bg_color = get_theme_mod('viral_times_th_bg_color', '#ea3546');
     $th_bottom_border_color = get_theme_mod('viral_times_th_bottom_border_color');
     $th_text_color = get_theme_mod('viral_times_th_text_color', '#FFFFFF');
     $th_anchor_color = get_theme_mod('viral_times_th_anchor_color', '#EEEEEE');
     $th_height = get_theme_mod('viral_times_th_height', 45);
     $mh_height = get_theme_mod('viral_times_mh_height', 65);
     $mh_half_height = $mh_height / 2;
-    $mh_bg_color = get_theme_mod('viral_times_mh_bg_color', '#f97c00');
-    $mh_bg_color_mobile = get_theme_mod('viral_times_mh_bg_color_mobile', '#f97c00');
+    $mh_bg_color = get_theme_mod('viral_times_mh_bg_color', '#ea3546');
+    $mh_bg_color_mobile = get_theme_mod('viral_times_mh_bg_color_mobile', '#ea3546');
     $mh_border_color = get_theme_mod('viral_times_mh_border_color', '#EEEEEE');
     $mh_menu_color = get_theme_mod('viral_times_mh_menu_color', '#FFFFFF');
     $mh_menu_hover_color = get_theme_mod('viral_times_mh_menu_hover_color', '#FFFFFF');
-    $mh_menu_hover_bg_color = get_theme_mod('viral_times_mh_menu_hover_bg_color', '#f97c00');
+    $mh_menu_hover_bg_color = get_theme_mod('viral_times_mh_menu_hover_bg_color', '#ea3546');
     $mh_submenu_bg_color = get_theme_mod('viral_times_mh_submenu_bg_color', '#F2F2F2');
     $mh_submenu_color = get_theme_mod('viral_times_mh_submenu_color', '#333333');
     $mh_submenu_hover_color = get_theme_mod('viral_times_mh_submenu_hover_color', '#333333');
@@ -684,7 +684,7 @@ function viral_times_dymanic_styles() {
 
     /* =============== Block Title Style =============== */
     $block_title_color = get_theme_mod('viral_times_block_title_color', '#333333');
-    $block_title_background_color = get_theme_mod('viral_times_block_title_background_color', '#f97c00');
+    $block_title_background_color = get_theme_mod('viral_times_block_title_background_color', '#ea3546');
     $block_title_border_color = get_theme_mod('viral_times_block_title_border_color', '#333333');
 
     $custom_css .= "
@@ -1158,8 +1158,8 @@ function viral_times_dymanic_styles() {
     /* =============== Header Button =============== */
     $hb_text_color = get_theme_mod('viral_times_hb_text_color', '#FFFFFF');
     $hb_text_hov_color = get_theme_mod('viral_times_hb_text_hov_color', '#FFFFFF');
-    $hb_bg_color = get_theme_mod('viral_times_hb_bg_color', '#f97c00');
-    $hb_bg_hov_color = get_theme_mod('viral_times_hb_bg_hov_color', '#f97c00');
+    $hb_bg_color = get_theme_mod('viral_times_hb_bg_color', '#ea3546');
+    $hb_bg_hov_color = get_theme_mod('viral_times_hb_bg_hov_color', '#ea3546');
     $hb_borderradius = get_theme_mod('viral_times_hb_borderradius', '0');
 
     $custom_css .= "
@@ -1178,7 +1178,7 @@ function viral_times_dymanic_styles() {
     /* =============== GDPR =============== */
     $gdpr_bg = get_theme_mod('viral_times_gdpr_bg', '#333333');
     $gdpr_text_color = get_theme_mod('viral_times_gdpr_text_color', '#FFFFFF');
-    $button_bg_color = get_theme_mod('viral_times_button_bg_color', '#f97c00');
+    $button_bg_color = get_theme_mod('viral_times_button_bg_color', '#ea3546');
     $button_text_color = get_theme_mod('viral_times_button_text_color', '#FFFFFF');
     $custom_css .= "
             .viral-times-privacy-policy{

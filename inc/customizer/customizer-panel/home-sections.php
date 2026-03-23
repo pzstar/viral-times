@@ -1334,7 +1334,7 @@ foreach ($home_sections as $home_section) {
     )));
 
     $wp_customize->add_setting("viral_times_{$id}_block_title_background_color", array(
-        'default' => '#f97c00',
+        'default' => '#ea3546',
         'sanitize_callback' => 'sanitize_hex_color',
         'transport' => 'postMessage'
     ));
@@ -1346,7 +1346,7 @@ foreach ($home_sections as $home_section) {
     )));
 
     $wp_customize->add_setting("viral_times_{$id}_block_title_border_color", array(
-        'default' => '#f97c00',
+        'default' => '#ea3546',
         'sanitize_callback' => 'sanitize_hex_color',
         'transport' => 'postMessage'
     ));

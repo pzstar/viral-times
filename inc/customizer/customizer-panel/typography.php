@@ -13,7 +13,7 @@ $wp_customize->add_section('body_typography', array(
 ));
 
 $wp_customize->add_setting('body_font_family', array(
-    'default' => 'Roboto',
+    'default' => 'Montserrat',
     'sanitize_callback' => 'sanitize_text_field',
 ));
 
@@ -88,12 +88,12 @@ $wp_customize->add_section('header_typography', array(
 
 // Add H typography section.
 $wp_customize->add_setting('h_font_family', array(
-    'default' => 'Roboto',
+    'default' => 'Jost',
     'sanitize_callback' => 'sanitize_text_field',
 ));
 
 $wp_customize->add_setting('h_font_style', array(
-    'default' => '700',
+    'default' => '500',
     'sanitize_callback' => 'sanitize_text_field',
     'transport' => 'postMessage'
 ));

@@ -216,7 +216,7 @@ $wp_customize->add_control(new Viral_Times_Range_Slider_Control($wp_customize, '
 )));
 
 $wp_customize->add_setting('viral_times_th_bg_color', array(
-    'default' => '#f97c00',
+    'default' => '#ea3546',
     'sanitize_callback' => 'viral_times_sanitize_color',
     'transport' => 'postMessage'
 ));
@@ -493,7 +493,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_
 )));
 
 $wp_customize->add_setting('viral_times_mh_bg_color', array(
-    'default' => '#f97c00',
+    'default' => '#ea3546',
     'sanitize_callback' => 'viral_times_sanitize_color',
     'transport' => 'postMessage'
 ));
@@ -504,7 +504,7 @@ $wp_customize->add_control(new Viral_Times_Alpha_Color_Control($wp_customize, 'v
 )));
 
 $wp_customize->add_setting('viral_times_mh_bg_color_mobile', array(
-    'default' => '#f97c00',
+    'default' => '#ea3546',
     'sanitize_callback' => 'sanitize_hex_color',
     'transport' => 'postMessage'
 ));
@@ -670,7 +670,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_
 )));
 
 $wp_customize->add_setting('viral_times_mh_menu_hover_bg_color', array(
-    'default' => '#f97c00',
+    'default' => '#ea3546',
     'sanitize_callback' => 'sanitize_hex_color',
     'transport' => 'postMessage'
 ));
