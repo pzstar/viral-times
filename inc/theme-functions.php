@@ -26,7 +26,7 @@ function viral_times_comment($comment, $args, $depth) {
     $tag = ('div' === $args['style']) ? 'div' : 'li';
     $show_avatars = get_option('show_avatars');
     ?>
-    <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class(empty($args['has_children']) ? 'parent' : '', $comment); ?>>
+    <<?php echo esc_attr($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class(empty($args['has_children']) ? 'parent' : '', $comment); ?>>
         <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
             <?php if (0 != $args['avatar_size'] && $show_avatars) { ?>
                 <div class="sp-comment-avatar">

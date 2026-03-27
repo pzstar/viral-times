@@ -293,7 +293,7 @@ if (!function_exists('viral_times_single_category')) {
             $categories_list = get_the_category_list(', ');
             if ($categories_list) {
                 echo '<div class="single-entry-category">';
-                echo $categories_list;
+                echo esc_html($categories_list);
                 echo '</div>';
             }
         }
@@ -310,7 +310,7 @@ if (!function_exists('viral_times_single_tag')) {
             $tags_list = get_the_tag_list('', '');
             if ($tags_list) {
                 echo '<div class="single-entry-tags">';
-                echo $tags_list;
+                echo esc_html($tags_list);
                 echo '</div>';
             }
         }
@@ -403,7 +403,7 @@ if (!function_exists('viral_times_entry_tag')) {
         $tags_list = get_the_tag_list('<i class="mdi mdi-bookmark"></i>', ', ');
         if ($tags_list) {
             echo '<span class="entry-tags">';
-            echo $tags_list;
+            echo esc_html($tags_list);
             echo '</span>';
         }
     }

@@ -47,9 +47,9 @@ if ($viral_times_sidebar_layout == 'no-sidebar' || $viral_times_sidebar_layout =
                 if ($viral_times_blog_date) {
                     ?>
                     <div class="ht-post-date">
-                        <div class="ht-month"><?php echo $post_month; ?></div>
-                        <div class="ht-day"><?php echo $post_date; ?></div>
-                        <div class="ht-year"><?php echo $post_year; ?></div>
+                        <div class="ht-month"><?php echo esc_html($post_month); ?></div>
+                        <div class="ht-day"><?php echo esc_html($post_date); ?></div>
+                        <div class="ht-year"><?php echo esc_html($post_year); ?></div>
                     </div>
                     <?php
                 }
@@ -58,8 +58,8 @@ if ($viral_times_sidebar_layout == 'no-sidebar' || $viral_times_sidebar_layout =
                 }
 
                 if ($viral_times_blog_author) {
-                    echo $avatar;
-                    echo '<div class="entry-author">' . $author . '</div>';
+                    echo wp_kses_post($avatar);
+                    echo '<div class="entry-author">' . esc_html($author) . '</div>';
                 }
                 ?>
 
@@ -111,7 +111,7 @@ if ($viral_times_sidebar_layout == 'no-sidebar' || $viral_times_sidebar_layout =
 
             <?php if ($viral_times_archive_content == 'excerpt') { ?>
                 <div class="entry-readmore">
-                    <a href="<?php the_permalink(); ?>"><?php echo $viral_times_archive_readmore; ?></a>
+                    <a href="<?php the_permalink(); ?>"><?php echo esc_html($viral_times_archive_readmore); ?></a>
                 </div>
             <?php } ?>
         </div>

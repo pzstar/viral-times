@@ -45,8 +45,8 @@ if ($current_post_count == 1) {
             if ('post' == get_post_type() && $viral_times_blog_date) {
                 ?>
                 <div class="ht-post-date">
-                    <div class="ht-day"><?php echo $post_date; ?></div>
-                    <div class="ht-month"><?php echo $post_month; ?></div>
+                    <div class="ht-day"><?php echo esc_html($post_date); ?></div>
+                    <div class="ht-month"><?php echo esc_html($post_month); ?></div>
                 </div>
                 <?php
             }
@@ -93,7 +93,7 @@ if ($current_post_count == 1) {
             </div><!-- .entry-content -->
 
             <div class="entry-readmore">
-                <a href="<?php the_permalink(); ?>"><?php echo $viral_times_archive_readmore; ?></a>
+                <a href="<?php the_permalink(); ?>"><?php echo esc_html($viral_times_archive_readmore); ?></a>
             </div>
         </div>
     </div>

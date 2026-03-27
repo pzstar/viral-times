@@ -27,7 +27,7 @@ class Viral_Times_Multiple_Selectize_Control extends WP_Customize_Control {
             }
 
             if (empty($this->choices)) {
-                echo $this->empty_text;
+                echo esc_html($this->empty_text);
                 return;
             } else {
 

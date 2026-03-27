@@ -320,7 +320,7 @@ if (!function_exists('viral_times_header_search_wrapper')) {
         $result = apply_filters('get_search_form', $form);
 
         if ($enable_search) {
-            echo $result;
+            echo wp_kses_post($result);
         }
     }
 

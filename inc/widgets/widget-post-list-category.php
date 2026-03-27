@@ -170,11 +170,11 @@ class viral_times_category_post_list extends WP_Widget {
         }
 
         if (!empty($title_color)) {
-            $title_style = 'style="color:' . $title_color . '"';
+            $title_style = 'style="color:' . esc_attr($title_color) . '"';
         }
 
         if (!empty($excerpt_color)) {
-            $excerpt_style = 'style="color:' . $excerpt_color . '"';
+            $excerpt_style = 'style="color:' . esc_attr($excerpt_color) . '"';
         }
 
         echo $before_widget;
@@ -213,11 +213,11 @@ class viral_times_category_post_list extends WP_Widget {
                     </div>
 
                     <div class="ht-pl-content">
-                        <<?php echo $title_html_tag; ?> class="<?php echo $class; ?>" <?php echo $title_style; ?>>
+                        <<?php echo esc_attr($title_html_tag); ?> class="<?php echo esc_attr($class); ?>" <?php echo $title_style; ?>>
                             <a href="<?php echo the_permalink(); ?>">
                                 <?php the_title(); ?>
                             </a>
-                        </<?php echo $title_html_tag; ?>>
+                        </<?php echo esc_attr($title_html_tag); ?>>
 
                         <?php if ($display_date) { ?>
                             <div class="ht-pl-date" <?php echo $excerpt_style; ?>>

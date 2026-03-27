@@ -143,19 +143,19 @@ class viral_times_contact_info extends WP_Widget {
         $wrap_css = array();
 
         if (!empty($title_color)) {
-            $title_style = 'style="color:' . $title_color . '"';
+            $title_style = 'style="color:' . esc_attr($title_color) . '"';
         }
 
         if (!empty($text_color)) {
-            $text_style = 'style="color:' . $text_color . '"';
+            $text_style = 'style="color:' . esc_attr($text_color) . '"';
         }
 
         if (!empty($icon_color)) {
-            $icon_style = 'style="color:' . $icon_color . '"';
+            $icon_style = 'style="color:' . esc_attr($icon_color) . '"';
         }
 
         if (!empty($background_color)) {
-            $wrap_css[] = "background-color:$background_color";
+            $wrap_css[] = "background-color: $background_color";
         }
 
         if (!empty($padding)) {

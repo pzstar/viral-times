@@ -45,7 +45,7 @@ function viral_times_frontpage_mininews_content() {
     if ($query->have_posts()) {
         ?>
         <div class="<?php echo esc_attr($class); ?>">
-            <div class="vl-mininews-block <?php echo esc_attr($layout); ?>" data-count="<?php echo $post_count; ?>">
+            <div class="vl-mininews-block <?php echo esc_attr($layout); ?>" data-count="<?php echo esc_attr($post_count); ?>">
                 <?php
                 $i = 0;
                 while ($query->have_posts()):

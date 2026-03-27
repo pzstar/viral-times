@@ -22,7 +22,7 @@ $viral_times_show_title = get_theme_mod('viral_times_show_title', true);
             if ($author_avatar) {
                 ?>
                 <div class="author-post-avatar">
-                    <?php echo $author_avatar; ?>
+                    <?php echo wp_kses_post($author_avatar); ?>
                 </div>
                 <?php
             }
