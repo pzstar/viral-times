@@ -205,7 +205,6 @@ if (!function_exists('viral_times_post_featured_image')) {
 
     function viral_times_post_featured_image($image_size = 'full', $default_lazy_load = true) {
 
-        $placeholder_image = get_theme_mod('viral_times_placeholder_image');
         $lazy_load = get_theme_mod('viral_times_lazy_load', false);
         $get_all_image_sizes = viral_times_get_all_image_sizes();
 
@@ -218,7 +217,7 @@ if (!function_exists('viral_times_post_featured_image')) {
         } elseif ($image_size == 'thumbnail') {
             $image_url = get_template_directory_uri() . '/images/placeholder-150x150.jpg';
         } else {
-            if (in_array($image_size, $get_all_image_sizes)) {
+            if (array_key_exists('thumbnail', $get_all_image_sizes)) {
                 $image_width = $get_all_image_sizes[$image_size]['width'];
                 $image_height = $get_all_image_sizes[$image_size]['height'];
                 $image_url = get_template_directory_uri() . '/images/placeholder-' . $image_width . 'x' . $image_height . '.jpg';
@@ -228,12 +227,6 @@ if (!function_exists('viral_times_post_featured_image')) {
         if (has_post_thumbnail()) {
             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
             $image_url = $image[0];
-        } else {
-            if ($placeholder_image) {
-                $placeholder_image_id = attachment_url_to_postid($placeholder_image);
-                $image = wp_get_attachment_image_src($placeholder_image_id, $image_size);
-                $image_url = $image[0];
-            }
         }
 
         if ($default_lazy_load && $lazy_load && !is_customize_preview() && !viral_times_is_amp()) {
@@ -293,7 +286,7 @@ if (!function_exists('viral_times_single_category')) {
             $categories_list = get_the_category_list(', ');
             if ($categories_list) {
                 echo '<div class="single-entry-category">';
-                echo esc_html($categories_list);
+                echo wp_kses_post($categories_list);
                 echo '</div>';
             }
         }
@@ -310,7 +303,7 @@ if (!function_exists('viral_times_single_tag')) {
             $tags_list = get_the_tag_list('', '');
             if ($tags_list) {
                 echo '<div class="single-entry-tags">';
-                echo esc_html($tags_list);
+                echo wp_kses_post($tags_list);
                 echo '</div>';
             }
         }

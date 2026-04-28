@@ -18,6 +18,6 @@
     </div><!-- .entry-content -->
 
     <div class="entry-readmore">
-        <a href="<?php the_permalink(); ?>"><?php _e('Read More', 'viral-times'); ?></a>
+        <a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'viral-times'); ?></a>
     </div>
 </article><!-- #post-## -->

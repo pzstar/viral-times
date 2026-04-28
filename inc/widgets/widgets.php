@@ -221,7 +221,7 @@ function viral_times_customizer_editor() {
             $settings = array('textarea_rows' => 55, 'editor_height' => 260);
             wp_editor('', 'wpeditorwidget', $settings);
             ?>
-            <p><a href="#" class="ht-wp-editor-widget-update-close button button-primary"><?php _e('Save and Close', 'viral-times'); ?></a></p>
+            <p><a href="#" class="ht-wp-editor-widget-update-close button button-primary"><?php esc_html_e('Save and Close', 'viral-times'); ?></a></p>
         </div>
     </div>
     <div id="ht-wp-editor-widget-backdrop" style="display: none;"></div>

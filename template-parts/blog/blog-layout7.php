@@ -59,7 +59,7 @@ if ($viral_times_sidebar_layout == 'no-sidebar' || $viral_times_sidebar_layout =
 
                 if ($viral_times_blog_author) {
                     echo wp_kses_post($avatar);
-                    echo '<div class="entry-author">' . esc_html($author) . '</div>';
+                    echo '<div class="entry-author">' . wp_kses_post($author) . '</div>';
                 }
                 ?>
 

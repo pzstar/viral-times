@@ -202,7 +202,7 @@ function viral_times_display_content_widget($content) {
             <?php
         }
 
-        echo esc_kses_post($content);
+        echo wp_kses_post($content);
 
         if (is_active_sidebar('viral-times-single-post-after-article')) {
             ?>
