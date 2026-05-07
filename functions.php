@@ -243,8 +243,8 @@ if (!function_exists('viral_times_fonts_url')):
         $google_fonts = viral_times_google_fonts();
 
         $customizer_fonts = array(
-            'body_font_family' => 'Roboto',
-            'h_font_family' => 'Roboto',
+            'body_font_family' => 'Montserrat',
+            'h_font_family' => 'Jost',
             'menu_font_family' => 'Default',
             'page_title_font_family' => 'Default',
             'frontpage_title_font_family' => 'Default',

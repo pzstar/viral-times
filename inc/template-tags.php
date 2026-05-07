@@ -208,26 +208,27 @@ if (!function_exists('viral_times_post_featured_image')) {
         $lazy_load = get_theme_mod('viral_times_lazy_load', false);
         $get_all_image_sizes = viral_times_get_all_image_sizes();
 
-        if ($image_size == 'full') {
-            $image_url = get_template_directory_uri() . '/images/placeholder.jpg';
-        } elseif ($image_size == 'large') {
-            $image_url = get_template_directory_uri() . '/images/placeholder-1300x540.jpg';
-        } elseif ($image_size == 'medium') {
-            $image_url = get_template_directory_uri() . '/images/placeholder-500x500.jpg';
-        } elseif ($image_size == 'thumbnail') {
-            $image_url = get_template_directory_uri() . '/images/placeholder-150x150.jpg';
-        } else {
-            if (array_key_exists('thumbnail', $get_all_image_sizes)) {
-                $image_width = $get_all_image_sizes[$image_size]['width'];
-                $image_height = $get_all_image_sizes[$image_size]['height'];
-                $image_url = get_template_directory_uri() . '/images/placeholder-' . $image_width . 'x' . $image_height . '.jpg';
-            }
-        }
-
         if (has_post_thumbnail()) {
             $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
             $image_url = $image[0];
+        } else {
+            if ($image_size == 'full') {
+                $image_url = get_template_directory_uri() . '/images/placeholder.jpg';
+            } elseif ($image_size == 'large') {
+                $image_url = get_template_directory_uri() . '/images/placeholder-1300x540.jpg';
+            } elseif ($image_size == 'medium') {
+                $image_url = get_template_directory_uri() . '/images/placeholder-500x500.jpg';
+            } elseif ($image_size == 'thumbnail') {
+                $image_url = get_template_directory_uri() . '/images/placeholder-150x150.jpg';
+            } else {
+                if (array_key_exists($image_size, $get_all_image_sizes)) {
+                    $image_width = $get_all_image_sizes[$image_size]['width'];
+                    $image_height = $get_all_image_sizes[$image_size]['height'];
+                    $image_url = get_template_directory_uri() . '/images/placeholder-' . $image_width . 'x' . $image_height . '.jpg';
+                }
+            }
         }
+
 
         if ($default_lazy_load && $lazy_load && !is_customize_preview() && !viral_times_is_amp()) {
             echo '<img class="vl-lazy" alt="' . esc_attr(get_the_title()) . '" src="' . esc_url(get_template_directory_uri()) . '/images/empty-image.png" data-src="' . esc_url($image_url) . '"/>';
@@ -396,7 +397,7 @@ if (!function_exists('viral_times_entry_tag')) {
         $tags_list = get_the_tag_list('<i class="mdi mdi-bookmark"></i>', ', ');
         if ($tags_list) {
             echo '<span class="entry-tags">';
-            echo esc_html($tags_list);
+            echo $tags_list;
             echo '</span>';
         }
     }

@@ -357,6 +357,15 @@ jQuery(function ($) {
         }, 500);
     }
 
+    $(document).on('keydown', '.menu-collapser', function (e) {
+        if (e.key === 'Tab' && e.shiftKey) {
+            if (!$('#ht-responsive-menu').is(':visible')) {
+                e.preventDefault();
+                $('#ht-site-branding > a').focus();
+            }
+        }
+    });
+
     var viralTimesMenuFocus = function (elem) {
         viralTimesKeyboardLoop(elem);
 

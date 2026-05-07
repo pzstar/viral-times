@@ -193,7 +193,7 @@ function viral_times_css_strip_whitespace($css) {
 function viral_times_get_customizer_fonts() {
     $fonts = array(
         'body' => array(
-            'font_family' => 'Roboto',
+            'font_family' => 'Montserrat',
             'font_style' => '400',
             'text_transform' => 'none',
             'text_decoration' => 'none',
@@ -242,7 +242,7 @@ function viral_times_get_customizer_fonts() {
     );
 
     $fonts['h'] = array(
-        'font_family' => 'Roboto',
+        'font_family' => 'Jost',
         'font_style' => '400',
         'text_transform' => 'none',
         'text_decoration' => 'none',
