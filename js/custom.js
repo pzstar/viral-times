@@ -38,6 +38,7 @@ jQuery(function ($) {
 
     $('.ht-search-close').click(function () {
         $('.ht-search-wrapper').removeClass('ht-search-triggered');
+        $('.ht-search-button > a').focus();
         return false;
     });
 
@@ -45,6 +46,7 @@ jQuery(function ($) {
         // ESCAPE key pressed
         if (e.keyCode == 27 && $('.ht-search-wrapper').hasClass('ht-search-triggered')) {
             $('.ht-search-wrapper').removeClass('ht-search-triggered');
+            $('.ht-search-button > a').focus();
         }
     });
 
@@ -63,8 +65,20 @@ jQuery(function ($) {
     $('a.sf-with-ul').append('<div class="dropdown-nav arrow_carrot-down"></div>');
 
     $('#ht-mobile-menu .menu-collapser').on('click', function () {
-        $(this).next('ul').slideToggle();
-        viralTimesMenuFocus($(' #ht-mobile-menu'));
+
+        const menu = $('#ht-responsive-menu');
+        const isOpen = menu.is(':visible');
+
+        menu.stop(true, true).slideToggle(200);
+
+        if (!isOpen) {
+            setTimeout(function () {
+                viralTimesMenuFocus($('#ht-mobile-menu'));
+            }, 250);
+        } else {
+            $('#ht-mobile-menu').off('keydown');
+            $('.menu-collapser').focus();
+        }
     });
 
     $('#ht-responsive-menu .dropdown-nav').on('click', function () {
@@ -371,7 +385,8 @@ jQuery(function ($) {
 
         elem.on('keyup', function (e) {
             if (e.keyCode === 27) {
-                $(' #ht-responsive-menu').hide();
+                $('#ht-responsive-menu').hide();
+                $('#ht-mobile-menu').off('keydown');
                 $('.menu-collapser').focus();
             }
         });
@@ -389,28 +404,37 @@ jQuery(function ($) {
     };
 
     var viralTimesKeyboardLoop = function (elem) {
-        var tabbable = elem.find('select, input, textarea, button, a').filter(':visible');
+
+        var tabbable = elem
+            .find('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])')
+            .filter(':visible');
 
         var firstTabbable = tabbable.first();
         var lastTabbable = tabbable.last();
 
-        /*set focus on first input*/
+        elem.off('keydown.viralTrap');
+
         firstTabbable.focus();
 
-        /*redirect last tab to first input*/
-        lastTabbable.on('keydown', function (e) {
-            if ((e.which === 9 && !e.shiftKey)) {
-                e.preventDefault();
-                firstTabbable.focus();
-            }
-        });
+        elem.on('keydown.viralTrap', function (e) {
 
-        /*redirect first shift+tab to last input*/
-        firstTabbable.on('keydown', function (e) {
-            if ((e.which === 9 && e.shiftKey)) {
-                e.preventDefault();
-                lastTabbable.focus();
+            var isTab = (e.which === 9 || e.key === 'Tab');
+
+            if (!isTab) return;
+
+            if (e.shiftKey) {
+                if ($(document.activeElement).is(firstTabbable)) {
+                    e.preventDefault();
+                    lastTabbable.focus();
+                }
+            }
+
+            else {
+                if ($(document.activeElement).is(lastTabbable)) {
+                    e.preventDefault();
+                    firstTabbable.focus();
+                }
             }
         });
-    }
+    };
 });
