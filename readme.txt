@@ -5,7 +5,7 @@ Viral Times is distributed under the terms of the GNU GPL (http://www.gnu.org/li
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 6.9
-Stable tag: 1.0.05
+Stable tag: 1.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,6 +18,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.0.1 - May 20 2026 =
+* Demo Importer added
 
 = 1.0 - Feb 04 2026 =
 * Initial release

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Viral Times\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-20 12:33+0000\n"
+"POT-Creation-Date: 2026-05-20 11:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,10 +13,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.7.2; wp-6.8.1\n"
+"X-Loco-Version: 2.8.4; wp-6.9.4; php-8.2.0\n"
 "X-Domain: viral-times"
 
-#: inc/template-tags.php:60 inc/template-tags.php:421
+#: inc/template-tags.php:60 inc/template-tags.php:417
 msgid " Comments"
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "%1$s"
 msgstr ""
 
-#: welcome/welcome.php:106
+#: welcome/welcome.php:113
 #, php-format
 msgid ""
 "%1$s is now installed and ready to use. You can start either by importing "
@@ -48,7 +48,7 @@ msgstr ""
 msgid "%s Demo"
 msgstr ""
 
-#: welcome/welcome.php:139
+#: welcome/welcome.php:146
 #, php-format
 msgid "%s Settings"
 msgstr ""
@@ -135,11 +135,11 @@ msgstr ""
 msgid "------------------------"
 msgstr ""
 
-#: inc/template-tags.php:58 inc/template-tags.php:419
+#: inc/template-tags.php:58 inc/template-tags.php:415
 msgid "0 Comments"
 msgstr ""
 
-#: inc/template-tags.php:62 inc/template-tags.php:423
+#: inc/template-tags.php:62 inc/template-tags.php:419
 msgid "1 Comment"
 msgstr ""
 
@@ -470,11 +470,11 @@ msgstr ""
 msgid "Activate"
 msgstr ""
 
-#: welcome/welcome.php:279
+#: welcome/welcome.php:286
 msgid "Activate Demo Importer Plugin"
 msgstr ""
 
-#: welcome/welcome.php:177
+#: welcome/welcome.php:184
 msgid "Activating Demo Importer Plugin"
 msgstr ""
 
@@ -688,10 +688,6 @@ msgstr ""
 msgid "Big Thumbnail With Title Over Image"
 msgstr ""
 
-#: inc/customizer/customizer-panel/general-settings.php:234
-msgid "Black Friday & Cyber Monday Discount!"
-msgstr ""
-
 #: inc/customizer/customizer-panel/home-sections.php:1345
 #: inc/customizer/customizer-panel/home-settings.php:76
 msgid "Block Title Background Color"
@@ -796,7 +792,7 @@ msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/header/header-functions.php:141
+#: inc/header/header-functions.php:145
 msgid "Breaking News"
 msgstr ""
 
@@ -812,7 +808,7 @@ msgstr ""
 msgid "Buy Now ($69 only)"
 msgstr ""
 
-#: inc/header/header-functions.php:111
+#: inc/header/header-functions.php:115
 msgid "California, TX 70240 | (1800) 456 7890"
 msgstr ""
 
@@ -848,7 +844,7 @@ msgid ""
 "version."
 msgstr ""
 
-#: welcome/welcome.php:118
+#: welcome/welcome.php:125
 msgid "Click below to install and active HashThemes Demo Importer Plugin."
 msgstr ""
 
@@ -914,7 +910,7 @@ msgstr[1] ""
 msgid "Comparision - Free Vs Pro"
 msgstr ""
 
-#: welcome/welcome.php:105
+#: welcome/welcome.php:112
 msgid "Congratulations!"
 msgstr ""
 
@@ -1095,7 +1091,7 @@ msgstr ""
 msgid "Disable Section"
 msgstr ""
 
-#: welcome/welcome.php:395
+#: welcome/welcome.php:402
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -1321,11 +1317,11 @@ msgstr ""
 msgid "Enable Top Header"
 msgstr ""
 
-#: inc/header/header-functions.php:305
+#: inc/header/header-functions.php:309
 msgid "Enter a keyword to search..."
 msgstr ""
 
-#: welcome/welcome.php:180
+#: welcome/welcome.php:187
 msgid "Error! Reload the page and try again."
 msgstr ""
 
@@ -1496,7 +1492,7 @@ msgstr ""
 msgid "FREE UPDATES FOR LIFETIME"
 msgstr ""
 
-#: welcome/welcome.php:149
+#: welcome/welcome.php:156
 msgid "Free Vs Pro"
 msgstr ""
 
@@ -1580,11 +1576,11 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: welcome/welcome.php:126
+#: welcome/welcome.php:133
 msgid "Get Started"
 msgstr ""
 
-#: welcome/welcome.php:146
+#: welcome/welcome.php:153
 msgid "Getting Started"
 msgstr ""
 
@@ -1592,11 +1588,11 @@ msgstr ""
 msgid "Go to Appearance > Customize"
 msgstr ""
 
-#: welcome/welcome.php:178 welcome/welcome.php:282
+#: welcome/welcome.php:185 welcome/welcome.php:289
 msgid "Go to Demo Importer Page"
 msgstr ""
 
-#: welcome/welcome.php:128
+#: welcome/welcome.php:135
 msgid "Go to Setting Page"
 msgstr ""
 
@@ -1610,7 +1606,7 @@ msgid "Gradient Preview"
 msgstr ""
 
 #. %1$s is link start tag, %2$s is link end tag.
-#: welcome/welcome.php:352
+#: welcome/welcome.php:359
 #, php-format
 msgid ""
 "Great to see that you have been using Viral Times Theme for some time. We "
@@ -1687,7 +1683,7 @@ msgstr ""
 msgid "here"
 msgstr ""
 
-#: welcome/welcome.php:127
+#: welcome/welcome.php:134
 #, php-format
 msgid ""
 "Here you will find all the necessary links and information on how to use %s."
@@ -1758,7 +1754,7 @@ msgstr ""
 msgid "Huge collection of custom widgets for magazine websites."
 msgstr ""
 
-#: welcome/welcome.php:357
+#: welcome/welcome.php:364
 msgid "I have already rated"
 msgstr ""
 
@@ -1822,7 +1818,7 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: welcome/welcome.php:117
+#: welcome/welcome.php:124
 msgid "Import Demo"
 msgstr ""
 
@@ -1848,7 +1844,7 @@ msgstr ""
 msgid "Inset"
 msgstr ""
 
-#: welcome/welcome.php:286
+#: welcome/welcome.php:293
 msgid "Install Demo Importer Plugin"
 msgstr ""
 
@@ -1860,7 +1856,7 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
-#: welcome/welcome.php:176
+#: welcome/welcome.php:183
 msgid "Installing Demo Importer Plugin"
 msgstr ""
 
@@ -2123,7 +2119,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:342
+#: inc/template-tags.php:338
 msgid "Next Post"
 msgstr ""
 
@@ -2328,7 +2324,7 @@ msgid ""
 "more features to the theme."
 msgstr ""
 
-#: welcome/welcome.php:266
+#: welcome/welcome.php:273
 #, php-format
 msgid ""
 "Please leave us a %s rating if you like our theme . A huge thank you from "
@@ -2386,7 +2382,7 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: inc/template-tags.php:333
+#: inc/template-tags.php:329
 msgid "Previous Post"
 msgstr ""
 
@@ -2442,7 +2438,7 @@ msgstr ""
 msgid "Recommended Plugin page"
 msgstr ""
 
-#: welcome/welcome.php:147 welcome/sections/recommended_plugins.php:6
+#: welcome/welcome.php:154 welcome/sections/recommended_plugins.php:6
 msgid "Recommended Plugins"
 msgstr ""
 
@@ -2793,7 +2789,7 @@ msgstr ""
 msgid "SubMenu Text/Link Color"
 msgstr ""
 
-#: welcome/welcome.php:148
+#: welcome/welcome.php:155
 msgid "Support"
 msgstr ""
 
@@ -3146,6 +3142,7 @@ msgstr ""
 #: welcome/sections/free_vs_pro.php:21 welcome/sections/free_vs_pro.php:388
 #: inc/customizer/customizer-panel/general-settings.php:148
 #: inc/customizer/customizer-panel/general-settings.php:184
+#: inc/customizer/customizer-panel/general-settings.php:235
 #: inc/customizer/customizer-panel/sidebar-settings.php:174
 #: inc/customizer/customizer-panel/home-sections.php:1522
 #: inc/customizer/customizer-panel/home-settings.php:257
@@ -3158,10 +3155,6 @@ msgstr ""
 #: inc/customizer/customizer-panel/header-settings.php:609
 #: inc/customizer/customizer-panel/header-settings.php:872
 msgid "Upgrade to Pro"
-msgstr ""
-
-#: inc/customizer/customizer-panel/general-settings.php:235
-msgid "Upgrade to Pro (40% OFF)"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:22 welcome/sections/free_vs_pro.php:389
@@ -3195,33 +3188,10 @@ msgstr ""
 msgid "View Demo"
 msgstr ""
 
-#: welcome/welcome.php:110 welcome/sections/footer.php:10
+#: welcome/welcome.php:117 welcome/sections/footer.php:10
 #: welcome/sections/footer.php:23 welcome/sections/footer.php:166
 #: welcome/sections/footer.php:179
 msgid "Viral Demo"
-msgstr ""
-
-#. Name of the theme
-msgid "Viral Times"
-msgstr ""
-
-#. Description of the theme
-msgid ""
-"Viral Times is a powerful and flexible WordPress theme designed "
-"specifically for magazine, news, blog, and editorial websites. This "
-"responsive theme comes packed with features to help you build a professional-"
-"looking site with ease. With one-click demo import, you can quickly set up "
-"your website and start customizing. The theme supports multiple header "
-"styles, diverse archive and single post layouts (including grid, list, and "
-"masonry), and advanced typography options that allow you to fine-tune your "
-"site's appearance. Viral Times is fully compatible with the WordPress "
-"Customizer, Elementor, and Gutenberg, offering flexibility for both "
-"beginners and developers. It also includes custom widgets for displaying "
-"trending posts, advertisements, categories, and social media feeds. "
-"Additionally, the theme is translation-ready and supports WPML, making it "
-"ideal for multilingual sites. Whether you're launching a personal blog or a "
-"full-scale online magazine, Viral Times offers the tools and support you "
-"need to create a visually appealing and high-performing WordPress site."
 msgstr ""
 
 #: welcome/sections/footer.php:36 welcome/sections/footer.php:49
@@ -3242,6 +3212,29 @@ msgstr ""
 #: welcome/sections/footer.php:3
 #, php-format
 msgid "Viral Pro Demos - Premium Version of %s"
+msgstr ""
+
+#. Name of the theme
+msgid "Viral Times"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Viral Times is a powerful and flexible WordPress theme designed specifically "
+"for magazine, news, blog, and editorial websites. This responsive theme "
+"comes packed with features to help you build a professional-looking site "
+"with ease. With one-click demo import, you can quickly set up your website "
+"and start customizing. The theme supports multiple header styles, diverse "
+"archive and single post layouts (including grid, list, and masonry), and "
+"advanced typography options that allow you to fine-tune your site's "
+"appearance. Viral Times is fully compatible with the WordPress Customizer, "
+"Elementor, and Gutenberg, offering flexibility for both beginners and "
+"developers. It also includes custom widgets for displaying trending posts, "
+"advertisements, categories, and social media feeds. Additionally, the theme "
+"is translation-ready and supports WPML, making it ideal for multilingual "
+"sites. Whether you're launching a personal blog or a full-scale online "
+"magazine, Viral Times offers the tools and support you need to create a "
+"visually appealing and high-performing WordPress site."
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:268
@@ -3286,7 +3279,7 @@ msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
-#: welcome/welcome.php:139
+#: welcome/welcome.php:146
 msgid "Welcome"
 msgstr ""
 
@@ -3357,7 +3350,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: welcome/welcome.php:356
+#: welcome/welcome.php:363
 msgid "Yes, of course"
 msgstr ""
 

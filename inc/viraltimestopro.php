@@ -13,22 +13,22 @@ function viral_times_transfer_old_settings() {
 
     $viral_times_new_value = array();
 
-    $widgets = array('widget_viral_express_category', 'widget_viral_express_contact_info', 'widget_viral_express_category_post_carousel', 'widget_viral_express_category_post_list');
+    $widgets = array('widget_viral_times_category', 'widget_viral_times_contact_info', 'widget_viral_times_category_post_carousel', 'widget_viral_times_category_post_list');
     foreach ($widgets as $wie) {
-        $key = str_replace('viral_express', 'viral_times', $wie);
+        $key = str_replace('viral_times', 'viral_times', $wie);
         $widget_val = get_option($wie);
         update_option($key, $widget_val);
     }
 
     if ($viral_times_mods) {
         foreach ($viral_times_mods as $viral_times_key => $viral_times_value) {
-            if ($viral_times_key == 'viral_express_frontpage_sections') {
+            if ($viral_times_key == 'viral_times_frontpage_sections') {
                 foreach ($viral_times_value as $section) {
-                    $viral_times_new_value[] = str_replace('viral_express', 'viral_times', $section);
+                    $viral_times_new_value[] = str_replace('viral_times', 'viral_times', $section);
                 }
                 $viral_times_value = $viral_times_new_value;
             }
-            $viral_times_key = str_replace('viral_express', 'viral_times', $viral_times_key);
+            $viral_times_key = str_replace('viral_times', 'viral_times', $viral_times_key);
             set_theme_mod($viral_times_key, $viral_times_value);
         }
 
@@ -37,7 +37,7 @@ function viral_times_transfer_old_settings() {
         foreach ($viral_times_mods['sidebars_widgets']['data'] as $widget_id => $widget) {
             $newwidget = array();
             foreach ($widget as $ww) {
-                $newwidget[] = str_replace('viral_express', 'viral_times', $ww);
+                $newwidget[] = str_replace('viral_times', 'viral_times', $ww);
             }
             $new_widget[str_replace('viral-express', 'viral-times', $widget_id)] = $newwidget;
         }

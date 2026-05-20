@@ -397,3 +397,5 @@ require get_template_directory() . '/inc/aricolor.php';
  * Dynamic Styles additions
  */
 require get_template_directory() . '/inc/style.php';
+
+require get_template_directory() . '/inc/viraltimestopro.php';
