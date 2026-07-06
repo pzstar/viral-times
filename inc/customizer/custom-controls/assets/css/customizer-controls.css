@@ -98,14 +98,15 @@
 /* Choosen CSS */
 .customize-control .chosen-container-single .chosen-single {
     background: #fff url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E) right 5px top 55%/16px 16px no-repeat !important;
-    border-color: #8c8f94;
-    border-radius: 3px;
+    border-color: #949494;
+    border-radius: 2px;
     box-shadow: none;
-    color: #2c3338;
+    color: #1e1e1e;
     cursor: pointer;
-    min-height: 32px;
+    min-height: 40px;
     padding: 0 0 0 10px;
     vertical-align: middle;
+    font-size: 14px;
 }
 
 .customize-control .chosen-container-single .chosen-single div {
@@ -113,7 +114,7 @@
 }
 
 .customize-control .chosen-container-single .chosen-single span {
-    line-height: 30px;
+    line-height: 40px;
     margin: 0 26px 0 0;
 }
 
@@ -193,7 +194,7 @@
 
 .customize-control-ht--heading h3:before,
 .customize-control-ht--typography .ht--typography-customize-control-title:before {
-    background: #000;
+    background: var(--wp-admin-theme-color);
     content: '';
     height: 10px;
     margin-right: 10px;
@@ -202,7 +203,7 @@
 
 .customize-control-ht--heading h3:after,
 .customize-control-ht--typography .ht--typography-customize-control-title:after {
-    background: #000;
+    background: var(--wp-admin-theme-color);
     content: '';
     flex-grow: 1;
     height: 10px;
@@ -220,7 +221,7 @@
 /* Customizer Tabs */
 .ht--customizer-tabs {
     background: #FFF;
-    border-bottom: 3px solid #000;
+    border-bottom: 3px solid var(--wp-admin-theme-color);
     display: flex;
 }
 
@@ -245,7 +246,7 @@
 }
 
 .ht--customizer-tabs a.active {
-    background: #000;
+    background: var(--wp-admin-theme-color);
     color: #fff;
 }
 
@@ -280,49 +281,48 @@
 }
 
 .ht--icon-box-wrap .ht--selected-icon {
-    align-items: center;
     background: #f6f6f6;
-    border: 1px solid #eee;
-    cursor: pointer;
-    display: flex;
-    font-size: 22px;
     height: 45px;
-    justify-content: center;
     line-height: 45px;
-    margin-right: 44px;
-    position: relative;
     text-align: center;
-    width: 60px;
+    border: 1px solid #949494;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .ht--icon-box-wrap .ht--selected-icon span {
-    align-items: center;
     background: #f6f6f6;
-    border: 1px solid #eee;
-    display: flex;
-    font-size: 16px;
     height: 45px;
-    justify-content: center;
-    position: absolute;
-    right: -45px;
-    top: -1px;
     width: 45px;
+    border-left: 1px solid #949494;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ht--icon-box-wrap .ht--selected-icon > i {
+    flex-grow: 1;
 }
 
 .ht--icon-box-wrap .ht--selected-icon span i.ht--down-icon {
+    display: block;
     border: solid #333;
     border-width: 0 2px 2px 0;
-    display: block;
     display: inline-block;
     padding: 3px;
     transform: rotate(45deg);
 }
 
 .ht--icon-box-wrap .ht--icon-search {
-    background: #f7f7f7;
-    border: 1px solid #eee;
-    border-top: 0;
     padding: 10px;
+    background: #f7f7f7;
+    border: 1px solid #949494;
+    margin-top: -1px;
 }
 
 .ht--icon-box-wrap .ht--icon-search select {
@@ -330,21 +330,22 @@
 }
 
 .ht--icon-box-wrap .ht--icon-list {
-    background: #fff;
-    border: 1px solid #eee;
-    border-top: 0;
-    box-sizing: border-box;
-    cursor: pointer;
-    display: none;
-    font-size: 18px;
     height: 215px;
-    -ms-overflow-style: none;
     overflow-y: scroll;
+    font-size: 18px;
+    border: 1px solid #949494;
+    background: #fff;
+    border-top: 0;
     padding: 4px;
+    display: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
 }
+
 
 .ht--icon-box-wrap .ht--icon-list::-webkit-scrollbar {
     display: none;
@@ -355,17 +356,17 @@
 }
 
 .ht--icon-box-wrap .ht--icon-list li {
-    align-items: center;
-    border: 1px solid #eee;
-    border-radius: 3px;
-    display: flex;
     float: left;
-    font-size: 18px;
-    height: 43px;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    height: 43px;
+    width: 43px;
+    border: 1px solid #949494;
+    border-radius: 3px;
+    font-size: 18px;
     margin: 4px;
     transition: all 0.3s ease;
-    width: 43px;
 }
 
 .ht--type-icon .ht--icon-box-wrap .ht--icon-list li {
@@ -382,8 +383,8 @@
 }
 
 .ht--icon-box-wrap .ht--icon-list li.icon-active {
-    background: #0073aa;
-    border: 1px solid #0073aa;
+    background: var(--wp-admin-theme-color);
+    border: 1px solid var(--wp-admin-theme-color);
     color: #fff;
 }
 
@@ -623,11 +624,11 @@
 }
 
 .ht--gradient-box .ui-slider .ui-slider-range {
-    background-color: #13a1dc;
     display: inline-block;
-    height: 100%;
     position: absolute;
     top: 0;
+    height: 100%;
+    background-color: var(--wp-admin-theme-color)
 }
 
 .ht--gradient-box .ui-slider-horizontal .ui-slider-handle {
@@ -704,21 +705,22 @@
     margin-right: 40px;
 }
 
+
 /* Customizer Dimension */
 .customize-control-ht--dimensions > ul,
 .customize-control-ht--border .ht--border-width > ul,
 .customize-control-ht--box-shadow .ht--box-shadow-values > ul {
     display: flex;
+    width: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
 }
 
 .customize-control-ht--dimensions .ht--dimension-wrap,
 .customize-control-ht--border .ht--dimension-wrap,
 .customize-control-ht--box-shadow .ht--dimension-wrap {
-    flex-grow: 1;
     float: left;
+    flex-grow: 1;
     margin: 0;
     padding: 0;
 }
@@ -728,35 +730,30 @@
 .customize-control-ht--border .ht--dimension-wrap input,
 .customize-control-ht--border .ht--dimension-wrap button,
 .customize-control-ht--box-shadow .ht--dimension-wrap input {
-    border: 1px solid;
-    border-color: #a4afb7;
-    border-left-width: 0;
-    border-radius: 0;
     display: block;
-    font-size: 12px;
-    height: 28px;
-    padding: 4px 0;
-    text-align: center;
     width: 100%;
+    border-left-width: 0;
+    text-align: center;
+    border-radius: 0;
 }
 
 .customize-control-ht--dimensions .ht--dimension-wrap:first-child input,
 .customize-control-ht--border .ht--dimension-wrap:first-child input,
 .customize-control-ht--box-shadow .ht--dimension-wrap:first-child input {
     border-left-width: 1px;
-    border-radius: 3px 0 0 3px;
+    border-radius: 2px 0 0 2px;
 }
 
 .customize-control-ht--dimensions .ht--dimension-wrap .ht--dimension-label,
 .customize-control-ht--border .ht--dimension-wrap .ht--dimension-label,
 .customize-control-ht--box-shadow .ht--dimension-wrap .ht--dimension-label {
-    color: #949698;
     display: block;
+    color: #949698;
     font-size: 10px;
-    font-style: normal;
     padding-top: 5px;
-    text-align: center;
+    font-style: normal;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .customize-control-ht--dimensions .ht--dimension-wrap input:focus + .ht--dimension-label,
@@ -768,26 +765,30 @@
 .customize-control-ht--dimensions .ht--dimension-wrap .ht--link-dimensions,
 .customize-control-ht--border .ht--dimension-wrap .ht--link-dimensions {
     background-color: #fff;
-    border: 1px solid #a4afb7;
+    border: 1px solid #959495;
     border-left-width: 0;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
-    outline: none;
     padding: 0;
+    outline: none;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
 }
 
 .customize-control-ht--dimensions .ht--dimension-wrap .ht--link-dimensions span,
 .customize-control-ht--border .ht--dimension-wrap .ht--link-dimensions span {
     display: block;
-    font-size: 16px;
-    height: 28px;
-    line-height: 28px;
-    width: 100%;
+    font-size: 14px;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 12px;
+    width: auto;
 }
 
 .customize-control-ht--dimensions .ht--dimension-wrap .ht--link-dimensions .ht--linked,
 .customize-control-ht--border .ht--dimension-wrap .ht--link-dimensions .ht--linked {
-    background-color: #a4afb7;
+    background-color: var(--wp-admin-theme-color);
     color: #fff;
 }
 
@@ -807,9 +808,9 @@
 }
 
 .customize-control.has-switchers .customize-control-title {
-    align-items: center;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .customize-control.has-switchers .customize-control-title span {
@@ -830,22 +831,22 @@
 }
 
 .customize-control .responsive-switchers li button {
-    background-color: #a4afb7;
-    border: 0;
-    border-radius: 50%;
-    color: #fff;
-    cursor: pointer;
     display: inline-block;
-    font-size: 10px;
     height: 20px;
-    margin-left: 5px;
-    outline: 0;
-    padding: 0;
+    width: 20px;
+    background-color: #a4afb7;
     position: relative;
+    margin-left: 5px;
+    color: #fff;
+    font-size: 10px;
     text-align: center;
+    border-radius: 50%;
+    padding: 0;
+    border: 0;
+    outline: 0;
     -webkit-transition: background-color 0.5s;
     transition: background-color 0.5s;
-    width: 20px;
+    cursor: pointer;
 }
 
 .customize-control .responsive-switchers li button:hover {
@@ -853,14 +854,14 @@
 }
 
 .customize-control .responsive-switchers li button.active {
-    background-color: #13aff0;
+    background-color: var(--wp-admin-theme-color);
 }
 
 .customize-control .responsive-switchers li button i {
-    font-size: inherit;
-    height: auto;
-    line-height: 18px;
     width: auto;
+    height: auto;
+    font-size: inherit;
+    line-height: 18px;
 }
 
 .customize-control.has-switchers > .control-wrap:not(.active) {
@@ -910,34 +911,34 @@
 
 /* Range Slider */
 .customize-control-ht--range-slider .customize-control-title {
-    align-items: center;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
-.customize-control .ht--slider-reset {
-    color: #999;
-    cursor: pointer;
+.ht--slider-reset {
     float: right;
+    cursor: pointer;
     font-size: 14px;
+    color: #999;
     line-height: 18px;
 }
 
 .ht--range-slider-control-wrap {
-    align-items: center;
-    display: flex;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .ht--range-slider-control-wrap .ht--range-slider {
+    position: relative;
+    flex-grow: 1;
+    height: 4px;
+    margin: 12px 0;
     background: rgba(0, 0, 0, 0.15);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    flex-grow: 1;
-    height: 4px;
-    margin: 12px 0;
-    position: relative;
     transition: background 0.5s;
 }
 
@@ -946,26 +947,26 @@
 }
 
 .ht--range-slider-control-wrap .ht--range-slider .ui-slider-range {
-    background: #13a1dc;
     display: inline-block;
-    height: 100%;
     position: absolute;
     top: 0;
+    height: 100%;
+    background: var(--wp-admin-theme-color)
 }
 
 .ht--range-slider-control-wrap .ht--range-slider .ui-slider-handle {
+    height: 16px;
+    width: 16px;
     background: #fff;
     border: none;
-    border-radius: 50%;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
     display: inline-block;
-    height: 16px;
-    margin: 0 0 0 -8px;
     position: absolute;
     top: 50%;
+    margin: 0 0 0 -8px;
     transform: translateY(-50%);
-    width: 16px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .ht--range-slider-control-wrap .ht--range-slider-input {
@@ -973,14 +974,8 @@
 }
 
 .ht--range-slider-control-wrap .ht--range-slider-input input {
-    border-radius: 4px;
-    color: #555;
-    font-size: 12px;
-    font-weight: 600;
-    height: 28px;
-    padding: 3px;
+    width: 75px;
     text-align: center;
-    width: 60px;
 }
 
 .ht--range-slider-control-wrap .ht--range-slider-unit {
@@ -1437,9 +1432,10 @@
 }
 
 /*Upgrade Section*/
-.control-section-ht--upgrade-section.ht--single-row .button {
-    float: right;
-    margin-top: -4px;
+.control-section-ht--upgrade-section.ht--single-row h3{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .control-section-ht--upgrade-section .accordion-section-title:after {

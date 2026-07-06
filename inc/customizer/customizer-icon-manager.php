@@ -36,22 +36,6 @@ class Viral_Times_Icon_Manager {
                 'displayPrefix' => '',
                 'url' => '',
                 'icons' => $this->materialdesignicons_array(),
-            ),
-            'viral-times-essential-icon' => array(
-                'name' => 'viral-times-essential-icon',
-                'label' => esc_html__('Essential Icons', 'viral-times'),
-                'prefix' => 'essential-icon-',
-                'displayPrefix' => '',
-                'url' => '',
-                'icons' => $this->essential_icon_array(),
-            ),
-            'viral-times-elegant-icon' => array(
-                'name' => 'viral-times-elegant-icon',
-                'label' => esc_html__('Elegant Icons', 'viral-times'),
-                'prefix' => '',
-                'displayPrefix' => '',
-                'url' => '',
-                'icons' => $this->eleganticons_array(),
             )
         );
 

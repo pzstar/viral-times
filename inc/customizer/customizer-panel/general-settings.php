@@ -239,6 +239,7 @@ $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral
 $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-doc-section', array(
     'title' => esc_html__('Documentation', 'viral-times'),
     'priority' => 1000,
+    'class' => 'ht--single-row',
     'upgrade_text' => esc_html__('View', 'viral-times'),
     'upgrade_url' => 'https://hashthemes.com/documentation/viral-times-documentation/'
 )));
@@ -246,6 +247,7 @@ $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral
 $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-demo-import-section', array(
     'title' => esc_html__('Import Demo Content', 'viral-times'),
     'priority' => 999,
+    'class' => 'ht--single-row',
     'upgrade_text' => esc_html__('Import', 'viral-times'),
     'upgrade_url' => admin_url('admin.php?page=viral-times-welcome')
 )));
@@ -275,7 +277,7 @@ $viral_pro_features = '<ul class="upsell-features">
         <li>' . esc_html__("Maintenance mode option", 'viral-times') . '</li>
         <li>' . esc_html__("Remove footer credit text", 'viral-times') . '</li>
 	</ul>
-	<a class="ht-implink" href="' . admin_url('admin.php?page=viral-times-welcome&section=free_vs_pro') . '" target="_blank">' . esc_html__("Comparision - Free Vs Pro", 'viral-times') . '</a>';
+	<a class="ht-implink button button-primary" href="' . admin_url('admin.php?page=viral-times-welcome&section=free_vs_pro') . '" target="_blank">' . esc_html__("Comparision - Free Vs Pro", 'viral-times') . '</a>';
 
 /* ============PRO FEATURES============ */
 $wp_customize->add_section('viral_pro_feature_section', array(

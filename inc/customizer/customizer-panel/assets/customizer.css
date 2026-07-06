@@ -197,12 +197,6 @@
     margin-bottom: 10px;
 }
 
-#accordion-section-viral-times-doc-section .accordion-section-title .button,
-#accordion-section-viral-times-demo-import-section .accordion-section-title .button {
-    float: right;
-    margin-top: -2px;
-}
-
 .customize-control-ht--upgrade-info ul.upsell-features {
     margin: 0;
 }
@@ -212,14 +206,7 @@
 }
 
 .ht-implink {
-    background: #0073aa;
-    padding: 5px 10px;
-    color: #FFF !important;
+    width: 100%;
     text-align: center;
-    display: block;
-    margin-top: 15px;
-    line-height: 1.2;
-    box-shadow: none;
     font-style: normal;
-    text-decoration: none;
 }
