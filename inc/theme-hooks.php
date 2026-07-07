@@ -243,6 +243,32 @@ add_filter('viral_times_regsiter_fonts', 'viral_times_add_custom_fonts');
 
 function viral_times_premium_demo_config($demos) {
     $premium_demos = array(
+        'buzz' => array(
+            'name' => 'Viral Pro - Buzz',
+            'type' => 'pro',
+            'buy_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/',
+            'image' => 'https://hashthemes.com/import-files/viral-pro/screen/buzz.jpg',
+            'preview_url' => 'https://demo.hashthemes.com/viral-pro/buzz/',
+            'tags' => array(
+                'premium' => 'Premium'
+            ),
+            'pagebuilder' => array(
+                'elementor' => 'Elementor'
+            )
+        ),
+        'headline' => array(
+            'name' => 'Viral Pro - Headline',
+            'type' => 'pro',
+            'buy_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/',
+            'image' => 'https://hashthemes.com/import-files/viral-pro/screen/headline.jpg',
+            'preview_url' => 'https://demo.hashthemes.com/viral-pro/headline/',
+            'tags' => array(
+                'premium' => 'Premium'
+            ),
+            'pagebuilder' => array(
+                'elementor' => 'Elementor'
+            )
+        ),
         'newspaper' => array(
             'name' => 'Viral Pro - NewsPaper',
             'type' => 'pro',
@@ -253,7 +279,32 @@ function viral_times_premium_demo_config($demos) {
                 'premium' => 'Premium'
             ),
             'pagebuilder' => array(
-                'customizer' => 'Customizer',
+                'elementor' => 'Elementor'
+            )
+        ),
+        'food' => array(
+            'name' => 'Viral Pro - Food',
+            'type' => 'pro',
+            'buy_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/',
+            'image' => 'https://hashthemes.com/import-files/viral-pro/screen/food.jpg',
+            'preview_url' => 'https://demo.hashthemes.com/viral-pro/food/',
+            'tags' => array(
+                'premium' => 'Premium'
+            ),
+            'pagebuilder' => array(
+                'elementor' => 'Elementor'
+            )
+        ),
+        'photography' => array(
+            'name' => 'Viral Pro - Photography',
+            'type' => 'pro',
+            'buy_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/',
+            'image' => 'https://hashthemes.com/import-files/viral-pro/screen/photography.jpg',
+            'preview_url' => 'https://demo.hashthemes.com/viral-pro/photography/',
+            'tags' => array(
+                'premium' => 'Premium'
+            ),
+            'pagebuilder' => array(
                 'elementor' => 'Elementor'
             )
         ),
@@ -403,34 +454,6 @@ function viral_times_premium_demo_config($demos) {
             'buy_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/',
             'image' => 'https://hashthemes.com/import-files/viral-pro/screen/travel.jpg',
             'preview_url' => 'https://demo.hashthemes.com/viral-pro/travel/',
-            'tags' => array(
-                'premium' => 'Premium'
-            ),
-            'pagebuilder' => array(
-                'customizer' => 'Customizer',
-                'elementor' => 'Elementor'
-            )
-        ),
-        'food' => array(
-            'name' => 'Viral Pro - Food',
-            'type' => 'pro',
-            'buy_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/',
-            'image' => 'https://hashthemes.com/import-files/viral-pro/screen/food.jpg',
-            'preview_url' => 'https://demo.hashthemes.com/viral-pro/food/',
-            'tags' => array(
-                'premium' => 'Premium'
-            ),
-            'pagebuilder' => array(
-                'customizer' => 'Customizer',
-                'elementor' => 'Elementor'
-            )
-        ),
-        'photography' => array(
-            'name' => 'Viral Pro - Photography',
-            'type' => 'pro',
-            'buy_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/',
-            'image' => 'https://hashthemes.com/import-files/viral-pro/screen/photography.jpg',
-            'preview_url' => 'https://demo.hashthemes.com/viral-pro/photography/',
             'tags' => array(
                 'premium' => 'Premium'
             ),
