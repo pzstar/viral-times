@@ -243,7 +243,7 @@ add_filter('viral_times_regsiter_fonts', 'viral_times_add_custom_fonts');
 
 function viral_times_premium_demo_config($demos) {
     $premium_demos = array(
-        'buzz' => array(
+        'buzz-pro' => array(
             'name' => 'Viral Pro - Buzz',
             'type' => 'pro',
             'buy_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/',
@@ -256,7 +256,7 @@ function viral_times_premium_demo_config($demos) {
                 'elementor' => 'Elementor'
             )
         ),
-        'headline' => array(
+        'headline-pro' => array(
             'name' => 'Viral Pro - Headline',
             'type' => 'pro',
             'buy_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/',
