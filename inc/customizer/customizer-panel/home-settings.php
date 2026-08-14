@@ -240,11 +240,39 @@ $wp_customize->add_control(new Viral_Times_Typography_Control($wp_customize, 'fr
     )
 )));
 
+$wp_customize->add_setting('viral_times_home_blocks_preview', array(
+    'sanitize_callback' => 'viral_times_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Times_Pro_Preview_Control($wp_customize, 'viral_times_home_blocks_preview', array(
+    'section' => 'viral_times_frontpage_settings',
+    'priority' => 99,
+    'label' => esc_html__('More block styles in Viral Pro', 'viral-times'),
+    'columns' => 3,
+    'images' => array(
+        'news/style1.png',
+        'news/style2.png',
+        'news/style3.png',
+        'tile/style1.png',
+        'tile/style2.png',
+        'tile/style3.png',
+        'slider/style1.png',
+        'slider/style2.png',
+        'carousel/style1.png',
+        'ticker/style1.png',
+        'ticker/style2.png'
+    ),
+    'more_count' => 22,
+    'upgrade_text' => esc_html__('Unlock these layouts', 'viral-times'),
+    'upgrade_url' => viral_times_upgrade_url('preview-home', 'viral-times-customizer'),
+    'active_callback' => 'viral_times_is_upgrade_notice_active'
+)));
+
 $wp_customize->add_setting('viral_times_home_settings_text', array(
     'sanitize_callback' => 'viral_times_sanitize_text'
 ));
 
-$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_sidebar_upgrade_text', array(
+$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_home_settings_text', array(
     'section' => 'viral_times_frontpage_settings',
     'label' => esc_html__('For more options,', 'viral-times'),
     'choices' => array(
@@ -255,6 +283,6 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
+    'upgrade_url' => viral_times_upgrade_url('home-settings', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));

@@ -172,6 +172,6 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
+    'upgrade_url' => viral_times_upgrade_url('sidebar', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));

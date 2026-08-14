@@ -146,7 +146,7 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
+    'upgrade_url' => viral_times_upgrade_url('logo-favicon', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
 
@@ -384,7 +384,7 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
+    'upgrade_url' => viral_times_upgrade_url('top-header', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
 
@@ -594,6 +594,30 @@ $wp_customize->add_control(new Viral_Times_Alpha_Color_Control($wp_customize, 'v
     'section' => 'viral_times_main_header_options'
 )));
 
+$wp_customize->add_setting('viral_times_main_header_preview', array(
+    'sanitize_callback' => 'viral_times_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Times_Pro_Preview_Control($wp_customize, 'viral_times_main_header_preview', array(
+    'section' => 'viral_times_main_header_options',
+    'priority' => 99,
+    'label' => esc_html__('7 header layouts in Viral Pro', 'viral-times'),
+    'columns' => 2,
+    'images' => array(
+        'headers/header-1.png',
+        'headers/header-2.png',
+        'headers/header-3.png',
+        'headers/header-4.png',
+        'headers/header-5.png',
+        'headers/header-6.png',
+        'headers/header-7.png'
+    ),
+    'more_count' => 0,
+    'upgrade_text' => esc_html__('Unlock these layouts', 'viral-times'),
+    'upgrade_url' => viral_times_upgrade_url('preview-header', 'viral-times-customizer'),
+    'active_callback' => 'viral_times_is_upgrade_notice_active'
+)));
+
 $wp_customize->add_setting('viral_times_mh_upgrade_text', array(
     'sanitize_callback' => 'viral_times_sanitize_text'
 ));
@@ -607,7 +631,7 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
+    'upgrade_url' => viral_times_upgrade_url('main-header', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
 
@@ -870,7 +894,7 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
+    'upgrade_url' => viral_times_upgrade_url('menu', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
 

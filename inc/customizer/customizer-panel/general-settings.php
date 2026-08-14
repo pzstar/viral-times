@@ -146,7 +146,7 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
+    'upgrade_url' => viral_times_upgrade_url('general-options', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
 
@@ -182,7 +182,7 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
+    'upgrade_url' => viral_times_upgrade_url('back-to-top', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
 
@@ -229,13 +229,17 @@ $wp_customize->add_control(new Viral_Times_Toggle_Control($wp_customize, 'viral_
 )));
 
 
+// Seasonal campaigns swap the banner copy automatically - see viral_times_get_active_campaign().
+$viral_times_campaign = viral_times_get_active_campaign();
+$viral_times_banner_title = $viral_times_campaign ? $viral_times_campaign['title'] : esc_html__('One-time payment. Unlimited sites. Lifetime updates.', 'viral-times');
+$viral_times_banner_button = $viral_times_campaign ? $viral_times_campaign['button'] : esc_html__('Get Viral Pro - $69', 'viral-times');
+
 $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-pro-section', array(
     'priority' => -10,
-    'title' => esc_html__('One-time payment. Unlimited sites. Lifetime updates.', 'viral-times'),
-    // Seasonal campaign: replace the title above with e.g.
-    // esc_html__('Christmas & New Year Discount!', 'viral-times')
-    'upgrade_text' => esc_html__('Get Viral Pro - $69', 'viral-times'),
-    'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-customizer-button&utm_campaign=viral-times-upgrade'
+    'title' => $viral_times_banner_title,
+    'upgrade_text' => $viral_times_banner_button,
+    'upgrade_url' => viral_times_upgrade_url($viral_times_campaign ? 'banner-' . $viral_times_campaign['id'] : 'banner', 'viral-times-customizer-button'),
+    'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
 
 $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-doc-section', array(
@@ -287,7 +291,7 @@ $viral_pro_features = '<p><strong>' . esc_html__("$69 once. No subscription, no 
         <li>' . esc_html__("Maintenance mode option", 'viral-times') . '</li>
         <li>' . esc_html__("Remove footer credit text", 'viral-times') . '</li>
 	</ul>
-	<a class="ht-implink button button-primary" href="https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade" target="_blank">' . esc_html__("Get Viral Pro - $69", 'viral-times') . '</a>
+	<a class="ht-implink button button-primary" href="' . esc_url(viral_times_upgrade_url('why-upgrade-cta', 'viral-times-customizer')) . '" target="_blank">' . esc_html__("Get Viral Pro - $69", 'viral-times') . '</a>
 	<p style="text-align:center;margin:10px 0 0"><a href="' . admin_url('admin.php?page=viral-times-welcome&section=free_vs_pro') . '" target="_blank">' . esc_html__("Compare Free vs Pro", 'viral-times') . '</a></p>';
 
 /* ============PRO FEATURES============ */
@@ -303,6 +307,7 @@ $wp_customize->add_setting('viral_times_hide_upgrade_notice', array(
 
 $wp_customize->add_control(new Viral_Times_Toggle_Control($wp_customize, 'viral_times_hide_upgrade_notice', array(
     'section' => 'viral_pro_feature_section',
+    'priority' => 20,
     'label' => esc_html__('Hide all Upgrade Notices from Customizer', 'viral-times'),
     'description' => esc_html__('If you don\'t want to upgrade to premium version then you can turn off all the upgrade notices. However you can turn it on anytime if you make mind to upgrade to premium version.', 'viral-times')
 )));
@@ -314,6 +319,7 @@ $wp_customize->add_setting('viral_pro_features', array(
 $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_pro_features', array(
     'settings' => 'viral_pro_features',
     'section' => 'viral_pro_feature_section',
+    'priority' => 10,
     'description' => $viral_pro_features,
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));

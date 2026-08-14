@@ -41,6 +41,7 @@ if (!class_exists('Viral_Times_Customizer_Custom_Controls')) {
             require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/preloader-control.php';
             require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/upgrade-section.php';
             require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/upgrade-info.php';
+            require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/pro-preview-control.php';
             require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/toggle-section.php';
             require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/border-control.php';
             require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/box-shadow-control.php';

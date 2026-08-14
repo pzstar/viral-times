@@ -499,3 +499,81 @@ if (!function_exists('viral_times_get_schema_attribute')) {
     }
 
 }
+
+/**
+ * Build a tracked Viral Pro upgrade URL.
+ *
+ * Every upsell link in the theme goes through this so each placement is
+ * distinguishable in analytics. Without utm_content every prompt looks
+ * identical in reports and there is no way to tell which one converts.
+ *
+ * @param string $placement Short slug identifying where the link lives.
+ * @param string $medium    utm_medium value.
+ * @return string Unescaped URL - callers are expected to run esc_url().
+ */
+function viral_times_upgrade_url($placement = '', $medium = 'viral-times-link') {
+    $args = array(
+        'utm_source' => 'wordpress',
+        'utm_medium' => $medium,
+        'utm_campaign' => 'viral-times-upgrade'
+    );
+
+    if ('' !== $placement) {
+        $args['utm_content'] = $placement;
+    }
+
+    return add_query_arg($args, 'https://hashthemes.com/wordpress-theme/viral-pro/');
+}
+
+/**
+ * Return the seasonal upgrade campaign running today, or false.
+ *
+ * Replaces hand-editing the banner title and shipping a release for every
+ * sale. Date windows are month-day, so they repeat every year.
+ *
+ * IMPORTANT: 'button' ships with the regular price. Set your actual sale price
+ * there before a window opens, or the banner advertises a sale at full price.
+ *
+ * @return array|false Campaign array, or false outside every window.
+ */
+function viral_times_get_active_campaign() {
+    $campaigns = apply_filters('viral_times_upgrade_campaigns', array(
+        array(
+            'id' => 'blackfriday',
+            'start' => '11-20',
+            'end' => '12-02',
+            'title' => esc_html__('Black Friday - our biggest discount of the year', 'viral-times'),
+            'button' => esc_html__('Get Viral Pro - $69', 'viral-times'),
+            'image' => 'blackfriday.jpg'
+        ),
+        array(
+            'id' => 'newyear',
+            'start' => '12-15',
+            'end' => '01-05',
+            'title' => esc_html__('Christmas & New Year Sale', 'viral-times'),
+            'button' => esc_html__('Get Viral Pro - $69', 'viral-times'),
+            'image' => 'christmas-sale.jpg'
+        )
+    ));
+
+    $today = current_time('m-d');
+
+    foreach ($campaigns as $campaign) {
+        if (empty($campaign['start']) || empty($campaign['end'])) {
+            continue;
+        }
+
+        // A window whose end sorts before its start crosses into the new year.
+        if ($campaign['end'] < $campaign['start']) {
+            $running = ($today >= $campaign['start'] || $today <= $campaign['end']);
+        } else {
+            $running = ($today >= $campaign['start'] && $today <= $campaign['end']);
+        }
+
+        if ($running) {
+            return $campaign;
+        }
+    }
+
+    return false;
+}
