@@ -1519,6 +1519,6 @@ $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral
         esc_html__('- Elementor Pagebuilder Compatible. All the above sections can be created with Elementor Page Builder or Customizer whichever you like.', 'viral-times'),
     ),
     'active_callback' => 'viral_times_is_upgrade_notice_active',
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-times'),
+    'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
     'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-times/?utm_source=wordpress&utm_medium=viral-times-customizer-button&utm_campaign=viral-times-upgrade',
 )));

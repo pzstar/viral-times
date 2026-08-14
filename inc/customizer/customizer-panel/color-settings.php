@@ -101,7 +101,7 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
         esc_html__('Color Tag for each category', 'viral-times'),
     ),
     'priority' => 100,
-    'upgrade_text' => esc_html__('Upgrade to Pro', 'viral-times'),
+    'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
     'upgrade_url' => 'https://hashthemes.com/wordpress-theme/viral-pro/?utm_source=wordpress&utm_medium=viral-times-link&utm_campaign=viral-times-upgrade',
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
