@@ -141,7 +141,7 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     'section' => 'viral_times_general_options_section',
     'label' => esc_html__('For more options,', 'viral-times'),
     'choices' => array(
-        esc_html__('16+ animated preloaders', 'viral-times'),
+        esc_html__('16 animated preloaders, or upload your own image', 'viral-times'),
         esc_html__('Admin page custom logo', 'viral-times')
     ),
     'priority' => 100,
@@ -321,5 +321,72 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     'section' => 'viral_pro_feature_section',
     'priority' => 10,
     'description' => $viral_pro_features,
+    'active_callback' => 'viral_times_is_upgrade_notice_active'
+)));
+
+/* ============CONTEXTUAL UPSELLS & PRO TEASER SECTIONS============ */
+
+$wp_customize->add_setting('viral_times_google_font_upgrade_text', array(
+    'sanitize_callback' => 'viral_times_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_google_font_upgrade_text', array(
+    'section' => 'viral_times_google_font_section',
+    'label' => esc_html__('For more font and icon control,', 'viral-times'),
+    'choices' => array(
+        esc_html__('Switch off the icon libraries you do not use - they leave the page and the icon picker', 'viral-times'),
+        esc_html__('Request only the Google font weights your site actually uses', 'viral-times'),
+        esc_html__('Preconnect to the Google font hosts for a faster first paint', 'viral-times')
+    ),
+    'priority' => 100,
+    'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
+    'upgrade_url' => viral_times_upgrade_url('google-fonts', 'viral-times-customizer'),
+    'active_callback' => 'viral_times_is_upgrade_notice_active'
+)));
+
+$wp_customize->add_setting('viral_times_seo_upgrade_text', array(
+    'sanitize_callback' => 'viral_times_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_seo_upgrade_text', array(
+    'section' => 'viral_times_seo_section',
+    'label' => esc_html__('For more SEO options,', 'viral-times'),
+    'choices' => array(
+        esc_html__('NewsArticle structured data in JSON-LD with speakable markup', 'viral-times'),
+        esc_html__('Google News sitemap so your posts get picked up faster', 'viral-times'),
+        esc_html__('Speculative loading - the next article opens instantly', 'viral-times'),
+        esc_html__('Print stylesheet for articles', 'viral-times')
+    ),
+    'priority' => 100,
+    'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
+    'upgrade_url' => viral_times_upgrade_url('seo', 'viral-times-customizer'),
+    'active_callback' => 'viral_times_is_upgrade_notice_active'
+)));
+
+$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-site-tools-upgrade-section', array(
+    'title' => esc_html__('GDPR & Maintenance', 'viral-times'),
+    'panel' => 'viral_times_general_settings_panel',
+    'priority' => 1002,
+    'upgrade_text' => esc_html__('Get Pro', 'viral-times'),
+    'class' => 'ht--single-row',
+    'upgrade_url' => viral_times_upgrade_url('sec-gdpr-maintenance', 'viral-times-customizer'),
+    'active_callback' => 'viral_times_is_upgrade_notice_active'
+)));
+
+$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-ads-upgrade-section', array(
+    'title' => esc_html__('Advertising & Monetization', 'viral-times'),
+    'priority' => 55,
+    'upgrade_text' => esc_html__('Get Pro', 'viral-times'),
+    'class' => 'ht--single-row',
+    'upgrade_url' => viral_times_upgrade_url('sec-advertising', 'viral-times-customizer'),
+    'active_callback' => 'viral_times_is_upgrade_notice_active'
+)));
+
+$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-woocommerce-upgrade-section', array(
+    'title' => esc_html__('WooCommerce', 'viral-times'),
+    'priority' => 56,
+    'upgrade_text' => esc_html__('Get Pro', 'viral-times'),
+    'class' => 'ht--single-row',
+    'upgrade_url' => viral_times_upgrade_url('sec-woocommerce', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));

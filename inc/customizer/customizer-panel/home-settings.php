@@ -249,20 +249,8 @@ $wp_customize->add_control(new Viral_Times_Pro_Preview_Control($wp_customize, 'v
     'priority' => 99,
     'label' => esc_html__('More block styles in Viral Pro', 'viral-times'),
     'columns' => 3,
-    'images' => array(
-        'news/style1.png',
-        'news/style2.png',
-        'news/style3.png',
-        'tile/style1.png',
-        'tile/style2.png',
-        'tile/style3.png',
-        'slider/style1.png',
-        'slider/style2.png',
-        'carousel/style1.png',
-        'ticker/style1.png',
-        'ticker/style2.png'
-    ),
-    'more_count' => 22,
+    'images' => $viral_times_pro_block_images,
+    'more_count' => 38,
     'upgrade_text' => esc_html__('Unlock these layouts', 'viral-times'),
     'upgrade_url' => viral_times_upgrade_url('preview-home', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'

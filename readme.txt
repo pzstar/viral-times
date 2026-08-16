@@ -5,7 +5,7 @@ Viral Times is distributed under the terms of the GNU GPL (http://www.gnu.org/li
 Contributors: hashthemes
 Requires at least: 6.3
 Tested up to: 7.0
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,6 +18,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.1.2 - Aug 14 2026 =
+* Free vs Pro comparison rebuilt against Viral Pro 1.6.0 - table of contents, NewsArticle structured data, Google News sitemap, speculative loading, icon and font loading control and print stylesheet added; demo, widget and layout counts corrected - Updated
+* Customizer upgrade section now shows the price and licence terms up front with clearer calls to action - Changed
+* Upgrade notices checked against the premium theme; claims the free theme already provides have been removed - Fixed
+* GDPR & Maintenance, Advertising and WooCommerce upgrade sections added to the customizer - Added
+* Upgrade notices added to the Google Fonts, SEO and typography sections - Added
+* Pro block style previews added to every front page module - Added
+* Upgrade section styles targeted the wrong theme prefix and button height inside single row sections - Fixed
+
 = 1.1.1 - July 6 2026 =
 * CSS fixes
 * Compatibility test with WordPress 7.0

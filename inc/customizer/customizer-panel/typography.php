@@ -270,3 +270,24 @@ $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral
     'upgrade_url' => 'https://hashthemes.com/downloads/hash-custom-font-uploader/',
     'active_callback' => 'viral_times_check_cfu'
 )));
+
+/* ============CONTEXTUAL UPSELLS============ */
+
+$wp_customize->add_setting('viral_times_typography_upgrade_text', array(
+    'sanitize_callback' => 'viral_times_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, 'viral_times_typography_upgrade_text', array(
+    'section' => 'body_typography',
+    'label' => esc_html__('For more fonts and settings,', 'viral-times'),
+    'choices' => array(
+        esc_html__('Separate typography for the site title and tagline', 'viral-times'),
+        esc_html__('Sidebar and widget title typography', 'viral-times'),
+        esc_html__('Table of contents title and list typography', 'viral-times')
+    ),
+    'priority' => 100,
+    'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
+    'upgrade_url' => viral_times_upgrade_url('typo-body', 'viral-times-customizer'),
+    'active_callback' => 'viral_times_is_upgrade_notice_active'
+)));
+
