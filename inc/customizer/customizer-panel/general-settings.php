@@ -211,10 +211,30 @@ $wp_customize->add_control(new Viral_Times_Switch_Control($wp_customize, 'viral_
 
 /* SEO SECTION */
 $wp_customize->add_section('viral_times_seo_section', array(
-    'title' => esc_html__('SEO', 'viral-times'),
+    'title' => esc_html__('SEO and Performance', 'viral-times'),
     'panel' => 'viral_times_general_settings_panel',
     'priority' => 1000
 ));
+
+$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-preloader-upgrade-section', array(
+    'title' => esc_html__('Preloader Settings', 'viral-times'),
+    'panel' => 'viral_times_general_settings_panel',
+    'priority' => 1001,
+    'upgrade_text' => esc_html__('Get Pro', 'viral-times'),
+    'class' => 'ht--single-row ht--pro-row',
+    'upgrade_url' => viral_times_upgrade_url('sec-preloader', 'viral-times-customizer'),
+    'active_callback' => 'viral_times_is_upgrade_notice_active'
+)));
+
+$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-toc-upgrade-section', array(
+    'title' => esc_html__('Table of Contents', 'viral-times'),
+    'panel' => 'viral_times_general_settings_panel',
+    'priority' => 1002,
+    'upgrade_text' => esc_html__('Get Pro', 'viral-times'),
+    'class' => 'ht--single-row ht--pro-row',
+    'upgrade_url' => viral_times_upgrade_url('sec-table-of-contents', 'viral-times-customizer'),
+    'active_callback' => 'viral_times_is_upgrade_notice_active'
+)));
 
 $wp_customize->add_setting('viral_times_schema_markup', array(
     'sanitize_callback' => 'viral_times_sanitize_checkbox',
@@ -365,10 +385,9 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
 
 $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-site-tools-upgrade-section', array(
     'title' => esc_html__('GDPR & Maintenance', 'viral-times'),
-    'panel' => 'viral_times_general_settings_panel',
-    'priority' => 1002,
+    'priority' => 56,
     'upgrade_text' => esc_html__('Get Pro', 'viral-times'),
-    'class' => 'ht--single-row',
+    'class' => 'ht--single-row ht--pro-row',
     'upgrade_url' => viral_times_upgrade_url('sec-gdpr-maintenance', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
@@ -377,16 +396,8 @@ $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral
     'title' => esc_html__('Advertising & Monetization', 'viral-times'),
     'priority' => 55,
     'upgrade_text' => esc_html__('Get Pro', 'viral-times'),
-    'class' => 'ht--single-row',
+    'class' => 'ht--single-row ht--pro-row',
     'upgrade_url' => viral_times_upgrade_url('sec-advertising', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
 
-$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-woocommerce-upgrade-section', array(
-    'title' => esc_html__('WooCommerce', 'viral-times'),
-    'priority' => 56,
-    'upgrade_text' => esc_html__('Get Pro', 'viral-times'),
-    'class' => 'ht--single-row',
-    'upgrade_url' => viral_times_upgrade_url('sec-woocommerce', 'viral-times-customizer'),
-    'active_callback' => 'viral_times_is_upgrade_notice_active'
-)));

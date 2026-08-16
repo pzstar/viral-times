@@ -22,7 +22,7 @@
             <p><?php esc_html_e('Upgrade to Pro version for additional features and better supports.', 'viral-times'); ?></p>
         </td>
         <td colspan="2">
-            <a target="__blank" class="buy-pro-btn" href="<?php echo esc_url(viral_times_upgrade_url('freevspro-top', 'viral-times-freevspro')); ?>"><?php esc_html_e('Buy Now ($69 only)', 'viral-times'); ?></a>
+            <a target="_blank" class="buy-pro-btn" href="<?php echo esc_url(viral_times_upgrade_url('freevspro-top', 'viral-times-freevspro')); ?>"><?php esc_html_e('Buy Now ($69 only)', 'viral-times'); ?></a>
         </td>
     </tr>
     <tr>
@@ -432,11 +432,27 @@
     </tr>
     <tr>
         <td>
+            <span><?php esc_html_e('51) Polylang Support', 'viral-times'); ?></span>
+            <p><?php esc_html_e('Built in Polylang integration so theme strings and customizer content translate correctly on multilingual sites.', 'viral-times'); ?></p>
+        </td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
+    </tr>
+    <tr>
+        <td>
+            <span><?php esc_html_e('52) System Status Panel', 'viral-times'); ?></span>
+            <p><?php esc_html_e('A status screen inside the theme panel that reports your PHP version, memory limit, server configuration and other values support may ask for.', 'viral-times'); ?></p>
+        </td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/no.png'); ?>" alt="No"></td>
+        <td><img src="<?php echo esc_url(get_template_directory_uri() . '/welcome/css/yes.png'); ?>" alt="Yes"></td>
+    </tr>
+    <tr>
+        <td>
             <span><?php esc_html_e('Upgrade to Pro', 'viral-times'); ?></span>
             <p><?php esc_html_e('Upgrade to Pro version for additional features and better supports.', 'viral-times'); ?></p>
         </td>
         <td colspan="2">
-            <a target="__blank" class="buy-pro-btn" href="<?php echo esc_url(viral_times_upgrade_url('freevspro-bottom', 'viral-times-freevspro')); ?>"><?php esc_html_e('Buy Now ($69 only)', 'viral-times'); ?></a>
+            <a target="_blank" class="buy-pro-btn" href="<?php echo esc_url(viral_times_upgrade_url('freevspro-bottom', 'viral-times-freevspro')); ?>"><?php esc_html_e('Buy Now ($69 only)', 'viral-times'); ?></a>
         </td>
     </tr>
 </table>
