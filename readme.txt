@@ -26,6 +26,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Upgrade notices added to the Google Fonts, SEO and typography sections - Added
 * Pro block style previews added to every front page module - Added
 * Upgrade section styles targeted the wrong theme prefix and button height inside single row sections - Fixed
+* Pro blog and archive layout previews added to the blog settings section - Added
+* Upgrade feature list expanded with premium features it was not mentioning - Added
 
 = 1.1.1 - July 6 2026 =
 * CSS fixes

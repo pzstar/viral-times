@@ -280,8 +280,8 @@ $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral
 
 $viral_pro_features = '<p><strong>' . esc_html__("$69 once. No subscription, no renewal fees.", "viral-times") . '</strong><br>' . esc_html__("Use Viral Pro on unlimited websites, keep every future update free, and get support replies in 10 hours or less.", "viral-times") . '</p>
     <ul class="upsell-features">
-	<li>' . esc_html__("11 more demos that can be imported with one click", 'viral-times') . '</li>
-        <li>' . esc_html__("Elementor compatible - Built your Home Page with Customizer or Elementor whichever you like", 'viral-times') . '</li>
+	<li>' . esc_html__("17 ready-made demos that can be imported with one click", 'viral-times') . '</li>
+        <li>' . esc_html__("Elementor widgets built into the theme - no companion plugin needed", 'viral-times') . '</li>
 	<li>' . esc_html__("50+ magazine blocks for customizer", 'viral-times') . '</li>
 	<li>' . esc_html__("Customizer home page section reorder", 'viral-times') . '</li>
 	<li>' . esc_html__("45+ magazine widgets for Elementor", 'viral-times') . '</li>
@@ -306,10 +306,12 @@ $viral_pro_features = '<p><strong>' . esc_html__("$69 once. No subscription, no 
 	<li>' . esc_html__("Advanced footer setting", 'viral-times') . '</li>
 	<li>' . esc_html__("Advanced advertising & monetization options", 'viral-times') . '</li>
 	<li>' . esc_html__("WooCommerce compatible", 'viral-times') . '</li>
-	<li>' . esc_html__("Fully multilingual and translation ready", 'viral-times') . '</li>
+	<li>' . esc_html__("Polylang compatible", 'viral-times') . '</li>
 	<li>' . esc_html__("Fully RTL(right to left) languages compatible", 'viral-times') . '</li>
         <li>' . esc_html__("Maintenance mode option", 'viral-times') . '</li>
         <li>' . esc_html__("Remove footer credit text", 'viral-times') . '</li>
+	<li>' . esc_html__("Unlimited custom widget areas", "viral-times") . '</li>
+	<li>' . esc_html__("16 SVG shape dividers between front page sections", "viral-times") . '</li>
 	</ul>
 	<a class="ht-implink button button-primary" href="' . esc_url(viral_times_upgrade_url('why-upgrade-cta', 'viral-times-customizer')) . '" target="_blank">' . esc_html__("Get Viral Pro - $69", 'viral-times') . '</a>
 	<p style="text-align:center;margin:10px 0 0"><a href="' . admin_url('admin.php?page=viral-times-welcome&section=free_vs_pro') . '" target="_blank">' . esc_html__("Compare Free vs Pro", 'viral-times') . '</a></p>';

@@ -397,3 +397,27 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     'upgrade_url' => viral_times_upgrade_url('single-post', 'viral-times-customizer'),
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
+
+$wp_customize->add_setting('viral_times_blog_layout_preview', array(
+    'sanitize_callback' => 'viral_times_sanitize_text'
+));
+
+$wp_customize->add_control(new Viral_Times_Pro_Preview_Control($wp_customize, 'viral_times_blog_layout_preview', array(
+    'section' => 'viral_times_blog_options_section',
+    'priority' => 98,
+    'label' => esc_html__('7 blog and archive layouts in Viral Pro', 'viral-times'),
+    'columns' => 3,
+    'images' => array(
+        'blog-layouts/layout1.png',
+        'blog-layouts/layout2.png',
+        'blog-layouts/layout3.png',
+        'blog-layouts/layout4.png',
+        'blog-layouts/layout5.png',
+        'blog-layouts/layout6.png',
+        'blog-layouts/layout7.png'
+    ),
+    'more_count' => 0,
+    'upgrade_text' => esc_html__('Unlock these layouts', 'viral-times'),
+    'upgrade_url' => viral_times_upgrade_url('preview-blog-layouts', 'viral-times-customizer'),
+    'active_callback' => 'viral_times_is_upgrade_notice_active'
+)));
