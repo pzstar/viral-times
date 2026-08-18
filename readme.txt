@@ -18,7 +18,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
-= 1.1.2 - Aug 14 2026 =
+= 1.1.2 - Aug 18 2026 =
 * Free vs Pro comparison rebuilt against Viral Pro 1.6.0 - table of contents, NewsArticle structured data, Google News sitemap, speculative loading, icon and font loading control and print stylesheet added; demo, widget and layout counts corrected - Updated
 * Customizer upgrade section now shows the price and licence terms up front with clearer calls to action - Changed
 * Upgrade notices checked against the premium theme; claims the free theme already provides have been removed - Fixed
