@@ -377,9 +377,9 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     'section' => 'viral_times_top_header_options',
     'label' => esc_html__('For more settings,', 'viral-times'),
     'choices' => array(
-        esc_html__('Display Date/time in top header', 'viral-times'),
-        esc_html__('Display Ticker in top header', 'viral-times'),
-        esc_html__('Display Custom Widgets in top header', 'viral-times')
+        esc_html__('Top header elements on the left, center and right', 'viral-times'),
+        esc_html__('Date/time, news ticker, widget, search, login/account link, button and trending tags', 'viral-times'),
+        esc_html__('Dismissible breaking news bar above the header', 'viral-times')
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),
@@ -626,6 +626,8 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     'label' => esc_html__('For more options,', 'viral-times'),
     'choices' => array(
         esc_html__('7 header layouts', 'viral-times'),
+        esc_html__('5 page title layouts with background image and overlay', 'viral-times'),
+        esc_html__('Offcanvas panel colors', 'viral-times'),
         esc_html__('More advanced options', 'viral-times')
     ),
     'priority' => 100,

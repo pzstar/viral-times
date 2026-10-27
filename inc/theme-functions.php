@@ -513,7 +513,7 @@ if (!function_exists('viral_times_get_schema_attribute')) {
  */
 function viral_times_upgrade_url($placement = '', $medium = 'viral-times-link') {
     $args = array(
-        'utm_source' => 'wordpress',
+        'utm_source' => 'WordPress',
         'utm_medium' => $medium,
         'utm_campaign' => 'viral-times-upgrade'
     );
@@ -543,7 +543,7 @@ function viral_times_get_active_campaign() {
             'start' => '11-20',
             'end' => '12-02',
             'title' => esc_html__('Black Friday - our biggest discount of the year', 'viral-times'),
-            'button' => esc_html__('Get Viral Pro - $69', 'viral-times'),
+            'button' => esc_html__('Get Viral Pro - From $69', 'viral-times'),
             'image' => 'blackfriday.jpg'
         ),
         array(
@@ -551,7 +551,7 @@ function viral_times_get_active_campaign() {
             'start' => '12-15',
             'end' => '01-05',
             'title' => esc_html__('Christmas & New Year Sale', 'viral-times'),
-            'button' => esc_html__('Get Viral Pro - $69', 'viral-times'),
+            'button' => esc_html__('Get Viral Pro - From $69', 'viral-times'),
             'image' => 'christmas-sale.jpg'
         )
     ));

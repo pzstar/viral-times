@@ -4,8 +4,8 @@ Viral Times is distributed under the terms of the GNU GPL (http://www.gnu.org/li
 
 Contributors: hashthemes
 Requires at least: 6.3
-Tested up to: 7.0
-Stable tag: 1.1.2
+Tested up to: 7.1
+Stable tag: 1.1.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,6 +18,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.1.3 - Oct 27 2026 =
+* Starter content added, based on the Buzz demo - new sites and the WordPress.org theme preview open with its section order and photo backgrounds, colors, fonts and header, the Viral Times logos, eight news posts with photos, advertisement placeholders, widgets in every widget area and a menu - Added
+* Starter posts show in the front page sections and widgets while previewing a new site in the Customizer, before it is published - Added
+* Fonts uploaded with Hash Custom Font Uploader are no longer also loaded from Google Fonts when they share a name - Fixed
+* Viral Pro feature list updated: front page builder, top header builder, breaking news bar, page title layouts, category layouts, Load More and infinite scroll and reading progress bar - Updated
+
 = 1.1.2 - Aug 18 2026 =
 * Free vs Pro comparison rebuilt against Viral Pro 1.6.0 - table of contents, NewsArticle structured data, Google News sitemap, speculative loading, icon and font loading control and print stylesheet added; demo, widget and layout counts corrected - Updated
 * Customizer upgrade section now shows the price and licence terms up front with clearer calls to action - Changed
@@ -103,7 +109,7 @@ Viral Times WordPress Theme bundles the following third-party resources:
 * License: The MIT License (MIT)
 * License Url: https://github.com/marcj/css-element-queries/blob/master/LICENSE
 
-ScreenShot Images
+Screenshot and Starter Content Images (images/starter; the logos are the theme's own and the advertisement placeholders are original)
 https://wordpress.org/photos/photo/896640776b/
 https://wordpress.org/photos/photo/950675826d/
 https://wordpress.org/photos/photo/54667f5e22/
@@ -112,6 +118,8 @@ https://wordpress.org/photos/photo/13967ef698/
 https://wordpress.org/photos/photo/30566ddf31/
 https://wordpress.org/photos/photo/11269ecc5b/
 https://wordpress.org/photos/photo/95165f252f/
+https://wordpress.org/photos/photo/31767a9e15/
+https://wordpress.org/photos/photo/48862c872f/
 
 * License: CC0 license
 * License Url: License: https://wordpress.org/photos/license/

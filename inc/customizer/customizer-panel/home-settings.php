@@ -265,6 +265,7 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     'label' => esc_html__('For more options,', 'viral-times'),
     'choices' => array(
         esc_html__('12 page block title styles', 'viral-times'),
+        esc_html__('Category tabs and Ajax pagination on news blocks', 'viral-times'),
         esc_html__('10 image hover style for post thumb', 'viral-times'),
         esc_html__('Lazy loading images', 'viral-times'),
         esc_html__('Option to upload custom placeholder image', 'viral-times'),

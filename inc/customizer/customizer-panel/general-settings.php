@@ -142,6 +142,8 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     'label' => esc_html__('For more options,', 'viral-times'),
     'choices' => array(
         esc_html__('16 animated preloaders, or upload your own image', 'viral-times'),
+        esc_html__('Corner radius for images, buttons, form fields and labels', 'viral-times'),
+        esc_html__('Accessibility ready - keyboard focus outline and reduced-motion support', 'viral-times'),
         esc_html__('Admin page custom logo', 'viral-times')
     ),
     'priority' => 100,
@@ -251,8 +253,8 @@ $wp_customize->add_control(new Viral_Times_Toggle_Control($wp_customize, 'viral_
 
 // Seasonal campaigns swap the banner copy automatically - see viral_times_get_active_campaign().
 $viral_times_campaign = viral_times_get_active_campaign();
-$viral_times_banner_title = $viral_times_campaign ? $viral_times_campaign['title'] : esc_html__('One-time payment. Unlimited sites. Lifetime updates.', 'viral-times');
-$viral_times_banner_button = $viral_times_campaign ? $viral_times_campaign['button'] : esc_html__('Get Viral Pro - $69', 'viral-times');
+$viral_times_banner_title = $viral_times_campaign ? $viral_times_campaign['title'] : esc_html__('One-time payment. Lifetime updates and support.', 'viral-times');
+$viral_times_banner_button = $viral_times_campaign ? $viral_times_campaign['button'] : esc_html__('Get Viral Pro - From $69', 'viral-times');
 
 $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-pro-section', array(
     'priority' => -10,
@@ -278,19 +280,19 @@ $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral
     'upgrade_url' => admin_url('admin.php?page=viral-times-welcome')
 )));
 
-$viral_pro_features = '<p><strong>' . esc_html__("$69 once. No subscription, no renewal fees.", "viral-times") . '</strong><br>' . esc_html__("Use Viral Pro on unlimited websites, keep every future update free, and get support replies in 10 hours or less.", "viral-times") . '</p>
+$viral_pro_features = '<p><strong>' . esc_html__("From $69 once. No subscription, no renewal fees.", "viral-times") . '</strong><br>' . esc_html__("1 site $69, unlimited sites $99. Every future update is free, and support replies in 10 hours or less.", "viral-times") . '</p>
     <ul class="upsell-features">
-	<li>' . esc_html__("17 ready-made demos that can be imported with one click", 'viral-times') . '</li>
-        <li>' . esc_html__("Elementor widgets built into the theme - no companion plugin needed", 'viral-times') . '</li>
+	<li>' . esc_html__("16 ready-made demos that can be imported with one click", 'viral-times') . '</li>
+	<li>' . esc_html__("Front page builder - add any of 12 section types as many times as you like", 'viral-times') . '</li>
 	<li>' . esc_html__("50+ magazine blocks for customizer", 'viral-times') . '</li>
-	<li>' . esc_html__("Customizer home page section reorder", 'viral-times') . '</li>
-	<li>' . esc_html__("45+ magazine widgets for Elementor", 'viral-times') . '</li>
-        <li>' . esc_html__("Ajax Tabs and Ajax Paginations for all Elementor widgets", 'viral-times') . '</li>
+	<li>' . esc_html__("47 magazine widgets for Elementor, built into the theme", 'viral-times') . '</li>
+        <li>' . esc_html__("Category tabs and Ajax pagination for front page blocks and Elementor widgets", 'viral-times') . '</li>
 	<li>' . esc_html__("12 title bar styles and 10 thumbnail hover effects for magazine blocks", 'viral-times') . '</li>
-	<li>' . esc_html__("7 header layouts with advanced settings", 'viral-times') . '</li>
-        <li>' . esc_html__("7 differently designed Blog/Archive layouts", 'viral-times') . '</li>
-	<li>' . esc_html__("7 differently designed Article/Post layouts", 'viral-times') . '</li>
-	<li>' . esc_html__("23 custom widgets", 'viral-times') . '</li>
+	<li>' . esc_html__("7 header layouts and a top header builder", 'viral-times') . '</li>
+	<li>' . esc_html__("Breaking news bar and 5 page title layouts", 'viral-times') . '</li>
+        <li>' . esc_html__("7 Blog/Archive layouts, category layouts and Load More or infinite scroll pagination", 'viral-times') . '</li>
+	<li>' . esc_html__("7 Article/Post layouts with a reading progress bar", 'viral-times') . '</li>
+	<li>' . esc_html__("20+ custom widgets", 'viral-times') . '</li>
 	<li>' . esc_html__("Table of contents for single posts", 'viral-times') . '</li>
 	<li>' . esc_html__("NewsArticle structured data in JSON-LD with speakable markup", 'viral-times') . '</li>
 	<li>' . esc_html__("Google News sitemap", 'viral-times') . '</li>
@@ -300,17 +302,20 @@ $viral_pro_features = '<p><strong>' . esc_html__("$69 once. No subscription, no 
 	<li>' . esc_html__("GDPR compliance & cookies consent", 'viral-times') . '</li>
 	<li>' . esc_html__("In-built megaMenu", 'viral-times') . '</li>
 	<li>' . esc_html__("Advanced typography options", 'viral-times') . '</li>
-	<li>' . esc_html__("Advanced color options", 'viral-times') . '</li>
+	<li>' . esc_html__("Advanced color options and corner radius", 'viral-times') . '</li>
+	<li>' . esc_html__("Accessibility ready - focus outline and reduced-motion support", 'viral-times') . '</li>
 	<li>' . esc_html__("Preloader option", 'viral-times') . '</li>
 	<li>' . esc_html__("Advanced blog & article settings", 'viral-times') . '</li>
-	<li>' . esc_html__("Advanced footer setting", 'viral-times') . '</li>
-	<li>' . esc_html__("Advanced advertising & monetization options", 'viral-times') . '</li>
+	<li>' . esc_html__("Advanced footer with logo, footer menu and social icons", 'viral-times') . '</li>
+	<li>' . esc_html__("Advertisement manager with 8 ad placements and per-device visibility", 'viral-times') . '</li>
+	<li>' . esc_html__("Header & footer code for analytics and verification tags", 'viral-times') . '</li>
 	<li>' . esc_html__("WooCommerce compatible", 'viral-times') . '</li>
 	<li>' . esc_html__("Polylang compatible", 'viral-times') . '</li>
 	<li>' . esc_html__("Fully RTL(right to left) languages compatible", 'viral-times') . '</li>
         <li>' . esc_html__("Maintenance mode option", 'viral-times') . '</li>
         <li>' . esc_html__("Remove footer credit text", 'viral-times') . '</li>
 	<li>' . esc_html__("Unlimited custom widget areas", "viral-times") . '</li>
+	<li>' . esc_html__("Viral Pro Panel with setup checklist, demo importer and system status", "viral-times") . '</li>
 	<li>' . esc_html__("16 SVG shape dividers between front page sections", "viral-times") . '</li>
 	</ul>
 	<a class="ht-implink button button-primary" href="' . esc_url(viral_times_upgrade_url('why-upgrade-cta', 'viral-times-customizer')) . '" target="_blank">' . esc_html__("Get Viral Pro - $69", 'viral-times') . '</a>

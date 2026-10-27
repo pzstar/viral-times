@@ -99,6 +99,8 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     'label' => esc_html__('For more options,', 'viral-times'),
     'choices' => array(
         esc_html__('Color Tag for each category', 'viral-times'),
+        esc_html__('Offcanvas panel and form field colors', 'viral-times'),
+        esc_html__('Menu, buttons, links and block titles follow the primary color', 'viral-times'),
     ),
     'priority' => 100,
     'upgrade_text' => esc_html__('Unlock in Viral Pro', 'viral-times'),

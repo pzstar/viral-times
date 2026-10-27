@@ -208,6 +208,8 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
     'label' => esc_html__('For more options,', 'viral-times'),
     'choices' => array(
         esc_html__('7 differently designed archive page layouts', 'viral-times'),
+        esc_html__('Own layout for any category, tag or author page', 'viral-times'),
+        esc_html__('Page numbers, Load More button or infinite scroll', 'viral-times'),
         esc_html__('More advanced customization options', 'viral-times')
     ),
     'priority' => 100,
@@ -390,6 +392,7 @@ $wp_customize->add_control(new Viral_Times_Upgrade_Info_Control($wp_customize, '
         esc_html__('7 differently designed single page layouts', 'viral-times'),
         esc_html__('Sticky social share buttons', 'viral-times'),
         esc_html__('Display related posts', 'viral-times'),
+        esc_html__('Reading progress bar', 'viral-times'),
         esc_html__('More advanced customization options', 'viral-times'),
     ),
     'priority' => 100,
