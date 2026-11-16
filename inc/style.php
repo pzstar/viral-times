@@ -10,12 +10,9 @@ function viral_times_dymanic_styles() {
     $container_width = get_theme_mod('viral_times_website_width', 1170);
     $fluid_container_width = get_theme_mod('viral_times_fluid_container_width', 80);
     $container_padding = get_theme_mod('viral_times_container_padding', 80);
-    $container_width_200 = $container_width + 200;
     $sidebar_width = get_theme_mod('viral_times_sidebar_width', 30);
     $primary_width = 100 - 4 - $sidebar_width;
     $boxed_container_width = $container_width + $container_padding + $container_padding;
-    $preloader_color = get_theme_mod('viral_times_preloader_color', '#000000');
-    $preloader_bg_color = get_theme_mod('viral_times_preloader_bg_color', '#FFFFFF');
     $responsive_width = get_theme_mod('viral_times_responsive_width', 780);
 
     /* =============== Full & Boxed width =============== */
@@ -31,8 +28,7 @@ function viral_times_dymanic_styles() {
 	}
     #primary{ width:{$primary_width}%}
     #secondary{ width:{$sidebar_width}%}
-    .ht-boxed .ht-fullwidth-container,
-    .ht-boxed .vl-fwcarousel-block {
+    .ht-boxed .ht-fullwidth-container {
         margin-left: -{$container_padding}px !important;
         margin-right: -{$container_padding}px !important;
     }
@@ -42,7 +38,7 @@ function viral_times_dymanic_styles() {
     $fonts = viral_times_get_customizer_fonts();
     $font_class = array(
         'body' => 'html, body, button, input, select, textarea',
-        'menu' => '.ht-menu > ul > li > a, a.ht-header-bttn',
+        'menu' => '.ht-menu > ul > li > a',
         'frontpage_title' => 'h3.vl-post-title',
         'frontpage_block_title' => '.vl-block-title span.vl-title, .vp-block-title span.vl-title',
         'page_title' => '.ht-main-title, .single-post .entry-title',
@@ -108,7 +104,6 @@ function viral_times_dymanic_styles() {
 
     $i_font_size = get_theme_mod('menu_font_size', 14);
     $i_font_family = get_theme_mod('menu_font_family', 'Default');
-    $frontpage_block_title_lineheight = get_theme_mod('frontpage_block_title', 1);
     $custom_css .= "
 	.ht-main-navigation,
         .menu-item-megamenu .widget-title,
@@ -120,10 +115,6 @@ function viral_times_dymanic_styles() {
     .single-ht-megamenu .ht-main-content{
     font-family: $i_font_family;
     }
-    
-    .vp-block-filter{
-        line-height: $frontpage_block_title_lineheight;
-    }
 	";
 
     $content_header_color = get_theme_mod('viral_times_content_header_color', '#000000');
@@ -132,19 +123,15 @@ function viral_times_dymanic_styles() {
     $content_link_hov_color = get_theme_mod('viral_times_content_link_hov_color', '#ea3546');
     $content_widget_title_color = get_theme_mod('viral_times_content_widget_title_color', '#000000');
     $content_light_color = viral_times_hex2rgba($content_text_color, 0.1);
-    $content_lighter_color = viral_times_hex2rgba($content_text_color, 0.05);
 
     $custom_css .= ".ht-main-content h1, .ht-main-content h2, .ht-main-content h3, .ht-main-content h4, .ht-main-content h5, .ht-main-content h6 {color:$content_header_color}";
     $custom_css .= ".ht-main-content{color:$content_text_color}";
     $custom_css .= "a{color:$content_link_color}";
     $custom_css .= "a:hover, .woocommerce .woocommerce-breadcrumb a:hover, .breadcrumb-trail a:hover{color:$content_link_hov_color}";
-    $custom_css .= ".ht-sidebar-style1 .ht-site-wrapper .widget-area ul ul, .ht-sidebar-style1 .ht-site-wrapper .widget-area li{border-color:$content_lighter_color}";
-    $custom_css .= ".ht-sidebar-style2 .ht-site-wrapper .widget, .ht-sidebar-style2 .ht-site-wrapper .widget-title, .ht-sidebar-style3 .ht-site-wrapper .widget, .ht-sidebar-style5 .ht-site-wrapper .widget, .ht-sidebar-style7 .ht-site-wrapper .widget, .ht-sidebar-style7 .ht-site-wrapper .widget-title, .comment-list .sp-comment-content, .post-navigation, .post-navigation .nav-next, .ht-social-share{border-color:$content_light_color}";
-    $custom_css .= ".ht-sidebar-style5 .ht-site-wrapper .widget-title:before, .ht-sidebar-style5 .ht-site-wrapper .widget-title:after{background-color:$content_light_color}";
+    $custom_css .= ".comment-list .sp-comment-content, .post-navigation, .post-navigation .nav-next{border-color:$content_light_color}";
     $custom_css .= ".single-entry-tags a, .widget-area .tagcloud a{border-color:$content_text_color}";
-    $custom_css .= ".ht-sidebar-style3 .ht-site-wrapper .widget{background:$content_lighter_color}";
     $custom_css .= ".ht-main-content .widget-title{color:$content_widget_title_color}";
-    $custom_css .= ".ht-sidebar-style1 .ht-site-wrapper .widget-title:after, .ht-sidebar-style3 .ht-site-wrapper .widget-title:after, .ht-sidebar-style6 .ht-site-wrapper .widget-title:after, .ht-sidebar-style7 .ht-site-wrapper .widget:before {background-color:$content_widget_title_color}";
+    $custom_css .= ".ht-sidebar-style6 .ht-site-wrapper .widget-title:after {background-color:$content_widget_title_color}";
 
 
     /* =============== FrontPage Section Advanced CSS =============== */
@@ -167,13 +154,6 @@ function viral_times_dymanic_styles() {
         $sectionbottommargin_tablet = get_theme_mod('viral_times_' . $sectionname . '_tablet_margin_bottom');
         $sectiontopmargin_mobile = get_theme_mod('viral_times_' . $sectionname . '_mobile_margin_top');
         $sectionbottommargin_mobile = get_theme_mod('viral_times_' . $sectionname . '_mobile_margin_bottom');
-        $top_seperator_height = get_theme_mod('viral_times_' . $sectionname . '_ts_height', 60);
-        $bottom_seperator_height = get_theme_mod('viral_times_' . $sectionname . '_bs_height', 60);
-        $top_seperator_height_tablet = get_theme_mod('viral_times_' . $sectionname . '_ts_height_tablet');
-        $bottom_seperator_height_tablet = get_theme_mod('viral_times_' . $sectionname . '_bs_height_tablet');
-        $top_seperator_height_mobile = get_theme_mod('viral_times_' . $sectionname . '_ts_height_mobile');
-        $bottom_seperator_height_mobile = get_theme_mod('viral_times_' . $sectionname . '_bs_height_mobile');
-        $sectionfullheight = get_theme_mod('viral_times_' . $sectionname . '_enable_fullwindow', 'off');
         $sectionbgtype = get_theme_mod('viral_times_' . $sectionname . '_bg_type', 'color-bg');
         $sectionbgimage = get_theme_mod('viral_times_' . $sectionname . '_bg_image_url');
         $sectionbgimage_repeat = get_theme_mod('viral_times_' . $sectionname . '_bg_image_repeat', 'no-repeat');
@@ -182,7 +162,6 @@ function viral_times_dymanic_styles() {
         $sectionbgimage_position = str_replace('-', ' ', $sectionbgimage_position);
         $sectionbgimage_attach = get_theme_mod('viral_times_' . $sectionname . '_bg_image_attach', 'fixed');
         $sectionbgoverlay = get_theme_mod('viral_times_' . $sectionname . '_overlay_color', 'rgba(255,255,255,0)');
-        $sectionalignitem = get_theme_mod('viral_times_' . $sectionname . '_align_item', 'top');
 
         $css = $css1 = array();
 
@@ -200,32 +179,9 @@ function viral_times_dymanic_styles() {
             if (!empty($sectionbgoverlay)) {
                 $css1[] = "background-color: $sectionbgoverlay";
             }
-        } elseif ($sectionbgtype == 'video-bg') {
-            if (!empty($sectionbgoverlay)) {
-                $css1[] = "background-color: $sectionbgoverlay";
-            }
-        } elseif ($sectionbgtype == 'gradient-bg') {
-            $sectiongradientcolor = get_theme_mod('viral_times_' . $sectionname . '_bg_gradient');
-            $css[] = "$sectiongradientcolor";
         }
 
         $custom_css .= "$sectionclass{" . implode(';', $css) . "}";
-
-        if ($sectionfullheight == 'on') {
-            $css1[] = "min-height:100vh";
-            $css1[] = "display: -webkit-flex";
-            $css1[] = "display: -ms-flexbox";
-            $css1[] = "display: flex";
-            $css1[] = "overflow: hidden";
-            $css1[] = "flex-wrap: wrap";
-            if ($sectionalignitem == 'top') {
-                $css1[] = "align-items: flex-start";
-            } elseif ($sectionalignitem == 'middle') {
-                $css1[] = "align-items: center";
-            } elseif ($sectionalignitem == 'bottom') {
-                $css1[] = "align-items: flex-end";
-            }
-        }
 
         if (!empty($sectiontoppadding)) {
             $css1[] = "padding-top: {$sectiontoppadding}px";
@@ -260,19 +216,13 @@ function viral_times_dymanic_styles() {
 
         $block_title_color = get_theme_mod("viral_times_{$sectionname}_block_title_color", '#333333');
         $block_title_background_color = get_theme_mod("viral_times_{$sectionname}_block_title_background_color", '#ea3546');
-        $block_title_border_color = get_theme_mod("viral_times_{$sectionname}_block_title_border_color", '#ea3546');
 
         $custom_css .= "
             {$sectionclass}.ht-overwrite-color .vl-block-title span.vl-title{color:$block_title_color}
-            .ht-block-title-style2 {$sectionclass}.ht-overwrite-color .vl-block-title:after, .ht-block-title-style5 {$sectionclass}.ht-overwrite-color .vl-block-title span.vl-title:before, .ht-block-title-style7 {$sectionclass}.ht-overwrite-color .vl-block-title span.vl-title, .ht-block-title-style8 {$sectionclass}.ht-overwrite-color .vl-block-title span.vl-title, .ht-block-title-style9 {$sectionclass}.ht-overwrite-color .vl-block-title span.vl-title, .ht-block-title-style9 {$sectionclass}.ht-overwrite-color .vl-block-title span.vl-title:before, .ht-block-title-style10 {$sectionclass}.ht-overwrite-color .vl-block-header, .ht-block-title-style11 {$sectionclass}.ht-overwrite-color .vl-block-title span.vl-title, .ht-block-title-style12 {$sectionclass}.ht-overwrite-color .vl-block-title{background-color:$block_title_background_color}
-            .ht-block-title-style8 {$sectionclass}.ht-overwrite-color .vl-block-header, .ht-block-title-style9 {$sectionclass}.ht-overwrite-color .vl-block-header, .ht-block-title-style11 {$sectionclass}.ht-overwrite-color .vl-block-header{border-color:$block_title_background_color}
-            .ht-block-title-style10 {$sectionclass}.ht-overwrite-color .vl-block-title:before{border-color: $block_title_background_color $block_title_background_color transparent transparent}
+            .ht-block-title-style9 {$sectionclass}.ht-overwrite-color .vl-block-title span.vl-title, .ht-block-title-style9 {$sectionclass}.ht-overwrite-color .vl-block-title span.vl-title:before{background-color:$block_title_background_color}
+            .ht-block-title-style9 {$sectionclass}.ht-overwrite-color .vl-block-header{border-color:$block_title_background_color}
             ";
 
-        $custom_css .= "
-            .ht-block-title-style2 {$sectionclass}.ht-overwrite-color .vl-block-title, .ht-block-title-style3 {$sectionclass}.ht-overwrite-color .vl-block-header, .ht-block-title-style5 {$sectionclass}.ht-overwrite-color .vl-block-header{border-color:$block_title_border_color}
-            .ht-block-title-style4 {$sectionclass}.ht-overwrite-color .vl-block-title:after, .ht-block-title-style6 {$sectionclass}.ht-overwrite-color .vl-block-title:before, .ht-block-title-style6 {$sectionclass}.ht-overwrite-color .vl-block-title:after, .ht-block-title-style7 {$sectionclass}.ht-overwrite-color .vl-block-title:after{background-color:$block_title_border_color}
-            ";
 
         if (!empty($sectiontoppadding_tablet)) {
             $tablet_css .= "$sectionclass .ht-section-wrap{padding-top: {$sectiontoppadding_tablet}px}";
@@ -305,41 +255,6 @@ function viral_times_dymanic_styles() {
         if (!empty($sectionbottommargin_mobile)) {
             $mobile_css .= "$sectionclass .ht-section-wrap{margin-bottom: {$sectionbottommargin_mobile}px}";
         }
-
-        if (!empty($top_seperator_height)) {
-            $custom_css .= "$sectionclass .ht-section-seperator.top-section-seperator{height: {$top_seperator_height}px}";
-        }
-
-        if (!empty($bottom_seperator_height)) {
-            $custom_css .= "$sectionclass .ht-section-seperator.bottom-section-seperator{height: {$bottom_seperator_height}px}";
-        }
-
-        if (!empty($top_seperator_height_tablet)) {
-            $tablet_css .= "$sectionclass .ht-section-seperator.top-section-seperator{height: {$top_seperator_height_tablet}px}";
-        }
-
-        if (!empty($bottom_seperator_height_tablet)) {
-            $tablet_css .= "$sectionclass .ht-section-seperator.bottom-section-seperator{height: {$bottom_seperator_height_tablet}px}";
-        }
-
-        if (!empty($top_seperator_height_mobile)) {
-            $mobile_css .= "$sectionclass .ht-section-seperator.top-section-seperator{height: {$top_seperator_height_mobile}px}";
-        }
-
-        if (!empty($bottom_seperator_height_mobile)) {
-            $mobile_css .= "$sectionclass .ht-section-seperator.bottom-section-seperator{height: {$bottom_seperator_height_mobile}px}";
-        }
-
-        $section_seperator = get_theme_mod("viral_times_{$sectionname}_section_seperator");
-        $top_seperator_color = get_theme_mod("viral_times_{$sectionname}_ts_color", '#FF0000');
-        $bottom_seperator_color = get_theme_mod("viral_times_{$sectionname}_bs_color", '#FF0000');
-
-        if ($section_seperator == 'top' || $section_seperator == 'top-bottom') {
-            $custom_css .= "$sectionclass .top-section-seperator svg{ fill:$top_seperator_color }";
-        }
-        if ($section_seperator == 'bottom' || $section_seperator == 'top-bottom') {
-            $custom_css .= "$sectionclass .bottom-section-seperator svg{ fill:$bottom_seperator_color }";
-        }
     }
 
     /* =============== Header CSS =============== */
@@ -350,22 +265,16 @@ function viral_times_dymanic_styles() {
     $th_anchor_color = get_theme_mod('viral_times_th_anchor_color', '#EEEEEE');
     $th_height = get_theme_mod('viral_times_th_height', 45);
     $mh_height = get_theme_mod('viral_times_mh_height', 65);
-    $mh_half_height = $mh_height / 2;
     $mh_bg_color = get_theme_mod('viral_times_mh_bg_color', '#ea3546');
     $mh_bg_color_mobile = get_theme_mod('viral_times_mh_bg_color_mobile', '#ea3546');
     $mh_border_color = get_theme_mod('viral_times_mh_border_color', '#EEEEEE');
     $mh_menu_color = get_theme_mod('viral_times_mh_menu_color', '#FFFFFF');
     $mh_menu_hover_color = get_theme_mod('viral_times_mh_menu_hover_color', '#FFFFFF');
-    $mh_menu_hover_bg_color = get_theme_mod('viral_times_mh_menu_hover_bg_color', '#ea3546');
     $mh_submenu_bg_color = get_theme_mod('viral_times_mh_submenu_bg_color', '#F2F2F2');
     $mh_submenu_color = get_theme_mod('viral_times_mh_submenu_color', '#333333');
     $mh_submenu_hover_color = get_theme_mod('viral_times_mh_submenu_hover_color', '#333333');
     $menu_dropdown_padding = get_theme_mod('viral_times_menu_dropdown_padding', 0);
-    $logo_height = $mh_height - 30;
-    $header6_height = $th_height + $mh_half_height;
-    $header6_single_bottom_margin = 40 - $mh_half_height;
     $logo_actual_height = get_theme_mod('viral_times_logo_height', 60);
-    $logo_min_height = min($logo_height, $logo_actual_height);
     $logo_padding = get_theme_mod('viral_times_logo_padding', 15);
 
     if ($th_bottom_border_color) {
@@ -392,27 +301,6 @@ function viral_times_dymanic_styles() {
         .th-menu > ul > li > a{
             line-height: {$th_height}px;
         }
-        
-        .ht-top-header-on .ht-header-six.ht-site-header{
-            margin-bottom: -{$mh_half_height}px;
-        }
-        
-        .ht-top-header-on.ht-single-layout1 .ht-header-six.ht-site-header,
-        .ht-top-header-on.ht-single-layout2 .ht-header-six.ht-site-header,
-        .ht-top-header-on.ht-single-layout7 .ht-header-six.ht-site-header{
-            margin-bottom: {$header6_single_bottom_margin}px;
-        }
-        
-        .ht-top-header-on.ht-single-layout3 .ht-header-six.ht-site-header,
-        .ht-top-header-on.ht-single-layout4 .ht-header-six.ht-site-header,
-        .ht-top-header-on.ht-single-layout5 .ht-header-six.ht-site-header,
-        .ht-top-header-on.ht-single-layout6 .ht-header-six.ht-site-header{
-            margin-bottom: -{$mh_height}px;
-        }
-        
-        .ht-header-six.ht-site-header .ht-top-header{
-            height: {$header6_height}px;
-        }
 
         .ht-site-header .ht-top-header a,
         .ht-site-header .ht-top-header a:hover,
@@ -421,92 +309,43 @@ function viral_times_dymanic_styles() {
             color: $th_anchor_color;
         }
 
-        .ht-header-one .ht-header,
         .ht-header-two .ht-header,
-        .ht-header-three .ht-header,
-        .ht-header-four .ht-header .ht-container,
-        .ht-header-five .ht-header,
-        .ht-header-six .ht-header .ht-container,
-        .ht-header-seven .ht-header,
-        .ht-sticky-header .ht-header-four .ht-header.headroom.headroom--not-top,
-        .ht-sticky-header .ht-header-six .ht-header.headroom.headroom--not-top{
+        .ht-header-five .ht-header{
             background: $mh_bg_color;
         }
-        
-        .ht-sticky-header .ht-header-four .ht-header.headroom.headroom--not-top .ht-container,
-        .ht-sticky-header .ht-header-six .ht-header.headroom.headroom--not-top .ht-container{
-            background: none;
-        }
 
-        .ht-header-one .ht-header .ht-container,
         .ht-header-two .ht-header .ht-container,
-        .ht-header-three .ht-header .ht-container,
-        .ht-header-four .ht-header .ht-container,
-        .ht-header-five .ht-header .ht-container,
-        .ht-header-six .ht-header .ht-container,
-        .ht-header-seven .ht-header .ht-container{
+        .ht-header-five .ht-header .ht-container{
             height: {$mh_height}px;
         }
 
-        .hover-style5 .ht-menu > ul > li.menu-item > a,
-        .hover-style6 .ht-menu > ul > li.menu-item > a,
-        .hover-style5 .ht-header-bttn,
-        .hover-style6 .ht-header-bttn{
+        .hover-style6 .ht-menu > ul > li.menu-item > a{
             line-height: {$mh_height}px;
         }
         
         #ht-site-branding img{
             height:{$logo_actual_height}px;
         }
-        
-        .ht-header-one #ht-site-branding img,
-        .ht-header-three #ht-site-branding img,
-        .ht-header-six #ht-site-branding img{
-            max-height: {$logo_height}px;
-        }
             
         .ht-header-two #ht-site-branding, 
-        .ht-header-four #ht-site-branding, 
-        .ht-header-five #ht-site-branding, 
-        .ht-header-seven #ht-site-branding{
+        .ht-header-five #ht-site-branding{
             padding-top:{$logo_padding}px;
             padding-bottom:{$logo_padding}px
         }
         
-        .ht-site-header.ht-header-one .ht-header,
         .ht-site-header.ht-header-two .ht-header,
-        .ht-site-header.ht-header-three .ht-header,
-        .ht-site-header.ht-header-four .ht-header .ht-container,
-        .ht-site-header.ht-header-five .ht-header,
-        .ht-site-header.ht-header-six .ht-header .ht-container,
-        .ht-site-header.ht-header-seven .ht-header{
+        .ht-site-header.ht-header-five .ht-header{
             border-color: {$mh_border_color};
         }
         
         .ht-menu > ul > li.menu-item > a,
         .ht-search-button a,
-        .ht-header-social-icons a,
-        .hover-style1 .ht-search-button a:hover,
-        .hover-style3 .ht-search-button a:hover,
-        .hover-style5 .ht-search-button a:hover,
-        .hover-style1 .ht-header-social-icons a:hover,
-        .hover-style3 .ht-header-social-icons a:hover,
-        .hover-style5 .ht-header-social-icons a:hover{
+        .ht-header-social-icons a{
             color: $mh_menu_color;
-        }
-        
-        .ht-offcanvas-nav a>span,
-        .hover-style1 .ht-offcanvas-nav a:hover>span,
-        .hover-style3 .ht-offcanvas-nav a:hover>span,
-        .hover-style5 .ht-offcanvas-nav a:hover>span{
-            background-color: $mh_menu_color;
         }
         
         .ht-search-button a:hover,
         .ht-header-social-icons a:hover,
-        .hover-style1 .ht-menu > ul> li.menu-item:hover > a,
-        .hover-style1 .ht-menu > ul> li.menu-item.current_page_item > a, 
-        .hover-style1 .ht-menu > ul > li.menu-item.current-menu-item > a,
         .ht-menu > ul > li.menu-item:hover > a,
         .ht-menu > ul > li.menu-item:hover > a > i,
         .ht-menu > ul > li.menu-item.current_page_item > a,
@@ -515,10 +354,6 @@ function viral_times_dymanic_styles() {
         .ht-menu > ul > li.menu-item.current > a{
             color: $mh_menu_hover_color;
         }
-        
-        .ht-offcanvas-nav a:hover>span{
-            background-color: $mh_menu_hover_color;
-        }
 
         .ht-menu ul ul,
         .menu-item-ht-cart .widget_shopping_cart,
@@ -526,102 +361,30 @@ function viral_times_dymanic_styles() {
             background: $mh_submenu_bg_color;
         }
         
-        .ht-menu .megamenu *,
-        #ht-responsive-menu .megamenu *,
-        .ht-menu .megamenu a,
-        #ht-responsive-menu .megamenu a,
         .ht-menu ul ul li.menu-item > a,
         .menu-item-ht-cart .widget_shopping_cart a,
         .menu-item-ht-cart .widget_shopping_cart,
         #ht-responsive-menu li.menu-item > a,
         #ht-responsive-menu li.menu-item > a i,
-        #ht-responsive-menu li .dropdown-nav,
-        .megamenu-category .mega-post-title a{
+        #ht-responsive-menu li .dropdown-nav{
             color: $mh_submenu_color;
         }
-
-        li.megamenu-category > a .dropdown-nav {
-            display: none;
-        }
         
-        .ht-menu .megamenu a:hover,
-        #ht-responsive-menu .megamenu a:hover,
-        .ht-menu .megamenu a:hover > i,
-        #ht-responsive-menu .megamenu a:hover > i,
-        .ht-menu > ul > li > ul:not(.megamenu) li.menu-item:hover > a,
-        .ht-menu ul ul.megamenu li.menu-item > a:hover,
         .ht-menu ul ul li.menu-item > a:hover i,
-        .menu-item-ht-cart .widget_shopping_cart a:hover,
-        .ht-menu .megamenu-full-width.megamenu-category .cat-megamenu-tab > div.active-tab,
-        .ht-menu .megamenu-full-width.megamenu-category .mega-post-title a:hover{
+        .menu-item-ht-cart .widget_shopping_cart a:hover{
             color: $mh_submenu_hover_color;
         }
         
         .ht-menu ul ul li.menu-item>a:after{
             background: $mh_submenu_hover_color;
         }
-
-        .hover-style1 .ht-menu > ul > li.menu-item:hover > a,
-        .hover-style1 .ht-menu > ul > li.menu-item.current_page_item > a,
-        .hover-style1 .ht-menu > ul > li.menu-item.current-menu-item > a,
-        .hover-style1 .ht-menu > ul > li.menu-item.current_page_ancestor > a,
-        .hover-style1 .ht-menu > ul > li.menu-item.current > a,
-        .hover-style5 .ht-menu > ul > li.menu-item:hover > a,
-        .hover-style5 .ht-menu > ul > li.menu-item.current_page_item > a,
-        .hover-style5 .ht-menu > ul > li.menu-item.current-menu-item > a,
-        .hover-style5 .ht-menu > ul > li.menu-item.current_page_ancestor > a,
-        .hover-style5 .ht-menu > ul > li.menu-item.current > a{
-            background: $mh_menu_hover_bg_color;
-        }
-
-        .hover-style2 .ht-menu > ul > li.menu-item:hover > a,
-        .hover-style2 .ht-menu > ul > li.menu-item.current_page_item > a,
-        .hover-style2 .ht-menu > ul > li.menu-item.current-menu-item > a,
-        .hover-style2 .ht-menu > ul > li.menu-item.current_page_ancestor > a,
-        .hover-style2 .ht-menu > ul > li.menu-item.current > a,
-        .hover-style4 .ht-menu > ul > li.menu-item:hover > a,
-        .hover-style4 .ht-menu > ul > li.menu-item.current_page_item > a,
-        .hover-style4 .ht-menu > ul > li.menu-item.current-menu-item > a,
-        .hover-style4 .ht-menu > ul > li.menu-item.current_page_ancestor > a,
-        .hover-style4 .ht-menu > ul > li.menu-item.current > a{
-            color: $mh_menu_hover_color;
-            border-color: $mh_menu_hover_color;
-        }
         
         .hover-style6 .ht-menu > ul > li.menu-item:hover > a:before,
         .hover-style6 .ht-menu > ul > li.menu-item.current_page_item > a:before,
         .hover-style6 .ht-menu > ul > li.menu-item.current-menu-item > a:before,
         .hover-style6 .ht-menu > ul > li.menu-item.current_page_ancestor > a:before,
-        .hover-style6 .ht-menu > ul > li.menu-item.current > a:before,
-        .hover-style8 .ht-menu>ul>li.menu-item>a:before,
-        .hover-style9 .ht-menu>ul>li.menu-item>a:before{
+        .hover-style6 .ht-menu > ul > li.menu-item.current > a:before{
             background: $mh_menu_hover_color;
-        }
-        
-        .hover-style7 .ht-menu>ul>li.menu-item>a:before{
-            border-left-color: $mh_menu_hover_color;
-            border-top-color: $mh_menu_hover_color;
-        }
-        
-        .hover-style7 .ht-menu>ul>li.menu-item>a:after{
-            border-right-color: $mh_menu_hover_color;
-            border-bottom-color: $mh_menu_hover_color;
-        }
-        
-        .rtl .hover-style7 .ht-menu>ul>li.menu-item>a:before{
-            border-right-color: $mh_menu_hover_color;
-        }
-
-        .rtl .hover-style7 .ht-menu>ul>li.menu-item>a:after{
-            border-left-color: $mh_menu_hover_color;
-        }   
-
-        .hover-style3 .ht-menu > ul > li.menu-item:hover > a,
-        .hover-style3 .ht-menu > ul > li.menu-item.current_page_item > a,
-        .hover-style3 .ht-menu > ul > li.menu-item.current-menu-item > a,
-        .hover-style3 .ht-menu > ul > li.menu-item.current_page_ancestor > a,
-        .hover-style3 .ht-menu > ul > li.menu-item.current > a{
-            background: $mh_menu_hover_bg_color;
         }
         
         .ht-menu>ul>li.menu-item{
@@ -633,69 +396,26 @@ function viral_times_dymanic_styles() {
         .ht-header-two .ht-middle-header-right>div>a{
             color: {$mh_button_color} !important;
         }
-        
-        .ht-header-two .ht-offcanvas-nav a>span{
-            background: {$mh_button_color} !important;
-        }
     ";
 
-    $mh_header_bg_url = get_theme_mod('viral_times_mh_header_bg_url');
-    $mh_header_bg_repeat = get_theme_mod('viral_times_mh_header_bg_repeat', 'no-repeat');
-    $mh_header_bg_size = get_theme_mod('viral_times_mh_header_bg_size', 'cover');
-    $mh_header_bg_position = get_theme_mod('viral_times_mh_header_bg_position', 'center-center');
-    $mh_header_bg_position = str_replace('-', ' ', $mh_header_bg_position);
-    $mh_header_bg_attach = get_theme_mod('viral_times_mh_header_bg_attach', 'scroll');
-    $mh_header_bg_overlay = get_theme_mod('viral_times_mh_header_bg_overlay');
     $mh_header_bg_color = get_theme_mod('viral_times_mh_header_bg_color', '#FFFFFF');
-
-    if ($mh_header_bg_url) {
-        $custom_css .= "
-        .ht-header-two,
-        .ht-header-four,
-        .ht-header-five,
-        .ht-header-seven{
-        background-image: url($mh_header_bg_url);
-        background-repeat: $mh_header_bg_repeat;
-        background-size: $mh_header_bg_size;
-        background-position: $mh_header_bg_position;
-        background-attachment: $mh_header_bg_attach;
-        }";
-    }
 
     if ($mh_header_bg_color) {
         $custom_css .= "
         .ht-header-two,
-        .ht-header-four,
-        .ht-header-five,
-        .ht-header-seven{
+        .ht-header-five{
         background-color: $mh_header_bg_color;
-        }";
-    }
-
-    if ($mh_header_bg_overlay) {
-        $custom_css .= "
-        .ht-header-two:before,
-        .ht-header-four:before,
-        .ht-header-five:before,
-        .ht-header-seven:before{
-            background : $mh_header_bg_overlay;
         }";
     }
 
     /* =============== Block Title Style =============== */
     $block_title_color = get_theme_mod('viral_times_block_title_color', '#333333');
     $block_title_background_color = get_theme_mod('viral_times_block_title_background_color', '#ea3546');
-    $block_title_border_color = get_theme_mod('viral_times_block_title_border_color', '#333333');
 
     $custom_css .= "
         .vl-block-title span.vl-title{color:$block_title_color}
-        .ht-block-title-style2 .vl-block-header .vl-block-title:after, .ht-block-title-style5 .vl-block-header .vl-block-title span.vl-title:before, .ht-block-title-style7 .vl-block-header .vl-block-title span.vl-title, .ht-block-title-style8 .vl-block-header .vl-block-title span.vl-title, .ht-block-title-style9 .vl-block-header .vl-block-title span.vl-title, .ht-block-title-style10 .vl-block-header, .ht-block-title-style11 .vl-block-header .vl-block-title span.vl-title, .ht-block-title-style12 .vl-block-header{background-color:$block_title_background_color}
-        .ht-block-title-style8 .vl-block-header, .ht-block-title-style9 .vl-block-header, .ht-block-title-style11 .vl-block-header{border-color:$block_title_background_color}
-        .ht-block-title-style10 .vl-block-header .vl-block-title:before{border-color: $block_title_background_color $block_title_background_color transparent transparent}
-    ";
-    $custom_css .= "
-        .ht-block-title-style2 .vl-block-header .vl-block-title, .ht-block-title-style2 .vl-block-header .vp-block-filter, .ht-block-title-style3 .vl-block-header, .ht-block-title-style5 .vl-block-header{border-color:$block_title_border_color}
-        .ht-block-title-style4 .vl-block-header .vl-block-title:after, .ht-block-title-style6 .vl-block-header .vl-block-title:before, .ht-block-title-style6 .vl-block-header .vl-block-title:after, .ht-block-title-style7 .vl-block-header .vl-block-title:after{background-color:$block_title_border_color}
+        .ht-block-title-style9 .vl-block-header .vl-block-title span.vl-title{background-color:$block_title_background_color}
+        .ht-block-title-style9 .vl-block-header{border-color:$block_title_background_color}
     ";
 
     /* =============== Background Color =============== */
@@ -704,11 +424,9 @@ function viral_times_dymanic_styles() {
         input[type='button'],
         input[type='reset'],
         input[type='submit'],
-        .ht-button,
         .comment-navigation .nav-previous a,
         .comment-navigation .nav-next a,
         .pagination .page-numbers,
-        .ht-progress-bar-length,
         .ht-main-content .entry-readmore a,
         .blog-layout2 .entry-date,
         .blog-layout4 .ht-post-date,
@@ -716,7 +434,6 @@ function viral_times_dymanic_styles() {
         .woocommerce a.button,
         .woocommerce button.button,
         .woocommerce input.button,
-        .woocommerce ul.products li.product:hover .viral-times-product-title-wrap .button,
         .woocommerce #respond input#submit.alt,
         .woocommerce a.button.alt,
         .woocommerce button.button.alt,
@@ -762,28 +479,14 @@ function viral_times_dymanic_styles() {
         .woocommerce input.button.alt:disabled[disabled]:hover,
         .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
         .woocommerce-MyAccount-navigation-link a,
-        .ht-style2-accordion .ht-accordion-header,
-        .ht-pt-header .ht-pt-tab.ht-pt-active,
-        .ht-post-listing .ht-pl-count,
         .vl-post-categories li a.vl-category,
         .vl-slider-block .owl-carousel .owl-nav .owl-prev:hover, 
         .vl-slider-block .owl-carousel .owl-nav .owl-next:hover,
-        .vl-fwcarousel-block .owl-carousel .owl-nav .owl-prev, 
-        .vl-fwcarousel-block .owl-carousel .owl-nav .owl-next,
         .vl-primary-cat-block .vl-primary-cat,
         .vl-carousel-block .owl-carousel .owl-nav .owl-prev, 
         .vl-carousel-block .owl-carousel .owl-nav .owl-next,
-        .video-controls,
-        .vl-ticker.style1 .vl-ticker-title,
-        .vl-ticker.style1 .owl-carousel .owl-nav button.owl-prev, 
-        .vl-ticker.style1 .owl-carousel .owl-nav button.owl-next,
-        .vl-ticker.style2 .vl-ticker-title,
-        .vl-ticker.style3 .vl-ticker-title,
-        .vl-ticker.style4 .vl-ticker-title,
         .single-entry-gallery .owl-carousel .owl-nav .owl-prev, 
         .single-entry-gallery .owl-carousel .owl-nav .owl-next,
-        .viral-times-related-post.style3 .owl-carousel .owl-nav .owl-prev, 
-        .viral-times-related-post.style3 .owl-carousel .owl-nav .owl-next,
         .ht-instagram-widget-footer a,
         .blog-layout7 .ht-post-date
         {
@@ -799,8 +502,7 @@ function viral_times_dymanic_styles() {
         .woocommerce-error:before,
         .woocommerce-info:before,
         .woocommerce-message:before,
-        .blog-layout1 .ht-post-date .entry-date span,
-        .vp-block-filter ul.vp-block-filter-list li.vp-active a
+        .blog-layout1 .ht-post-date .entry-date span
         {
             color:{$color};
         }";
@@ -813,7 +515,6 @@ function viral_times_dymanic_styles() {
         .woocommerce a.button,
         .woocommerce button.button,
         .woocommerce input.button,
-        .woocommerce ul.products li.product:hover .viral-times-product-title-wrap .button,
         .woocommerce #respond input#submit.alt,
         .woocommerce a.button.alt,
         .woocommerce button.button.alt,
@@ -844,7 +545,6 @@ function viral_times_dymanic_styles() {
         .woocommerce input.button.alt:disabled[disabled],
         .woocommerce input.button.alt:disabled[disabled]:hover,
         .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
-        .ht-style2-accordion .ht-accordion-content-wrap,
         .content-area .entry-content blockquote
         {
             border-color: {$color};
@@ -866,22 +566,6 @@ function viral_times_dymanic_styles() {
 
         .woocommerce div.product .woocommerce-tabs ul.tabs li.active a:before{
             border-color: {$color} transparent transparent;
-        }
-        
-        .vl-ticker.style1 .vl-ticker-title:after{
-            border-color: transparent transparent transparent {$color};
-        }
-        
-        .vl-ticker.style4 .vl-ticker-title:after{
-            border-color: {$color} transparent transparent {$color};
-        }
-        
-        .rtl .vl-ticker.style1 .vl-ticker-title:after{
-            border-color: transparent {$color} transparent transparent;
-        }
-        
-        .rtl .vl-ticker.style4 .vl-ticker-title:after{
-            border-color: transparent {$color} {$color} transparent;
         }
     ";
 
@@ -919,25 +603,9 @@ function viral_times_dymanic_styles() {
             }";
     }
 
-    $custom_css .= "
-        #ht-back-top.ht-st-framed{
-            border-color: {$st_color};
-            color: {$st_color};
-        }";
-
-    if ($st_hov_color || $st_icon_hov_color) {
-        $custom_css .= "
-            #ht-back-top.ht-st-framed:hover{
-                border-color: {$st_hov_color};
-                color: {$st_hov_color};
-            }";
-    }
-
-    $st_offset_left = get_theme_mod('viral_times_scroll_top_offset_left', 40);
     $st_offset_right = get_theme_mod('viral_times_scroll_top_offset_right', 40);
     $st_offset_bottom = get_theme_mod('viral_times_scroll_top_offset_bottom', 40);
 
-    $custom_css .= "#ht-back-top.ht-st-left{left: {$st_offset_left}px;}";
 
     $custom_css .= "#ht-back-top.ht-st-right{right: {$st_offset_right}px;}";
 
@@ -952,7 +620,6 @@ function viral_times_dymanic_styles() {
     $footer_bg_attach = get_theme_mod('viral_times_footer_bg_attach', 'scroll');
     $footer_bg_color = get_theme_mod('viral_times_footer_bg_color', '#333333');
     $footer_title_color = get_theme_mod('viral_times_footer_title_color', '#EEEEEE');
-    $footer_title_light_color = viral_times_hex2rgba($footer_title_color, 0.1);
     $footer_text_color = get_theme_mod('viral_times_footer_text_color', '#EEEEEE');
     $footer_anchor_color = get_theme_mod('viral_times_footer_anchor_color', '#EEEEEE');
     $footer_border_color = get_theme_mod('viral_times_footer_border_color', '#444444');
@@ -975,20 +642,8 @@ function viral_times_dymanic_styles() {
                 color: $footer_title_color;
         }
         
-        .ht-sidebar-style1 .ht-site-footer .widget-title:after,
-        .ht-sidebar-style3 .ht-site-footer .widget-title:after,
         .ht-sidebar-style6 .ht-site-footer .widget-title:after{
             background: $footer_title_color;
-        }
-        
-        .ht-sidebar-style2 .ht-site-footer .widget-title,
-        .ht-sidebar-style7 .ht-site-footer .widget-title{
-            border-color: $footer_title_light_color;
-        }
-        
-        .ht-sidebar-style5 .ht-site-footer .widget-title:before,
-        .ht-sidebar-style5 .ht-site-footer .widget-title:after{
-            background-color: $footer_title_light_color;
         }
 
         .ht-site-footer *{
@@ -1000,9 +655,7 @@ function viral_times_dymanic_styles() {
                 color: $footer_anchor_color;
         }
         
-        .ht-top-footer .ht-container,
-        .ht-main-footer .ht-container,
-        .ht-bottom-top-footer .ht-container{
+        .ht-main-footer .ht-container{
             border-color: $footer_border_color;
         }";
 
@@ -1016,67 +669,13 @@ function viral_times_dymanic_styles() {
                 display: block;
             }
 
-            .ht-header-one .ht-header, 
             .ht-header-two .ht-header, 
-            .ht-header-three .ht-header, 
-            .ht-header-four .ht-header .ht-container, 
-            .ht-header-five .ht-header, 
-            .ht-header-six .ht-header .ht-container, 
-            .ht-header-seven .ht-header, 
-            .ht-sticky-header .ht-header-four .ht-header.headroom.headroom--not-top, 
-            .ht-sticky-header .ht-header-six .ht-header.headroom.headroom--not-top{
+            .ht-header-five .ht-header{
                 background: {$mh_bg_color_mobile};
             }
             
             .ht-header-two .ht-header .ht-container {
                 justify-content: flex-end;
-            }
-            
-            .ht-header-six.ht-site-header .ht-top-header {
-                height: auto !important;
-            }
-            .ht-top-header-on .ht-header-six .ht-header {
-                -webkit-transform: translateY(0) !important;
-                transform: translateY(0) !important;
-            }
-            .ht-header-six.ht-site-header {
-                margin-bottom: 0 !important;
-            }
-            .ht-top-header-on.ht-single-layout1 .ht-header-six.ht-site-header, 
-            .ht-top-header-on.ht-single-layout2 .ht-header-six.ht-site-header, 
-            .ht-top-header-on.ht-single-layout5 .ht-header-six.ht-site-header,
-            .ht-top-header-on.ht-single-layout6 .ht-header-six.ht-site-header,
-            .ht-top-header-on.ht-single-layout7 .ht-header-six.ht-site-header{
-                margin-bottom: 40px !important;
-            }
-            
-            .megamenu-full-width.megamenu-category .cat-megamenu-content-full,
-            .megamenu-full-width.megamenu-category .cat-megamenu-tab,
-            .megamenu-full-width.megamenu-category .cat-megamenu-content{
-                display: none;
-            }
-            
-            .megamenu-full-width.megamenu-category .cat-megamenu-tab > div{
-                padding: 15px 40px;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            }
-            
-            .megamenu-full-width.megamenu-category .cat-megamenu-tab > div:after{
-                display: none;
-            }
-            
-            .megamenu-full-width.megamenu-category .cat-megamenu-content-full ul li{
-                width: 100%;
-                float: none;
-                margin: 0;
-            }
-            
-            .megamenu-full-width.megamenu-category .cat-megamenu-content-full ul li > a{
-                display:none;
-            }
-            
-            #ht-responsive-menu li.menu-item.megamenu-category > a > .dropdown-nav{
-                display:none;
             }
 
             .ht-sticky-header .headroom.headroom--not-top{
@@ -1091,7 +690,6 @@ function viral_times_dymanic_styles() {
                 animation: none;
             }
             
-            .ht-header .ht-offcanvas-nav, 
             .ht-header .ht-search-button, 
             .ht-header .ht-header-social-icons{
                 display: none;
@@ -1104,26 +702,9 @@ function viral_times_dymanic_styles() {
             .admin-bar.ht-sticky-header .headroom.headroom--not-top{
                 top: auto;
             }
-            
-            .ht-sticky-header .ht-header-four .ht-header.headroom.headroom--not-top .ht-container{
-                margin-bottom: 38px !important;
-            }
-            
-            .ht-top-header-on.ht-sticky-header .ht-header-six .ht-header.headroom.headroom--not-top {
-                -webkit-transform: translateY(-50%);
-                transform: translateY(-50%);
-            }
-            
-            .ht-header-one #ht-site-branding img,
-            .ht-header-three #ht-site-branding img,
-            .ht-header-six #ht-site-branding img{
-                max-height: {$logo_min_height}px;
-            }
                     
             .ht-header-two #ht-site-branding img, 
-            .ht-header-four #ht-site-branding img, 
-            .ht-header-five #ht-site-branding img, 
-            .ht-header-seven #ht-site-branding img{
+            .ht-header-five #ht-site-branding img{
                 max-height: {$logo_actual_height}px;
             }
             
@@ -1141,61 +722,7 @@ function viral_times_dymanic_styles() {
                 width: 100%;
                 max-width: none;
             }
-        }
-            
-        @media screen and (max-width: {$container_width_200}px){        
-            .ht-single-layout5 .entry-header,
-            .ht-single-layout6 .entry-header{
-                margin-left: 0;
-                margin-right: 0;
-            }
-            .ht-single-layout6 .entry-header{
-                height: auto;
-            }
         }";
-
-
-    /* =============== Header Button =============== */
-    $hb_text_color = get_theme_mod('viral_times_hb_text_color', '#FFFFFF');
-    $hb_text_hov_color = get_theme_mod('viral_times_hb_text_hov_color', '#FFFFFF');
-    $hb_bg_color = get_theme_mod('viral_times_hb_bg_color', '#ea3546');
-    $hb_bg_hov_color = get_theme_mod('viral_times_hb_bg_hov_color', '#ea3546');
-    $hb_borderradius = get_theme_mod('viral_times_hb_borderradius', '0');
-
-    $custom_css .= "
-            a.ht-header-bttn{
-                color: $hb_text_color;
-                background: $hb_bg_color;
-                border-radius: {$hb_borderradius}px;
-            }
-
-            a.ht-header-bttn:hover{
-                color: $hb_text_hov_color;
-                background: $hb_bg_hov_color;
-            }
-        ";
-
-    /* =============== GDPR =============== */
-    $gdpr_bg = get_theme_mod('viral_times_gdpr_bg', '#333333');
-    $gdpr_text_color = get_theme_mod('viral_times_gdpr_text_color', '#FFFFFF');
-    $button_bg_color = get_theme_mod('viral_times_button_bg_color', '#ea3546');
-    $button_text_color = get_theme_mod('viral_times_button_text_color', '#FFFFFF');
-    $custom_css .= "
-            .viral-times-privacy-policy{
-                color: $gdpr_text_color;
-                background: $gdpr_bg;
-            }
-
-            .policy-text a{
-                color: $gdpr_text_color;
-            }
-
-            .policy-buttons a,
-            .policy-buttons a:hover{
-                color: $button_text_color;
-                background: $button_bg_color;
-            }
-        ";
 
 
     /* =============== Category Color =============== */
@@ -1217,10 +744,8 @@ function viral_times_dymanic_styles() {
 
     /* =============== FrontPage Section Spacing =============== */
     $frontpage_section_spacing = get_theme_mod('viral_times_frontpage_section_spacing', 40);
-    $featured_block_spacing = $frontpage_section_spacing - 30;
 
-    $custom_css .= "#vl-video-playlist, .vl-bottom-block, .vl-carousel-block, .vl-fwcarousel-block, .vl-slider-block, .vl-news-block, .vl-ticker, .ht-mininews-section .ht-non-fullwidth-container, .ht-mininews-section .ht-fullwidth-container, .vl-fwnews-block, .vl-tile-block-wrap, .ht-section .widget{margin-bottom:{$frontpage_section_spacing}px}";
-    $custom_css .= ".ht-featured-block-wrap{margin-bottom:{$featured_block_spacing}px}";
+    $custom_css .= "#vl-video-playlist, .vl-carousel-block, .vl-slider-block, .vl-news-block, .ht-mininews-section .ht-non-fullwidth-container, .ht-mininews-section .ht-fullwidth-container, .ht-section .widget{margin-bottom:{$frontpage_section_spacing}px}";
 
     $custom_css .= "@media screen and (max-width:768px){{$tablet_css}}";
     $custom_css .= "@media screen and (max-width:480px){{$mobile_css}}";

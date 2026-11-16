@@ -23,10 +23,6 @@ function viral_times_header_styles() {
             get_template_part('inc/header/header', 'five');
             break;
 
-        case 'header-style6':
-            get_template_part('inc/header/header', 'six');
-            break;
-
         default:
             get_template_part('inc/header/header', 'five');
             break;

@@ -410,7 +410,6 @@ $wp_customize->add_control(new Viral_Times_Tab_Control($wp_customize, 'viral_tim
                 'viral_times_mh_show_search',
                 'viral_times_mh_show_cart',
                 'viral_times_mh_show_social',
-                'viral_times_mh_show_offcanvas',
             ),
             'active' => true,
         ),

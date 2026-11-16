@@ -33,6 +33,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Google Fonts list updated to 1,980 fonts - Changed
 * IcoFont now loads under the same stylesheet handle as in the other HashThemes themes and plugins, so it loads only once - Changed
 * Featured images in the home sections, widgets and blog no longer print an empty image or a PHP warning when the image file is missing - Fixed
+* Unused styles and Customizer preview code left over from Viral Pro (off-canvas menu, mega menu, GDPR notice, header button, home sections, widgets and header layouts not in this theme) removed, so the stylesheet is about 45% smaller - Removed
 * Unused files - Removed
 
 = 1.1.3 - Oct 27 2026 =
