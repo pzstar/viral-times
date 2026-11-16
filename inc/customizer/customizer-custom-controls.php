@@ -40,6 +40,7 @@ if (!class_exists('Viral_Times_Customizer_Custom_Controls')) {
             require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/column-control/column-control.php';
             require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/preloader-control.php';
             require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/upgrade-section.php';
+            require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/pro-banner-section.php';
             require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/upgrade-info.php';
             require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/pro-preview-control.php';
             require VIRAL_TIMES_CUSTOMIZER_PATH . 'custom-controls/toggle-section.php';
@@ -63,6 +64,7 @@ if (!class_exists('Viral_Times_Customizer_Custom_Controls')) {
 
             // Register custom section types.
             $wp_customize->register_section_type('Viral_Times_Upgrade_Section');
+            $wp_customize->register_section_type('Viral_Times_Pro_Banner_Section');
             $wp_customize->register_section_type('Viral_Times_Toggle_Section');
         }
 
@@ -73,7 +75,10 @@ if (!class_exists('Viral_Times_Customizer_Custom_Controls')) {
             if ($icons && is_array($icons)) {
                 foreach ($icons as $icon) {
                     if (isset($icon['name']) && isset($icon['url'])) {
-                        wp_enqueue_style($icon['name'], $icon['url'], array(), VIRAL_TIMES_VER);
+                        // Icon libraries load under one shared, versioned handle in every HashThemes product, so each file loads once.
+                        $shared_icon_handles = array('materialdesignicons.css' => 'materialdesignicons-7.4.47', 'icofont.css' => 'icofont-1.0.1', 'eleganticons.css' => 'eleganticons-1.0', 'essentialicon.css' => 'essentialicon-1.0', 'essential-icon.css' => 'essentialicon-1.0', 'fontawesome-6.3.0.css' => 'fontawesome-7.3.1', 'font-awesome-6.3.0.css' => 'fontawesome-7.3.1', 'font-awesome.css' => 'fontawesome-7.3.1');
+                        $icon_file = basename(strtok($icon['url'], '?'));
+                        wp_enqueue_style(isset($shared_icon_handles[$icon_file]) ? $shared_icon_handles[$icon_file] : $icon['name'], $icon['url'], array(), VIRAL_TIMES_VER);
                     }
                 }
             }

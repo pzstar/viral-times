@@ -62,7 +62,7 @@ jQuery(function ($) {
         speed: 'fast'
     });
 
-    $('a.sf-with-ul').append('<div class="dropdown-nav arrow_carrot-down"></div>');
+    $('a.sf-with-ul').append('<div class="dropdown-nav icofont-simple-down"></div>');
 
     $('#ht-mobile-menu .menu-collapser').on('click', function () {
 
@@ -209,7 +209,7 @@ jQuery(function ($) {
                 autoplay: true,
                 nav: true,
                 dots: false,
-                navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>']
+                navText: ['<i class="icofont-simple-left"></i>', '<i class="icofont-simple-right"></i>']
             });
         }
 
@@ -234,7 +234,7 @@ jQuery(function ($) {
                     autoplayTimeout: parseInt(c_params.pause) * 1000,
                     nav: true,
                     dots: false,
-                    navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>'],
+                    navText: ['<i class="icofont-simple-left"></i>', '<i class="icofont-simple-right"></i>'],
                     responsive: {
                         0: {
                             items: 1

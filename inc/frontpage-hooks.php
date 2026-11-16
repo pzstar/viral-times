@@ -1828,7 +1828,7 @@ if (!function_exists('viral_times_carousel_section_style1')) {
                                         <?php
                                         $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
                                         ?>
-                                        <img alt="<?php echo esc_attr(get_the_title()) ?>" src="<?php echo esc_url($image[0]); ?>" />
+                                        <?php if ($image) { ?><img alt="<?php echo esc_attr(get_the_title()) ?>" src="<?php echo esc_url($image[0]); ?>" /><?php } ?>
                                     </a>
                                 </div>
                                 <div class="vl-carousel-heading">
@@ -1926,7 +1926,7 @@ if (!function_exists('viral_times_carousel_section_style2')) {
                                         <?php
                                         $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
                                         ?>
-                                        <img alt="<?php echo esc_attr(get_the_title()) ?>" src="<?php echo esc_url($image[0]); ?>" />
+                                        <?php if ($image) { ?><img alt="<?php echo esc_attr(get_the_title()) ?>" src="<?php echo esc_url($image[0]); ?>" /><?php } ?>
                                     </a>
 
                                     <div class="vl-carousel-heading">
@@ -2025,7 +2025,7 @@ if (!function_exists('viral_times_carousel_section_style3')) {
                                         <?php
                                         $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
                                         ?>
-                                        <img alt="<?php echo esc_attr(get_the_title()) ?>" src="<?php echo esc_url($image[0]); ?>" />
+                                        <?php if ($image) { ?><img alt="<?php echo esc_attr(get_the_title()) ?>" src="<?php echo esc_url($image[0]); ?>" /><?php } ?>
                                     </a>
                                 </div>
                                 <div class="vl-carousel-heading">

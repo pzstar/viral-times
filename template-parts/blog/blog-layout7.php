@@ -75,7 +75,7 @@ if ($viral_times_sidebar_layout == 'no-sidebar' || $viral_times_sidebar_layout =
                     ?>
                     <a href="<?php the_permalink(); ?>">
                         <div class="entry-thumb-container">
-                            <img src="<?php echo esc_url($viral_times_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>">
+                            <?php if ($viral_times_image) { ?><img src="<?php echo esc_url($viral_times_image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>"><?php } ?>
                         </div>
                     </a>
                 </figure>

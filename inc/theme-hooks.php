@@ -243,6 +243,32 @@ add_filter('viral_times_regsiter_fonts', 'viral_times_add_custom_fonts');
 
 function viral_times_premium_demo_config($demos) {
     $premium_demos = array(
+        'spotlight-pro' => array(
+            'name' => 'Viral Pro - Spotlight',
+            'type' => 'pro',
+            'buy_url' => viral_times_upgrade_url('demo-spotlight-pro', 'viral-times-demo-importer'),
+            'image' => 'https://hashthemes.com/import-files/viral-pro/screen/spotlight.jpg',
+            'preview_url' => 'https://demo.hashthemes.com/viral-pro/spotlight/',
+            'tags' => array(
+                'premium' => 'Premium'
+            ),
+            'pagebuilder' => array(
+                'customizer' => 'Customizer'
+            )
+        ),
+        'wellness-journal-pro' => array(
+            'name' => 'Viral Pro - The Wellness Journal',
+            'type' => 'pro',
+            'buy_url' => viral_times_upgrade_url('demo-wellness-journal-pro', 'viral-times-demo-importer'),
+            'image' => 'https://hashthemes.com/import-files/viral-pro/screen/wellness-journal.jpg',
+            'preview_url' => 'https://demo.hashthemes.com/viral-pro/wellness-journal/',
+            'tags' => array(
+                'premium' => 'Premium'
+            ),
+            'pagebuilder' => array(
+                'customizer' => 'Customizer'
+            )
+        ),
         'buzz-pro' => array(
             'name' => 'Viral Pro - Buzz',
             'type' => 'pro',

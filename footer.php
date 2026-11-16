@@ -57,7 +57,7 @@ $enable_st = get_theme_mod('viral_times_backtotop', 1);
 
 if ($enable_st) {
     ?>
-    <div id="ht-back-top" class="ht-st-right ht-st-stacked"><i class="arrow_up"></i></div>
+    <div id="ht-back-top" class="ht-st-right ht-st-stacked"><i class="icofont-long-arrow-up"></i></div>
     <?php
 }
 

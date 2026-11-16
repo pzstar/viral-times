@@ -208,7 +208,7 @@ $wp_customize->add_control(new Viral_Times_Switch_Control($wp_customize, 'viral_
         'on' => esc_html__('Yes', 'viral-times'),
         'off' => esc_html__('No', 'viral-times')
     ),
-    'description' => esc_html__('It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with Google Fonts then you can check this field off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly.', 'viral-times'),
+    'description' => esc_html__('It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with Google Fonts then you can turn this off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly.', 'viral-times'),
 )));
 
 /* SEO SECTION */
@@ -252,15 +252,26 @@ $wp_customize->add_control(new Viral_Times_Toggle_Control($wp_customize, 'viral_
 
 
 // Seasonal campaigns swap the banner copy automatically - see viral_times_get_active_campaign().
+// During a sale the card leads with the sale and drops the list price, which
+// would contradict the discount shown at checkout.
 $viral_times_campaign = viral_times_get_active_campaign();
-$viral_times_banner_title = $viral_times_campaign ? $viral_times_campaign['title'] : esc_html__('One-time payment. Lifetime updates and support.', 'viral-times');
-$viral_times_banner_button = $viral_times_campaign ? $viral_times_campaign['button'] : esc_html__('Get Viral Pro - From $69', 'viral-times');
 
-$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-pro-section', array(
+$wp_customize->add_section(new Viral_Times_Pro_Banner_Section($wp_customize, 'viral-times-pro-section', array(
     'priority' => -10,
-    'title' => $viral_times_banner_title,
-    'upgrade_text' => $viral_times_banner_button,
+    'badge' => $viral_times_campaign ? $viral_times_campaign['badge'] : esc_html__('Viral Pro', 'viral-times'),
+    'title' => $viral_times_campaign ? $viral_times_campaign['title'] : esc_html__('Run a better news site', 'viral-times'),
+    'points' => array(
+        esc_html__('50+ magazine blocks', 'viral-times'),
+        esc_html__('7 header, blog and post layouts', 'viral-times'),
+        esc_html__('19 one-click demos', 'viral-times')
+    ),
+    'price' => $viral_times_campaign ? '' : '$69',
+    'price_prefix' => esc_html__('From', 'viral-times'),
+    'price_note' => esc_html__('one-time · no renewals', 'viral-times'),
+    'upgrade_text' => $viral_times_campaign ? $viral_times_campaign['button'] : esc_html__('Upgrade to Viral Pro', 'viral-times'),
     'upgrade_url' => viral_times_upgrade_url($viral_times_campaign ? 'banner-' . $viral_times_campaign['id'] : 'banner', 'viral-times-customizer-button'),
+    'note' => esc_html__('7-day money-back guarantee', 'viral-times'),
+    'is_sale' => (bool) $viral_times_campaign,
     'active_callback' => 'viral_times_is_upgrade_notice_active'
 )));
 

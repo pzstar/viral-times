@@ -308,10 +308,6 @@ function viral_times_get_section_position($key) {
     return $return;
 }
 
-function viral_times_scroll_top_icons_array() {
-    return array('arrow_up', 'arrow_carrot-up', 'arrow_carrot-2up', 'arrow_carrot-2up_alt2', 'arrow_carrot-up_alt2', 'arrow_triangle-up_alt2', 'arrow_up_alt', 'icofont-arrow-up', 'icofont-block-up', 'icofont-bubble-up', 'icofont-caret-up', 'icofont-circled-up', 'icofont-curved-up', 'icofont-dotted-up', 'icofont-hand-drawn-alt-up', 'icofont-hand-drawn-up', 'icofont-hand-up', 'icofont-line-block-up', 'icofont-long-arrow-up', 'icofont-rounded-up', 'icofont-scroll-bubble-up', 'icofont-scroll-double-up', 'icofont-scroll-long-up', 'icofont-scroll-up', 'icofont-simple-up', 'icofont-square-up', 'icofont-stylish-up', 'icofont-swoosh-up', 'icofont-thin-up', 'mdi-arrow-collapse-up', 'mdi-arrow-expand-up', 'mdi-arrow-up', 'mdi-arrow-up-bold', 'mdi-arrow-up-bold-box', 'mdi-arrow-up-bold-box-outline', 'mdi-arrow-up-bold-circle', 'mdi-arrow-up-bold-circle-outline', 'mdi-arrow-up-bold-hexagon-outline', 'mdi-arrow-up-bold-outline', 'mdi-arrow-up-box', 'mdi-arrow-up-circle', 'mdi-arrow-up-circle-outline', 'mdi-arrow-up-drop-circle', 'mdi-arrow-up-drop-circle-outline', 'mdi-arrow-up-thick', 'mdi-boom-gate-up', 'mdi-boom-gate-up-outline', 'mdi-chevron-double-up', 'mdi-chevron-triple-up', 'mdi-chevron-up', 'mdi-chevron-up-box', 'mdi-chevron-up-box-outline', 'mdi-chevron-up-circle-outline', 'mdi-clipboard-arrow-up-outline', 'mdi-elevator-up', 'mdi-format-text-rotation-up', 'mdi-gesture-swipe-up', 'mdi-hand-pointing-up', 'mdi-menu-up', 'mdi-menu-up-outline', );
-}
-
 function viral_times_check_cfu() {
     if (class_exists('Hash_Custom_Font_Uploader')) {
         return false;

@@ -1,44 +1,55 @@
 <?php
-$viral_times_free_plugins = $this->free_plugins;
+$free_plugins = $this->free_plugins;
+$plugin_descriptions = $this->plugin_descriptions();
 
-if (!empty($viral_times_free_plugins)) {
+if (!empty($free_plugins)) {
     ?>
-    <h3><?php echo esc_html__('Recommended Plugins', 'viral-times'); ?></h3>
-    <p><?php echo esc_html__('Please install these free plugins. These plugins are complementary that adds more features to the theme.', 'viral-times'); ?></p>
-    <div class="recomended-plugin-wrap">
+    <div class="welcome-block-head">
+        <h3><?php echo esc_html__('Recommended Plugins', 'viral-times'); ?></h3>
+    </div>
+    <p class="welcome-block-intro"><?php echo esc_html__('These free plugins are made to work with Viral Times and add more features to your site. Install the ones you need.', 'viral-times'); ?></p>
+
+    <div class="welcome-grid welcome-grid-3">
         <?php
-        foreach ($viral_times_free_plugins as $viral_times_plugin) {
-            $viral_times_slug = $viral_times_plugin['slug'];
-            $viral_times_name = $viral_times_plugin['name'];
-            $viral_times_filename = $viral_times_plugin['filename'];
-            $viral_times_thumb = $viral_times_plugin['thumb_path'];
+        foreach ($free_plugins as $plugin) {
+            $slug = $plugin['slug'];
+            $filename = $plugin['filename'];
+            $installed = $this->check_plugin_installed_state($slug, $filename);
+            $active = $installed && $this->check_plugin_active_state($slug, $filename);
+
+            if ($active) {
+                $status = array('is-active', esc_html__('Active', 'viral-times'));
+            } elseif ($installed) {
+                $status = array('is-inactive', esc_html__('Inactive', 'viral-times'));
+            } else {
+                $status = array('is-missing', esc_html__('Not installed', 'viral-times'));
+            }
             ?>
-            <div class="recommended-plugins">
-                <div class="plugin-image">
-                    <img src="<?php echo esc_url($viral_times_thumb) ?>" />
+            <div class="welcome-card welcome-plugin">
+                <div class="welcome-plugin-head">
+                    <img src="<?php echo esc_url($plugin['thumb_path']); ?>" alt="" loading="lazy" />
+                    <div>
+                        <h4><?php echo esc_html($plugin['name']); ?></h4>
+                        <span class="welcome-status <?php echo esc_attr($status[0]); ?>"><?php echo esc_html($status[1]); ?></span>
+                    </div>
                 </div>
 
-                <div class="plugin-title-wrap">
-                    <div class="plugin-title">
-                        <?php echo esc_html($viral_times_name); ?>
-                    </div>
+                <?php if (!empty($plugin_descriptions[$slug])) { ?>
+                    <p><?php echo esc_html($plugin_descriptions[$slug]); ?></p>
+                <?php } ?>
 
-                    <div class="plugin-btn-wrapper">
-                        <?php if ($this->check_plugin_installed_state($viral_times_slug, $viral_times_filename) && !$this->check_plugin_active_state($viral_times_slug, $viral_times_filename)): ?>
-                            <a target="_blank" href="<?php echo esc_url($this->plugin_generate_url('active', $viral_times_slug, $viral_times_filename)) ?>" class="button button-primary"><?php esc_html_e('Activate', 'viral-times'); ?></a>
-                        <?php elseif ($this->check_plugin_installed_state($viral_times_slug, $viral_times_filename)):
-                            ?>
-                            <button type="button" class="button button-disabled" disabled="disabled"><?php esc_html_e('Installed', 'viral-times'); ?></button>
-                        <?php else:
-                            ?>
-                            <a target="_blank" class="install-now button-primary" href="<?php echo esc_url($this->plugin_generate_url('install', $viral_times_slug, $viral_times_filename)) ?>">
-                                <?php esc_html_e('Install Now', 'viral-times'); ?></a>
-                        <?php endif; ?>
-                    </div>
+                <div class="welcome-plugin-action">
+                    <?php if ($active) { ?>
+                        <button type="button" class="button button-disabled" disabled="disabled"><?php esc_html_e('Installed', 'viral-times'); ?></button>
+                    <?php } elseif ($installed) { ?>
+                        <a href="<?php echo esc_url($this->plugin_generate_url('active', $slug, $filename)); ?>" class="button button-primary"><?php esc_html_e('Activate', 'viral-times'); ?></a>
+                    <?php } else { ?>
+                        <a class="install-now button button-primary" href="<?php echo esc_url($this->plugin_generate_url('install', $slug, $filename)); ?>"><?php esc_html_e('Install Now', 'viral-times'); ?></a>
+                    <?php } ?>
+                    <a class="welcome-plugin-more" href="<?php echo esc_url('https://wordpress.org/plugins/' . $slug . '/'); ?>" target="_blank"><?php esc_html_e('Details', 'viral-times'); ?></a>
                 </div>
             </div>
-        <?php }
-        ?>
+        <?php } ?>
     </div>
     <?php
 }

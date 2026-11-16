@@ -47,7 +47,7 @@ if (!function_exists('viral_times_posted_on')) {
                 $time_string, esc_attr(($is_updated_date ? get_the_modified_date(DATE_W3C) : get_the_date(DATE_W3C))), esc_html($get_the_date), esc_attr(get_the_modified_date(DATE_W3C)), esc_html($get_the_modified_date)
             );
 
-            echo '<span class="entry-post-date"><i class="mdi mdi-clock-time-four-outline"></i>' . $time_string . '</span>';
+            echo '<span class="entry-post-date"><i class="icofont-clock-time"></i>' . $time_string . '</span>';
         }
 
         if ($single_comment_count) {
@@ -66,11 +66,11 @@ if (!function_exists('viral_times_posted_on')) {
                 $comment_link = "";
             }
 
-            echo '<span class="entry-comment"><i class="mdi mdi-comment-outline"></i>' . $comment_link . '</span>';
+            echo '<span class="entry-comment"><i class="icofont-comment"></i>' . $comment_link . '</span>';
         }
 
         if ($single_reading_time) {
-            echo '<span class="entry-read-time"><i class="mdi mdi-book-open"></i>' . viral_times_calculate_reading_time() . '</span>';
+            echo '<span class="entry-read-time"><i class="icofont-read-book"></i>' . viral_times_calculate_reading_time() . '</span>';
         }
     }
 
@@ -79,7 +79,7 @@ if (!function_exists('viral_times_posted_on')) {
 if (!function_exists('viral_times_post_author')) {
 
     function viral_times_post_author() {
-        echo '<span class="vl-posted-by" ' . viral_times_get_schema_attribute('author_name') . '><i class="mdi mdi-account"></i>' . esc_html(get_the_author()) . '</span>';
+        echo '<span class="vl-posted-by" ' . viral_times_get_schema_attribute('author_name') . '><i class="icofont-ui-user"></i>' . esc_html(get_the_author()) . '</span>';
     }
 
 }
@@ -99,7 +99,7 @@ if (!function_exists('viral_times_post_date')) {
             $time_string = sprintf(_x('%s ago', '%s = human-readable time difference', 'viral-times'), human_time_diff(($is_updated_date ? get_the_modified_time('U') : get_the_time('U')), current_time('timestamp')));
         }
 
-        echo '<span class="vl-posted-on" ' . viral_times_get_schema_attribute('publish_date') . '><i class="mdi mdi-clock-time-four-outline"></i>' . $time_string . '</span>'; // WPCS: XSS OK.
+        echo '<span class="vl-posted-on" ' . viral_times_get_schema_attribute('publish_date') . '><i class="icofont-clock-time"></i>' . $time_string . '</span>'; // WPCS: XSS OK.
     }
 
 }
@@ -208,8 +208,8 @@ if (!function_exists('viral_times_post_featured_image')) {
         $lazy_load = get_theme_mod('viral_times_lazy_load', false);
         $get_all_image_sizes = viral_times_get_all_image_sizes();
 
-        if (has_post_thumbnail()) {
-            $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
+        $image = has_post_thumbnail() ? wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size) : false;
+        if ($image) {
             $image_url = $image[0];
         } else {
             if ($image_size == 'full') {
@@ -250,7 +250,7 @@ if (!function_exists('viral_times_single_featured_image')) {
                 <?php
                 $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'viral-times-840x420');
                 ?>
-                <img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>">
+                <?php if ($image) { ?><img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(get_the_title()) ?>"><?php } ?>
             </figure>
             <?php
         }
@@ -362,7 +362,7 @@ if (!function_exists('viral_times_single_comment')) {
 if (!function_exists('viral_times_entry_author')) {
 
     function viral_times_entry_author() {
-        $author = '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '"><i class="mdi mdi-account"></i>' . esc_html(get_the_author()) . '</a></span>';
+        $author = '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '"><i class="icofont-ui-user"></i>' . esc_html(get_the_author()) . '</a></span>';
         echo '<span class="entry-author">' . $author . '</span>';
     }
 
@@ -372,7 +372,7 @@ if (!function_exists('viral_times_entry_date')) {
 
     function viral_times_entry_date() {
         $is_updated_date = get_theme_mod('viral_times_blog_display_date_option', 'posted') == 'updated' ? true : false;
-        $post_date = '<a href="' . esc_url(get_permalink()) . '"><i class="mdi mdi-clock-time-four-outline"></i>' . ($is_updated_date ? get_the_modified_date() : get_the_date()) . '</a>';
+        $post_date = '<a href="' . esc_url(get_permalink()) . '"><i class="icofont-clock-time"></i>' . ($is_updated_date ? get_the_modified_date() : get_the_date()) . '</a>';
         echo '<span class="entry-date">' . $post_date . '</span>';
     }
 
@@ -384,7 +384,7 @@ if (!function_exists('viral_times_entry_category')) {
         $categories_list = get_the_category_list(', ');
         if ($categories_list) {
             echo '<span class="entry-categories">';
-            echo '<i class="mdi mdi-folder"></i>' . $categories_list;
+            echo '<i class="icofont-folder"></i>' . $categories_list;
             echo '</span>';
         }
     }
@@ -394,7 +394,7 @@ if (!function_exists('viral_times_entry_category')) {
 if (!function_exists('viral_times_entry_tag')) {
 
     function viral_times_entry_tag() {
-        $tags_list = get_the_tag_list('<i class="mdi mdi-bookmark"></i>', ', ');
+        $tags_list = get_the_tag_list('<i class="icofont-tag"></i>', ', ');
         if ($tags_list) {
             echo '<span class="entry-tags">';
             echo $tags_list;
@@ -419,7 +419,7 @@ if (!function_exists('viral_times_comment_link')) {
                 $comments = esc_html__('1 Comment', 'viral-times');
             }
             $comment_link .= '<span class="entry-comment">';
-            $comment_link .= '<a class="comment-link" href="' . get_comments_link() . '"><i class="mdi mdi-comment"></i>' . $comments . '</a>';
+            $comment_link .= '<a class="comment-link" href="' . get_comments_link() . '"><i class="icofont-comment"></i>' . $comments . '</a>';
             $comment_link .= '</span>';
         }
 

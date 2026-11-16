@@ -189,8 +189,7 @@ function viral_times_category_list() {
  * Enqueue Style and Script for widgets
  */
 function viral_times_admin_scripts() {
-    wp_enqueue_style('materialdesignicons', get_template_directory_uri() . '/css/materialdesignicons.css', array(), VIRAL_TIMES_VER);
-    wp_enqueue_style('icofont', get_template_directory_uri() . '/css/icofont.css', array(), VIRAL_TIMES_VER);
+    wp_enqueue_style('icofont-1.0.1', get_template_directory_uri() . '/css/icofont.css', array(), VIRAL_TIMES_VER);
     if (is_rtl()) {
         wp_enqueue_style('viral-times-admin-style', get_template_directory_uri() . '/inc/widgets/css/widget-style.rtl.css', array('wp-color-picker'), VIRAL_TIMES_VER);
     } else {

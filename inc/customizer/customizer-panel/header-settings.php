@@ -55,11 +55,10 @@ $wp_customize->add_setting('viral_times_hide_title', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control('viral_times_hide_title', array(
-    'type' => 'checkbox',
+$wp_customize->add_control(new Viral_Times_Toggle_Control($wp_customize, 'viral_times_hide_title', array(
     'section' => 'title_tagline',
     'label' => esc_html__('Hide Site Title', 'viral-times')
-));
+)));
 
 $wp_customize->add_setting('viral_times_hide_tagline', array(
     'sanitize_callback' => 'viral_times_sanitize_text',
@@ -67,11 +66,10 @@ $wp_customize->add_setting('viral_times_hide_tagline', array(
     'transport' => 'postMessage'
 ));
 
-$wp_customize->add_control('viral_times_hide_tagline', array(
-    'type' => 'checkbox',
+$wp_customize->add_control(new Viral_Times_Toggle_Control($wp_customize, 'viral_times_hide_tagline', array(
     'section' => 'title_tagline',
     'label' => esc_html__('Hide Site Tagline', 'viral-times')
-));
+)));
 
 $wp_customize->add_setting('viral_times_tagline_position', array(
     'sanitize_callback' => 'viral_times_sanitize_text',

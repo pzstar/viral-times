@@ -73,7 +73,7 @@ function viral_times_widgets_show_widget_field($instance = '', $widget_field = '
                         if (isset($viral_times_icon_array) && !empty($viral_times_icon_array)) {
                             $icon_array = $viral_times_icon_array;
                         } else {
-                            $icon_array = viral_times_eleganticons_array();
+                            $icon_array = viral_times_icofont_icon_array();
                         }
 
                         foreach ($icon_array as $icon) {

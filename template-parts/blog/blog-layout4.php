@@ -27,8 +27,8 @@ if ($current_post_count == 1) {
     <div class="ht-article-wrap">
         <figure class="entry-figure">
             <?php
-            if (has_post_thumbnail()) {
-                $viral_times_image = wp_get_attachment_image_src(get_post_thumbnail_id(), $imagesize);
+            $viral_times_image = has_post_thumbnail() ? wp_get_attachment_image_src(get_post_thumbnail_id(), $imagesize) : false;
+            if ($viral_times_image) {
                 $viral_times_image_url = $viral_times_image[0];
             } else {
                 $viral_times_image_url = $default_image;
