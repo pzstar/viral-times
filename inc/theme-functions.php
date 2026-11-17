@@ -499,7 +499,7 @@ if (!function_exists('viral_times_get_schema_attribute')) {
 }
 
 /**
- * Build a tracked Viral Pro upgrade URL.
+ * Build a tracked Viral Pro upgrade URL; utm_content tells each placement apart in analytics.
  *
  * @param string $placement Short slug identifying where the link lives.
  * @param string $medium    utm_medium value.
@@ -520,7 +520,8 @@ function viral_times_upgrade_url($placement = '', $medium = 'viral-times-link') 
 }
 
 /**
- * Return the seasonal upgrade campaign running today, or false.
+ * Return the seasonal upgrade campaign running today, or false. Month-day windows repeat yearly;
+ * no prices or coupon codes here.
  *
  * @return array|false Campaign array, or false outside every window.
  */

@@ -21,7 +21,7 @@ if (!function_exists('viral_times_starter_content')) {
             return $html;
         };
 
-        // Starter posts can't be given categories.
+        // Starter posts can't be given categories, so every block shows the latest posts with category labels hidden (they would all read Uncategorized), and titles are kept general.
         $news_block = function ($title, $layout) {
             return array(
                 'title' => $title,
@@ -380,7 +380,7 @@ add_action('after_setup_theme', 'viral_times_starter_content');
 
 if (!function_exists('viral_times_preview_starter_posts')) {
 
-    // In the Customizer, starter posts stay auto-drafts until the user publishes.
+    // In the Customizer, starter posts stay auto-drafts until the user publishes, so the home sections' queries can't see them; include them while previewing.
     function viral_times_preview_starter_posts($query) {
         global $wp_customize;
 
@@ -421,7 +421,8 @@ add_filter('posts_where', 'viral_times_preview_starter_posts_where', 10, 2);
 
 if (!function_exists('viral_times_theme_preview_posts')) {
 
-    // The WordPress.org theme preview keeps starter posts only in the object cache.
+    // The WordPress.org theme preview keeps starter posts only in the object cache, with made-up IDs from 10000 and their keys as slugs, so post lists never see them.
+    // Finds them there and gives them the dates and author the preview leaves out; returns nothing on real sites.
     function viral_times_theme_preview_posts() {
         static $posts = null;
 
@@ -488,7 +489,7 @@ if (!function_exists('viral_times_theme_preview_posts')) {
 
 if (!function_exists('viral_times_theme_preview_post_lists')) {
 
-    // In the WordPress.org theme preview, the front page sections and post widgets list the starter posts.
+    // In the WordPress.org theme preview, the front page sections and post widgets list the starter posts instead of the Theme Unit Test posts.
     function viral_times_theme_preview_post_lists($posts, $query) {
         if (null !== $posts || $query->is_main_query() || !in_array($query->get('post_type'), array('', 'post'), true) || $query->get('p') || $query->get('page_id') || $query->get('post__in') || $query->get('s') || $query->get('cat') || $query->get('category_name') || $query->get('tag') || $query->get('tax_query') || $query->get('author')) {
             return $posts;
