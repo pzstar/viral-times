@@ -102,7 +102,6 @@ if (!function_exists('viral_times_setup')):
         // Add support editor style.
         add_theme_support('editor-styles');
 
-        // Add support for Block Styles.
         add_theme_support('wp-block-styles');
 
         // Add support for full and wide align images.
@@ -253,7 +252,7 @@ if (!function_exists('viral_times_fonts_url')):
 
         $customizer_fonts = apply_filters('viral_times_customizer_fonts', $customizer_fonts);
 
-        // Uploaded fonts win over Google fonts of the same name, so a self-hosted copy is never fetched from Google.
+        // Uploaded fonts win over Google fonts of the same name.
         $custom_fonts = class_exists('Hash_Custom_Font_Uploader_Public') ? Hash_Custom_Font_Uploader_Public::get_all_fonts_names() : array();
 
         foreach ($customizer_fonts as $key => $value) {

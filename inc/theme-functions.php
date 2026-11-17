@@ -2,8 +2,6 @@
 /**
  * Custom functions that act independently of the theme templates
  *
- * Eventually, some of the functionality here could be replaced by core features
- *
  * @package Viral Times
  */
 if (!function_exists('viral_times_excerpt')) {
@@ -503,10 +501,6 @@ if (!function_exists('viral_times_get_schema_attribute')) {
 /**
  * Build a tracked Viral Pro upgrade URL.
  *
- * Every upsell link in the theme goes through this so each placement is
- * distinguishable in analytics. Without utm_content every prompt looks
- * identical in reports and there is no way to tell which one converts.
- *
  * @param string $placement Short slug identifying where the link lives.
  * @param string $medium    utm_medium value.
  * @return string Unescaped URL - callers are expected to run esc_url().
@@ -527,13 +521,6 @@ function viral_times_upgrade_url($placement = '', $medium = 'viral-times-link') 
 
 /**
  * Return the seasonal upgrade campaign running today, or false.
- *
- * Replaces hand-editing the banner title and shipping a release for every
- * sale. Date windows are month-day, so they repeat every year.
- *
- * 'badge', 'title' and 'button' replace the upgrade card's copy while a
- * window is open, and the card hides its list price. No prices or coupon
- * codes go here.
  *
  * @return array|false Campaign array, or false outside every window.
  */

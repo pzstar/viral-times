@@ -2,8 +2,6 @@
 /**
  * Custom template tags for this theme.
  *
- * Eventually, some of the functionality here could be replaced by core features.
- *
  * @package Viral Times
  */
 if (!function_exists('viral_times_posted_on')) {

@@ -252,8 +252,6 @@ $wp_customize->add_control(new Viral_Times_Toggle_Control($wp_customize, 'viral_
 
 
 // Seasonal campaigns swap the banner copy automatically - see viral_times_get_active_campaign().
-// During a sale the card leads with the sale and drops the list price, which
-// would contradict the discount shown at checkout.
 $viral_times_campaign = viral_times_get_active_campaign();
 
 $wp_customize->add_section(new Viral_Times_Pro_Banner_Section($wp_customize, 'viral-times-pro-section', array(

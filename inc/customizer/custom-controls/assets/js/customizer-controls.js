@@ -284,7 +284,6 @@ jQuery(document).ready(function ($) {
                 /* add an image ID to the array of all images */
                 hiddenfieldvalue.push(attachments[i].id);
             }
-            /* refresh sortable */
             galleryContainer.sortable("refresh");
             /* add the IDs to the hidden field value */
             hiddenfield.val(hiddenfieldvalue.join()).trigger('change');
@@ -327,7 +326,6 @@ jQuery(document).ready(function ($) {
         /* add the IDs to the hidden field value */
         hiddenfield.val(hiddenfieldvalue.join()).trigger('change');
 
-        /* refresh sortable */
         gallery.sortable("refresh");
 
         return false;
@@ -501,7 +499,6 @@ jQuery(document).ready(function ($) {
                         }
                     });
                 });
-                //field.find('.ht--fields').show();
                 $this.find('.ht--repeater-field-control-wrap').append(field);
                 field.addClass('expanded').find('.ht--repeater-fields').show();
                 $('.accordion-section-content').animate({
@@ -789,7 +786,6 @@ jQuery(document).ready(function ($) {
                         }
                     });
                 });
-                //field.find('.ht--fields').show();
                 $this.find('.ht--custom-repeater-field-control-wrap').append(field);
                 field.addClass('expanded').find('.ht--custom-repeater-fields').show();
                 $('.accordion-section-content').animate({
@@ -1011,9 +1007,7 @@ jQuery(document).ready(function ($) {
     $('.ht--linked').on('click', function () {
         // Set up variables
         var $this = $(this);
-        // Remove linked class
         $this.parent().parent('.ht--dimension-wrap').prevAll().slice(0, 4).find('input').removeClass('linked').attr('data-element', '');
-        // Remove class
         $this.parent('.ht--link-dimensions').removeClass('unlinked');
     });
 
@@ -1022,9 +1016,7 @@ jQuery(document).ready(function ($) {
         // Set up variables
         var $this = $(this),
             $element = $this.data('element');
-        // Add linked class
         $this.parent().parent('.ht--dimension-wrap').prevAll().slice(0, 4).find('input').addClass('linked').attr('data-element', $element);
-        // Add class
         $this.parent('.ht--link-dimensions').addClass('unlinked');
     });
 

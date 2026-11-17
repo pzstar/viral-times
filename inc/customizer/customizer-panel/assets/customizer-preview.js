@@ -1,9 +1,5 @@
 /**
  * customizer.js
- *
- * Theme Customizer enhancements for a better user experience.
- *
- * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
 function viral_times_dynamic_css(control, style) {
