@@ -245,19 +245,6 @@ $wp_customize->add_control(new Viral_Times_Range_Slider_Control($wp_customize, '
     )
 )));
 
-$wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral_times_more_typography_section', array(
-    'title' => esc_html__('Other Typography', 'viral-times'),
-    'panel' => 'viral_times_typography_panel',
-    'priority' => 1000,
-    'class' => 'ht--boxed',
-    'options' => array(
-        '<a href="javascript:wp.customize.section(\'viral_times_menu_section\').focus();">' . esc_html__('Menu & Sub Menu', 'viral-times') . '</a>',
-        '<a href="javascript:wp.customize.section(\'viral_times_title_bar_section\').focus();">' . esc_html__('Page Banner (Header Title)', 'viral-times') . '</a>',
-        '<a href="javascript:wp.customize.section(\'viral_times_frontpage_settings\').focus();">' . esc_html__('Front Page Block Title', 'viral-times') . '</a>',
-        '<a href="javascript:wp.customize.section(\'viral_times_frontpage_settings\').focus();">' . esc_html__('Front Page Post Title', 'viral-times') . '</a>',
-    )
-)));
-
 $wp_customize->add_section(new Viral_Times_Upgrade_Section($wp_customize, 'viral-times-hcfu-section', array(
     'title' => esc_html__('Want To Use Custom Fonts?', 'viral-times'),
     'panel' => 'viral_times_typography_panel',

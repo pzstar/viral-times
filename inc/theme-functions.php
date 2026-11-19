@@ -569,9 +569,7 @@ function viral_times_get_active_campaign() {
     return false;
 }
 
-// [display-year] prints the current year, as the Copyright Text description says.
-add_shortcode('display-year', 'viral_times_current_year');
-
+// Current year, swapped in for [display-year] in the copyright text.
 function viral_times_current_year() {
     return esc_html(date_i18n('Y'));
 }

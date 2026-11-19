@@ -26,6 +26,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Customizer font weight lookup limited to administrators - Fixed
 * Customizer upgrade notes list the 1-site and unlimited-site prices - Changed
 * Customizer category dropdowns in repeater fields now show the saved category as selected - Fixed
+* [display-year] in the footer copyright text now shows the current year - Fixed
+* "Other Typography" box in the Customizer Typography Settings - Removed
 
 = 1.2.0 - Nov 16, 2026 =
 * Settings page redesigned, with a compact header, a Viral Pro card, clearer tabs, a setup checklist, Customizer shortcuts and rewritten help text - Changed
