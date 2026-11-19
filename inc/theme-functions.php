@@ -568,3 +568,49 @@ function viral_times_get_active_campaign() {
 
     return false;
 }
+
+// [display-year] prints the current year, as the Copyright Text description says.
+add_shortcode('display-year', 'viral_times_current_year');
+
+function viral_times_current_year() {
+    return esc_html(date_i18n('Y'));
+}
+
+if (!function_exists('viral_times_cart_link')) {
+
+    // Cart icon with the item count, refreshed by WooCommerce cart fragments.
+    function viral_times_cart_link() {
+        ?>
+        <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', 'viral-times'); ?>">
+            <i class="icofont-cart"><span class="cart-count"><?php echo wp_kses_data(WC()->cart->get_cart_contents_count()); ?></span></i>
+        </a>
+        <?php
+    }
+
+}
+
+// Adds the cart to the end of the Primary Menu when "Show Cart Button" is on.
+add_filter('wp_nav_menu_items', 'viral_times_cart_icon', 10, 2);
+
+function viral_times_cart_icon($items, $args) {
+    if (!viral_times_is_woocommerce_activated() || !get_theme_mod('viral_times_mh_show_cart', false) || 'primary' !== $args->theme_location || !WC()->cart) {
+        return $items;
+    }
+    ob_start();
+    echo '<li class="menu-item menu-item-ht-cart' . (is_cart() ? ' current-menu-item' : '') . '">';
+    viral_times_cart_link();
+    if (!is_cart() && !is_checkout()) {
+        the_widget('WC_Widget_Cart', 'title=');
+    }
+    echo '</li>';
+    return $items . ob_get_clean();
+}
+
+add_filter('woocommerce_add_to_cart_fragments', 'viral_times_cart_link_fragment');
+
+function viral_times_cart_link_fragment($fragments) {
+    ob_start();
+    viral_times_cart_link();
+    $fragments['a.cart-contents'] = ob_get_clean();
+    return $fragments;
+}

@@ -398,6 +398,20 @@ function viral_times_dymanic_styles() {
         }
     ";
 
+    // Menu hover background: only output once it has been set, so sites that never chose one keep their look.
+    $mh_menu_hover_bg_color = get_theme_mod('viral_times_mh_menu_hover_bg_color');
+    if ($mh_menu_hover_bg_color) {
+        $custom_css .= "
+        .ht-menu > ul > li.menu-item:hover > a,
+        .ht-menu > ul > li.menu-item.current_page_item > a,
+        .ht-menu > ul > li.menu-item.current-menu-item > a,
+        .ht-menu > ul > li.menu-item.current_page_ancestor > a,
+        .ht-menu > ul > li.menu-item.current > a{
+            background: $mh_menu_hover_bg_color;
+        }
+    ";
+    }
+
     $mh_header_bg_color = get_theme_mod('viral_times_mh_header_bg_color', '#FFFFFF');
 
     if ($mh_header_bg_color) {

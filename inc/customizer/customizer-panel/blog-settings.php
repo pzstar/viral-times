@@ -20,7 +20,7 @@ $wp_customize->add_control(new Viral_Times_Tab_Control($wp_customize, 'viral_tim
     'priority' => 1,
     'buttons' => array(
         array(
-            'name' => esc_html__('BLog Page', 'viral-times'),
+            'name' => esc_html__('Blog Page', 'viral-times'),
             'icon' => 'dashicons dashicons-welcome-write-blog',
             'fields' => array(
                 'viral_times_display_frontpage_sections',

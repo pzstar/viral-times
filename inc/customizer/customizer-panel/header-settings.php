@@ -742,7 +742,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_
 $wp_customize->add_setting('viral_times_mh_menu_hover_bg_color', array(
     'default' => '#ea3546',
     'sanitize_callback' => 'sanitize_hex_color',
-    'transport' => 'postMessage'
+    'transport' => 'refresh'
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'viral_times_mh_menu_hover_bg_color', array(
