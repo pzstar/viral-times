@@ -1,6 +1,10 @@
 <?php
 
 function viral_times_get_google_font_variants() {
+    if (!current_user_can('manage_options')) {
+        return;
+    }
+    
     $all_font = viral_times_all_fonts();
     $font_family = isset($_REQUEST['font_family']) ? sanitize_text_field(wp_unslash($_REQUEST['font_family'])) : '';
 
@@ -146,7 +150,7 @@ function viral_times_standard_fonts() {
 function viral_times_register_fonts() {
     return apply_filters('viral_times_regsiter_fonts', array(
         array(
-            'label' => '',
+            'label' => esc_html__('Default', 'viral-times'),
             'fonts' => viral_times_default_fonts()
         ),
         array(

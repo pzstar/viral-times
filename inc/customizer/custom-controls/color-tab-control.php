@@ -99,7 +99,7 @@ class Viral_Times_Color_Tab_Control extends WP_Customize_Control {
                     <# _.each( data.normal, function( args, key ) { #>
                     <div class="ht--color-content-wrap {{ key }}">
                         <label class="ht--color-tab-label">{{ data.group[ key ] }}</label>
-                        <input class="ht--alpha-color-control" type="text" value="{{ args.value }}" data-alpha-color-type="hex" data-alpha-enabled="{{ data.show_opacity }}" data-default-color="{{ args.default }}" data-palette="{{ data.palette }}" {{{ args.link }}} />   
+                        <input class="ht--alpha-color-control" type="text" value="{{ args.value }}" data-alpha-color-type="hex" data-alpha-enabled="{{ data.show_opacity }}" data-default-color="{{ args.default }}" data-palette="{{ data.palette }}" {{{ args.link }}} />
                     </div>
                     <# } ); #>
                 </div>
@@ -108,7 +108,7 @@ class Viral_Times_Color_Tab_Control extends WP_Customize_Control {
                     <# _.each( data.hover, function( args, key ) { #>
                     <div class="ht--color-content-wrap {{ key }}">
                         <label class="ht--color-tab-label">{{ data.group[ key ] }}</label>
-                        <input class="ht--alpha-color-control" type="text"  value="{{ args.value }}" data-alpha-color-type="hex" data-alpha-enabled="{{ data.show_opacity }}" data-default-color="{{ args.default }}" data-palette="{{ data.palette }}" {{{ args.link }}} />   
+                        <input class="ht--alpha-color-control" type="text" value="{{ args.value }}" data-alpha-color-type="hex" data-alpha-enabled="{{ data.show_opacity }}" data-default-color="{{ args.default }}" data-palette="{{ data.palette }}" {{{ args.link }}} />
                     </div>
                     <# } ); #>
                 </div>

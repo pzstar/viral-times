@@ -18,8 +18,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
-= 1.2.1 - Nov 17, 2026 =
+= 1.2.1 - Nov 19, 2026 =
+* Customizer upgrade box made smaller: the price is in the button, and the feature list is removed - Changed
+* Seasonal sale banner on the admin screens during a sale, which can be closed - Added
+* Customizer colour picker redesigned: one card with the picker on top and the hex field below - Changed
 * Code comments shortened, and unused commented-out code removed - Changed
+* Customizer font weight lookup limited to administrators - Fixed
+* Customizer upgrade notes list the 1-site and unlimited-site prices - Changed
+* Customizer category dropdowns in repeater fields now show the saved category as selected - Fixed
 
 = 1.2.0 - Nov 16, 2026 =
 * Settings page redesigned, with a compact header, a Viral Pro card, clearer tabs, a setup checklist, Customizer shortcuts and rewritten help text - Changed

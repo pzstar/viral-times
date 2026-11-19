@@ -41,16 +41,16 @@ class Viral_Times_Typography_Control extends WP_Customize_Control {
         parent::__construct($manager, $id, $args);
         // Make sure we have labels.
         $this->l10n = wp_parse_args(
-            $this->l10n, array(
-                'family' => esc_html__('Font Family', 'viral-times'),
-                'style' => esc_html__('Font Weight/Style', 'viral-times'),
-                'text_transform' => esc_html__('Text Transform', 'viral-times'),
-                'text_decoration' => esc_html__('Text Decoration', 'viral-times'),
-                'size' => esc_html__('Font Size', 'viral-times'),
-                'line_height' => esc_html__('Line Height', 'viral-times'),
-                'letter_spacing' => esc_html__('Letter Spacing', 'viral-times'),
-                'color' => esc_html__('Font Color', 'viral-times')
-            )
+                $this->l10n, array(
+            'family' => esc_html__('Font Family', 'viral-times'),
+            'style' => esc_html__('Font Weight/Style', 'viral-times'),
+            'text_transform' => esc_html__('Text Transform', 'viral-times'),
+            'text_decoration' => esc_html__('Text Decoration', 'viral-times'),
+            'size' => esc_html__('Font Size', 'viral-times'),
+            'line_height' => esc_html__('Line Height', 'viral-times'),
+            'letter_spacing' => esc_html__('Letter Spacing', 'viral-times'),
+            'color' => esc_html__('Font Color', 'viral-times')
+                )
         );
     }
 
@@ -149,18 +149,13 @@ class Viral_Times_Typography_Control extends WP_Customize_Control {
                 <# } #>
 
                 <select {{{ data.family.link }}} data-default="{{data.family.default}}">
-                    <# if ( data.family.choices ) { 
-                    _.each(data.family.choices, function(options){
-                    #>
+                    <# if ( data.family.choices ) { _.each(data.family.choices, function(options){ #>
                     <optgroup label="{{options.label}}">
                         <# _.each( options.fonts, function( label, value ) { #>
                         <option value="{{ label.family }}" <# if ( label.family === data.family.value ) { #> selected="selected" <# } #>>{{ label.family }}</option>
                         <# } ) #>
                     </optgroup>
-                    <#
-                    })
-                    }
-                    #>
+                    <# }) } #>
                 </select>
             </li>
             <# } #>
@@ -373,7 +368,7 @@ class Viral_Times_Typography_Control extends WP_Customize_Control {
                 <# } #>
 
                 <div class="customize-control-content">
-                    <input class="ht--color-picker-hex" type="text" maxlength="7" placeholder="<?php esc_attr_e('Hex Value', 'viral-times'); ?>" {{{ data.color.link }}} value="{{ data.color.value }}"  />
+                    <input class="ht--color-picker-hex" type="text" maxlength="7" placeholder="<?php esc_attr_e('Hex Value', 'viral-times'); ?>" {{{ data.color.link }}} value="{{ data.color.value }}" />
                 </div>
             </li>
             <# } #>
